@@ -17,6 +17,9 @@ namespace Inventario
             InitializeComponent();
         }
 
-
+        private void buscarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // TODO : abrir ventana de busqueda
+        }
     }
 }
