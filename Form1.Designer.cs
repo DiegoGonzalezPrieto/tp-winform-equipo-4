@@ -34,9 +34,11 @@
             this.tlsNuevoArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsActualizarArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsEliminarArticulo = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsBuscar = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataArticulos = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataArticulos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -47,8 +49,8 @@
             this.editarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(662, 26);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(883, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,57 +63,70 @@
             this.tlsBuscar});
             this.inicioToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(53, 22);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
             this.inicioToolStripMenuItem.Text = "Inicio";
             // 
             // tlsNuevoArticulo
             // 
             this.tlsNuevoArticulo.Name = "tlsNuevoArticulo";
-            this.tlsNuevoArticulo.Size = new System.Drawing.Size(184, 22);
+            this.tlsNuevoArticulo.Size = new System.Drawing.Size(230, 26);
             this.tlsNuevoArticulo.Text = "&Nuevo Articulo";
             // 
             // tlsActualizarArticulo
             // 
             this.tlsActualizarArticulo.Name = "tlsActualizarArticulo";
-            this.tlsActualizarArticulo.Size = new System.Drawing.Size(184, 22);
+            this.tlsActualizarArticulo.Size = new System.Drawing.Size(230, 26);
             this.tlsActualizarArticulo.Text = "&Modificar Articulo";
             // 
             // tlsEliminarArticulo
             // 
             this.tlsEliminarArticulo.Name = "tlsEliminarArticulo";
-            this.tlsEliminarArticulo.Size = new System.Drawing.Size(184, 22);
+            this.tlsEliminarArticulo.Size = new System.Drawing.Size(230, 26);
             this.tlsEliminarArticulo.Text = "&Eliminar Articulo";
+            // 
+            // tlsBuscar
+            // 
+            this.tlsBuscar.Name = "tlsBuscar";
+            this.tlsBuscar.Size = new System.Drawing.Size(230, 26);
+            this.tlsBuscar.Text = "&Buscar Articulo";
+            this.tlsBuscar.Click += new System.EventHandler(this.buscarArticuloToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(42, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(50, 26);
             this.editarToolStripMenuItem.Text = "Ver";
             // 
-            // tlsBuscar
+            // dataArticulos
             // 
-            this.tlsBuscar.Name = "tlsBuscar";
-            this.tlsBuscar.Size = new System.Drawing.Size(184, 22);
-            this.tlsBuscar.Text = "&Buscar Articulo";
-            this.tlsBuscar.Click += new System.EventHandler(this.buscarArticuloToolStripMenuItem_Click);
+            this.dataArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataArticulos.Location = new System.Drawing.Point(12, 104);
+            this.dataArticulos.Name = "dataArticulos";
+            this.dataArticulos.RowHeadersWidth = 51;
+            this.dataArticulos.RowTemplate.Height = 24;
+            this.dataArticulos.Size = new System.Drawing.Size(859, 332);
+            this.dataArticulos.TabIndex = 1;
             // 
             // VentanaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 449);
+            this.ClientSize = new System.Drawing.Size(883, 553);
+            this.Controls.Add(this.dataArticulos);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "VentanaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Artículos v1.0";
+            this.Load += new System.EventHandler(this.VentanaPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,6 +141,7 @@
         private System.Windows.Forms.ToolStripMenuItem tlsActualizarArticulo;
         private System.Windows.Forms.ToolStripMenuItem tlsEliminarArticulo;
         private System.Windows.Forms.ToolStripMenuItem tlsBuscar;
+        private System.Windows.Forms.DataGridView dataArticulos;
     }
 }
 

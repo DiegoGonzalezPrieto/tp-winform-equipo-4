@@ -12,6 +12,7 @@ namespace Inventario
 {
     public partial class VentanaPrincipal : Form
     {
+        private List<Articulo> articuloListados;
         public VentanaPrincipal()
         {
             InitializeComponent();
@@ -21,5 +22,28 @@ namespace Inventario
         {
             // TODO : abrir ventana de busqueda
         }
+
+        private void VentanaPrincipal_Load(object sender, EventArgs e)
+        {
+            cargarListadoArticulos();
+        }
+
+        private void cargarListadoArticulos()
+        {
+            VisualizacionArticulos articulos = new VisualizacionArticulos();
+            try
+            {
+                articuloListados = articulos.listar();
+
+                dataArticulos.DataSource = articuloListados;
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
     }
 }

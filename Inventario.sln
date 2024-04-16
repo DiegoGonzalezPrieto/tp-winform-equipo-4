@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventario", "Inventario.csproj", "{8AA4C70E-2F92-45E7-B2BB-D261049C85ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "..\AccesoDatos\AccesoDatos.csproj", "{0D517336-BB53-4DA2-A9ED-D98B1B36CA96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8AA4C70E-2F92-45E7-B2BB-D261049C85ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AA4C70E-2F92-45E7-B2BB-D261049C85ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AA4C70E-2F92-45E7-B2BB-D261049C85ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D517336-BB53-4DA2-A9ED-D98B1B36CA96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D517336-BB53-4DA2-A9ED-D98B1B36CA96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D517336-BB53-4DA2-A9ED-D98B1B36CA96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D517336-BB53-4DA2-A9ED-D98B1B36CA96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
