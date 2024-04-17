@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlsInicio = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsNuevoArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsActualizarArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.seleccionarPorIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,31 +50,31 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem,
+            this.tlsInicio,
             this.editarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(882, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(662, 26);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // inicioToolStripMenuItem
+            // tlsInicio
             // 
-            this.inicioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlsInicio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlsNuevoArticulo,
             this.tlsActualizarArticulo,
             this.tlsEliminarArticulo,
             this.tlsBuscar});
-            this.inicioToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
-            this.inicioToolStripMenuItem.Text = "Inicio";
+            this.tlsInicio.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlsInicio.Name = "tlsInicio";
+            this.tlsInicio.Size = new System.Drawing.Size(53, 22);
+            this.tlsInicio.Text = "&Inicio";
             // 
             // tlsNuevoArticulo
             // 
             this.tlsNuevoArticulo.Name = "tlsNuevoArticulo";
-            this.tlsNuevoArticulo.Size = new System.Drawing.Size(230, 26);
+            this.tlsNuevoArticulo.Size = new System.Drawing.Size(184, 22);
             this.tlsNuevoArticulo.Text = "&Nuevo Articulo";
             this.tlsNuevoArticulo.Click += new System.EventHandler(this.tlsNuevoArticulo_Click);
             // 
@@ -87,50 +87,50 @@
             this.seleccionarPorMarcaToolStripMenuItem,
             this.pRUEBAToolStripMenuItem});
             this.tlsActualizarArticulo.Name = "tlsActualizarArticulo";
-            this.tlsActualizarArticulo.Size = new System.Drawing.Size(230, 26);
+            this.tlsActualizarArticulo.Size = new System.Drawing.Size(184, 22);
             this.tlsActualizarArticulo.Text = "&Modificar Articulo";
             // 
             // seleccionarPorIDToolStripMenuItem
             // 
             this.seleccionarPorIDToolStripMenuItem.Name = "seleccionarPorIDToolStripMenuItem";
-            this.seleccionarPorIDToolStripMenuItem.Size = new System.Drawing.Size(290, 26);
+            this.seleccionarPorIDToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.seleccionarPorIDToolStripMenuItem.Text = "Seleccionar por ID";
             // 
             // seleccionarPorCategoriaToolStripMenuItem
             // 
             this.seleccionarPorCategoriaToolStripMenuItem.Name = "seleccionarPorCategoriaToolStripMenuItem";
-            this.seleccionarPorCategoriaToolStripMenuItem.Size = new System.Drawing.Size(290, 26);
+            this.seleccionarPorCategoriaToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.seleccionarPorCategoriaToolStripMenuItem.Text = "Seleccionar por código";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(290, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
             this.toolStripMenuItem1.Text = "Seleccionar por categoria";
             // 
             // seleccionarPorMarcaToolStripMenuItem
             // 
             this.seleccionarPorMarcaToolStripMenuItem.Name = "seleccionarPorMarcaToolStripMenuItem";
-            this.seleccionarPorMarcaToolStripMenuItem.Size = new System.Drawing.Size(290, 26);
+            this.seleccionarPorMarcaToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.seleccionarPorMarcaToolStripMenuItem.Text = "Seleccionar por marca";
             // 
             // pRUEBAToolStripMenuItem
             // 
             this.pRUEBAToolStripMenuItem.Name = "pRUEBAToolStripMenuItem";
-            this.pRUEBAToolStripMenuItem.Size = new System.Drawing.Size(290, 26);
+            this.pRUEBAToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.pRUEBAToolStripMenuItem.Text = "Prueba";
             this.pRUEBAToolStripMenuItem.Click += new System.EventHandler(this.pRUEBAToolStripMenuItem_Click);
             // 
             // tlsEliminarArticulo
             // 
             this.tlsEliminarArticulo.Name = "tlsEliminarArticulo";
-            this.tlsEliminarArticulo.Size = new System.Drawing.Size(230, 26);
+            this.tlsEliminarArticulo.Size = new System.Drawing.Size(184, 22);
             this.tlsEliminarArticulo.Text = "&Eliminar Articulo";
             // 
             // tlsBuscar
             // 
             this.tlsBuscar.Name = "tlsBuscar";
-            this.tlsBuscar.Size = new System.Drawing.Size(230, 26);
+            this.tlsBuscar.Size = new System.Drawing.Size(184, 22);
             this.tlsBuscar.Text = "&Buscar Articulo";
             this.tlsBuscar.Click += new System.EventHandler(this.buscarArticuloToolStripMenuItem_Click);
             // 
@@ -138,30 +138,31 @@
             // 
             this.editarToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(50, 26);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(42, 22);
             this.editarToolStripMenuItem.Text = "Ver";
             // 
             // dataArticulos
             // 
             this.dataArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataArticulos.Location = new System.Drawing.Point(12, 104);
+            this.dataArticulos.Location = new System.Drawing.Point(9, 84);
+            this.dataArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataArticulos.Name = "dataArticulos";
             this.dataArticulos.RowHeadersWidth = 51;
             this.dataArticulos.RowTemplate.Height = 24;
-            this.dataArticulos.Size = new System.Drawing.Size(859, 332);
+            this.dataArticulos.Size = new System.Drawing.Size(644, 270);
             this.dataArticulos.TabIndex = 1;
             // 
             // VentanaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 553);
+            this.ClientSize = new System.Drawing.Size(662, 449);
             this.Controls.Add(this.dataArticulos);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "VentanaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -178,7 +179,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tlsInicio;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tlsNuevoArticulo;
         private System.Windows.Forms.ToolStripMenuItem tlsActualizarArticulo;
