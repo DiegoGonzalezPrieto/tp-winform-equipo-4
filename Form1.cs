@@ -50,5 +50,11 @@ namespace Inventario
             AgregarArticulo ventanaAgregar = new AgregarArticulo();
             ventanaAgregar.ShowDialog();
         }
+
+        private void pRUEBAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarArticulo ventanaModificar = new ModificarArticulo();
+            ventanaModificar.ShowDialog();
+        }
     }
 }

@@ -33,6 +33,11 @@
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsNuevoArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsActualizarArticulo = new System.Windows.Forms.ToolStripMenuItem();
+            this.seleccionarPorIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seleccionarPorCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.seleccionarPorMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pRUEBAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsEliminarArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsBuscar = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,9 +80,46 @@
             // 
             // tlsActualizarArticulo
             // 
+            this.tlsActualizarArticulo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seleccionarPorIDToolStripMenuItem,
+            this.seleccionarPorCategoriaToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.seleccionarPorMarcaToolStripMenuItem,
+            this.pRUEBAToolStripMenuItem});
             this.tlsActualizarArticulo.Name = "tlsActualizarArticulo";
             this.tlsActualizarArticulo.Size = new System.Drawing.Size(230, 26);
             this.tlsActualizarArticulo.Text = "&Modificar Articulo";
+            // 
+            // seleccionarPorIDToolStripMenuItem
+            // 
+            this.seleccionarPorIDToolStripMenuItem.Name = "seleccionarPorIDToolStripMenuItem";
+            this.seleccionarPorIDToolStripMenuItem.Size = new System.Drawing.Size(290, 26);
+            this.seleccionarPorIDToolStripMenuItem.Text = "Seleccionar por ID";
+            // 
+            // seleccionarPorCategoriaToolStripMenuItem
+            // 
+            this.seleccionarPorCategoriaToolStripMenuItem.Name = "seleccionarPorCategoriaToolStripMenuItem";
+            this.seleccionarPorCategoriaToolStripMenuItem.Size = new System.Drawing.Size(290, 26);
+            this.seleccionarPorCategoriaToolStripMenuItem.Text = "Seleccionar por código";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(290, 26);
+            this.toolStripMenuItem1.Text = "Seleccionar por categoria";
+            // 
+            // seleccionarPorMarcaToolStripMenuItem
+            // 
+            this.seleccionarPorMarcaToolStripMenuItem.Name = "seleccionarPorMarcaToolStripMenuItem";
+            this.seleccionarPorMarcaToolStripMenuItem.Size = new System.Drawing.Size(290, 26);
+            this.seleccionarPorMarcaToolStripMenuItem.Text = "Seleccionar por marca";
+            // 
+            // pRUEBAToolStripMenuItem
+            // 
+            this.pRUEBAToolStripMenuItem.Name = "pRUEBAToolStripMenuItem";
+            this.pRUEBAToolStripMenuItem.Size = new System.Drawing.Size(290, 26);
+            this.pRUEBAToolStripMenuItem.Text = "Prueba";
+            this.pRUEBAToolStripMenuItem.Click += new System.EventHandler(this.pRUEBAToolStripMenuItem_Click);
             // 
             // tlsEliminarArticulo
             // 
@@ -143,6 +185,11 @@
         private System.Windows.Forms.ToolStripMenuItem tlsEliminarArticulo;
         private System.Windows.Forms.ToolStripMenuItem tlsBuscar;
         private System.Windows.Forms.DataGridView dataArticulos;
+        private System.Windows.Forms.ToolStripMenuItem seleccionarPorIDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seleccionarPorCategoriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem seleccionarPorMarcaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pRUEBAToolStripMenuItem;
     }
 }
 
