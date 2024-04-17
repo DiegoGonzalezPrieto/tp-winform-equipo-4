@@ -55,7 +55,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(662, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(828, 26);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -143,20 +143,21 @@
             // 
             // dataArticulos
             // 
+            this.dataArticulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataArticulos.Location = new System.Drawing.Point(9, 84);
+            this.dataArticulos.Location = new System.Drawing.Point(24, 77);
             this.dataArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataArticulos.Name = "dataArticulos";
             this.dataArticulos.RowHeadersWidth = 51;
             this.dataArticulos.RowTemplate.Height = 24;
-            this.dataArticulos.Size = new System.Drawing.Size(644, 270);
+            this.dataArticulos.Size = new System.Drawing.Size(774, 270);
             this.dataArticulos.TabIndex = 1;
             // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 449);
+            this.ClientSize = new System.Drawing.Size(828, 449);
             this.Controls.Add(this.dataArticulos);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -164,6 +165,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(844, 488);
             this.Name = "VentanaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Artículos v1.0";

@@ -19,8 +19,9 @@ namespace Inventario
         }
 
         private void buscarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // TODO : abrir ventana de busqueda
+        { 
+            FrmBuscar frmBuscar = new FrmBuscar();
+            frmBuscar.ShowDialog();
         }
 
         private void VentanaPrincipal_Load(object sender, EventArgs e)
