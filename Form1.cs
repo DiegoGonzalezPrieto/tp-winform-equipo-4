@@ -45,5 +45,10 @@ namespace Inventario
             }
         }
 
+        private void tlsNuevoArticulo_Click(object sender, EventArgs e)
+        {
+            AgregarArticulo ventanaAgregar = new AgregarArticulo();
+            ventanaAgregar.ShowDialog();
+        }
     }
 }
