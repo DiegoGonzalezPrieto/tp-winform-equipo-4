@@ -59,5 +59,7 @@ namespace Inventario
             }
             else { MessageBox.Show("Debe completar todos los campos para poder guardar un articulo"); }
         }
+
+
     }
 }
