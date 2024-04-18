@@ -15,15 +15,15 @@ namespace Inventario
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         
-        public int Marca { get; set; }
+        public Marca Marca { get; set; }
         
         // A futuro Marca sera de tipo Marca
         //public Marca Marca { get; set; }
-        public int Categoria { get; set; }
+        public Categoria Categoria { get; set; }
         // A futuro Categoria sera de tipo Marca
         //public Categoria Categoria { get; set; }
 
-        public List<string> Imagen { get; set; }
+        public List<Imagen> Imagen { get; set; }
 
         // A futuro reemplazamos Imagen por lista de imagenes
         //public List<Imagen> Imagenes { get; set; }

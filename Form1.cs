@@ -37,6 +37,7 @@ namespace Inventario
                 articuloListados = articulos.listar();
 
                 dataArticulos.DataSource = articuloListados;
+                dataArticulos.Columns["Id"].Visible = false;
                 
             }
             catch (Exception ex)
