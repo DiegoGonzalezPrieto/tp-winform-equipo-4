@@ -94,6 +94,7 @@
             // 
             // TBCodigoArticulo
             // 
+            this.TBCodigoArticulo.AccessibleName = "";
             this.TBCodigoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBCodigoArticulo.Location = new System.Drawing.Point(242, 47);
             this.TBCodigoArticulo.MaxLength = 3;
@@ -104,12 +105,14 @@
             // 
             // TBNombre
             // 
+            this.TBNombre.AccessibleName = "";
             this.TBNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBNombre.Location = new System.Drawing.Point(242, 97);
             this.TBNombre.MaxLength = 50;
             this.TBNombre.Name = "TBNombre";
             this.TBNombre.Size = new System.Drawing.Size(200, 27);
             this.TBNombre.TabIndex = 7;
+            this.TBNombre.Tag = "";
             this.TBNombre.TextChanged += new System.EventHandler(this.TBNombre_TextChanged);
             // 
             // TBDescripcion
@@ -167,12 +170,12 @@
             // BTAgregarArticulo
             // 
             this.BTAgregarArticulo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BTAgregarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTAgregarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTAgregarArticulo.Location = new System.Drawing.Point(150, 361);
             this.BTAgregarArticulo.Name = "BTAgregarArticulo";
             this.BTAgregarArticulo.Size = new System.Drawing.Size(233, 36);
             this.BTAgregarArticulo.TabIndex = 11;
-            this.BTAgregarArticulo.Text = "Agregar Artículo";
+            this.BTAgregarArticulo.Text = "Guardar Artículo";
             this.BTAgregarArticulo.UseVisualStyleBackColor = true;
             this.BTAgregarArticulo.Click += new System.EventHandler(this.BTAgregarArticulo_Click);
             // 

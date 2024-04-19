@@ -35,17 +35,17 @@
             // TBModificar
             // 
             this.TBModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBModificar.Location = new System.Drawing.Point(109, 49);
+            this.TBModificar.Location = new System.Drawing.Point(188, 75);
             this.TBModificar.MaxLength = 50;
             this.TBModificar.Name = "TBModificar";
-            this.TBModificar.Size = new System.Drawing.Size(357, 27);
+            this.TBModificar.Size = new System.Drawing.Size(291, 27);
             this.TBModificar.TabIndex = 8;
             // 
             // NuevoDato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 124);
+            this.ClientSize = new System.Drawing.Size(580, 198);
             this.Controls.Add(this.TBModificar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

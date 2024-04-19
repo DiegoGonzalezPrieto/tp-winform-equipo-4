@@ -47,11 +47,6 @@ namespace Inventario
             }
         }
 
-        private void tlsNuevoArticulo_Click(object sender, EventArgs e)
-        {
-            AgregarArticulo ventanaAgregar = new AgregarArticulo();
-            ventanaAgregar.ShowDialog();
-        }
 
         private void pRUEBAToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -59,5 +54,10 @@ namespace Inventario
             ventanaModificar.ShowDialog();
         }
 
+        private void nuevoArticulo_Click(object sender, EventArgs e)
+        {
+            AgregarArticulo ventanaAgregar = new AgregarArticulo();
+            ventanaAgregar.ShowDialog();
+        }
     }
 }
