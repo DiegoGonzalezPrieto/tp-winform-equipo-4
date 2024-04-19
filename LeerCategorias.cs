@@ -8,8 +8,11 @@ namespace Inventario
 {
     internal class LeerCategorias
     {
-
-        public List<Categoria> ListaCategorias()
+        /// <summary>
+        ///  Obtiene lista de Categorías de la base de datos
+        /// </summary>
+        /// <returns></returns>
+        public static List<Categoria> ListaCategorias()
         {
             {
                 List<Categoria> ListaDeCategorias = new List<Categoria>();

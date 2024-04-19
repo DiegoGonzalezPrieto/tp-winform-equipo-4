@@ -26,5 +26,14 @@ namespace Inventario
         public List<Imagen> Imagen { get; set; }
         [DisplayName("Precio")]
         public decimal Precio { get; set; }
+
+        override public string ToString()
+        {
+            string s = "Cod. Artículo: " + this.CodigoArticulo;
+            s += "\nNombre: " + this.Nombre;
+            s += "\nCategoría: " + this.Categoria;
+            s += "\nMarca: " + this.Marca;
+            return s;
+        }
     }
 }

@@ -8,7 +8,8 @@ namespace Inventario
 {
     internal class LeerMarcas
     {
-        public List<Marca> ListaMarcas()
+        /**Devuelve un listado de Marcas de la base de datos*/
+        public static List<Marca> ListaMarcas()
         {
             List<Marca> listaDeMarcas = new List<Marca>();
             Data datosDeMarcas = new Data();

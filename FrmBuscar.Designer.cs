@@ -52,21 +52,11 @@
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
             this.cmbCategoria.Location = new System.Drawing.Point(357, 299);
             this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCategoria.MaxLength = 2;
@@ -77,17 +67,6 @@
             // cmbMarca
             // 
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
             this.cmbMarca.Location = new System.Drawing.Point(357, 238);
             this.cmbMarca.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMarca.MaxLength = 2;
