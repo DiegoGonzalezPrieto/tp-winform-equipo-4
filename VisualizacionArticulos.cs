@@ -19,7 +19,10 @@ namespace Inventario
 
             try
             {
-                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre,  A.Descripcion, M.Descripcion Nombre_Marca, A.IdCategoria, A.Precio FROM ARTICULOS A, MARCAS M  WHERE A.IdMarca = M.Id");
+                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion Nombre_Marca, C.Descripcion Nombre_Categoria, A.Precio FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id");
+
+
+
                 accesoDatos.ejecutarLectura();
 
                 while (accesoDatos.Lector.Read())
@@ -35,7 +38,8 @@ namespace Inventario
                     articulo.Marca.Nombre = (string)accesoDatos.Lector["Nombre_Marca"];
                     //Creacion de Categoria y relacion en datagrip
                     articulo.Categoria = new Categoria();
-                    articulo.Categoria.Id = (int)accesoDatos.Lector["IdCategoria"];
+                    articulo.Categoria.Id = (int)accesoDatos.Lector["Id"];
+                    articulo.Categoria.Nombre = (string)accesoDatos.Lector["Nombre_Categoria"];
                     articulo.Precio = (decimal)accesoDatos.Lector["Precio"];
                     
 

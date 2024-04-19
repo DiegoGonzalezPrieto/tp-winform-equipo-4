@@ -58,5 +58,6 @@ namespace Inventario
             ModificarArticulo ventanaModificar = new ModificarArticulo();
             ventanaModificar.ShowDialog();
         }
+
     }
 }

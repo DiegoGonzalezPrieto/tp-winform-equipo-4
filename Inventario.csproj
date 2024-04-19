@@ -80,6 +80,7 @@
       <DependentUpon>FrmBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="Imagen.cs" />
+    <Compile Include="LeerCategorias.cs" />
     <Compile Include="LeerMarcas.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="Program.cs" />
