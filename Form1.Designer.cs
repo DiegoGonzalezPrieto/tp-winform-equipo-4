@@ -130,12 +130,14 @@
             this.nuevaMarca.Name = "nuevaMarca";
             this.nuevaMarca.Size = new System.Drawing.Size(224, 26);
             this.nuevaMarca.Text = "&Nueva Marca";
+            this.nuevaMarca.Click += new System.EventHandler(this.nuevaMarca_Click);
             // 
             // modificarMarca
             // 
             this.modificarMarca.Name = "modificarMarca";
             this.modificarMarca.Size = new System.Drawing.Size(224, 26);
             this.modificarMarca.Text = "&Modificar Marca";
+            this.modificarMarca.Click += new System.EventHandler(this.modificarMarca_Click);
             // 
             // eliminarMarca
             // 

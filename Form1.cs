@@ -59,5 +59,19 @@ namespace Inventario
             AgregarArticulo ventanaAgregar = new AgregarArticulo();
             ventanaAgregar.ShowDialog();
         }
+
+        private void nuevaMarca_Click(object sender, EventArgs e)
+        {
+            NuevoDato nuevaMarca = new NuevoDato();
+            nuevaMarca.Text = "Nueva Marca";
+            nuevaMarca.ShowDialog();
+        }
+
+        private void modificarMarca_Click(object sender, EventArgs e)
+        {
+            NuevoDato modificarMarca = new NuevoDato();
+            modificarMarca.Text = "Modificar Marca";
+            modificarMarca.ShowDialog();
+        }
     }
 }
