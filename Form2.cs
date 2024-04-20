@@ -69,7 +69,7 @@ namespace Inventario
 
                 Close();
             }
-            catch(FormatException fe)
+            catch(FormatException)
             {
                 MessageBox.Show("Verifique que los campos esten cargados correctamente.");
             }

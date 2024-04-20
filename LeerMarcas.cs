@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Inventario
 {
-    public class LeerMarcas
+    internal class LeerMarcas
     {
         /**Devuelve un listado de Marcas de la base de datos*/
         public static List<Marca> ListaMarcas()
@@ -39,6 +40,27 @@ namespace Inventario
                 datosDeMarcas.cerrarConexion();
             }
 
+
+        }
+
+        public void agregarMarca(Marca nuevaMarca) {
+            
+            Data datos = new Data();
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO MARCAS (Descripcion) VALUES('" + nuevaMarca.Nombre + "')");
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
 
         }
 

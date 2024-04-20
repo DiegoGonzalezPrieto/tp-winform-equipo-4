@@ -20,30 +20,24 @@ namespace Inventario
         private void btnGuardarMarca_Click(object sender, EventArgs e)
         {
             Marca marca = new Marca();
+            LeerMarcas leerMarcas = new LeerMarcas();
             try
             {
-                marca.Nombre = txtMarca.Text;
-
-                Data datos = new Data();
-
-                try
+                if(!string.IsNullOrWhiteSpace(txtMarca.Text))
                 {
-                    datos.setearConsulta("INSERT INTO MARCAS (Descripcion) VALUES('" + marca.Nombre + "')");
-                    datos.ejecutarLectura();
-                }
-                catch (Exception ex)
+                    marca.Nombre = txtMarca.Text;
+                    leerMarcas.agregarMarca(marca);
+
+                    MessageBox.Show("Agregado Exitosamente!");
+
+                    Close();
+                }else
                 {
-
-                    throw ex;
+                    MessageBox.Show("Ingrese una marca, no se permiten espacio en blanco o vacios.");
                 }
-                finally
-                {
-                    datos.cerrarConexion();
-                }
+                //marca.Nombre = txtMarca.Text;
 
-                MessageBox.Show("Agregado Exitosamente!");
-
-                Close();
+                
 
             }
             catch (Exception ex)
