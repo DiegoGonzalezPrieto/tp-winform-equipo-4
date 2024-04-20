@@ -48,16 +48,11 @@ namespace Inventario
         }
 
 
-        private void pRUEBAToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ModificarArticulo ventanaModificar = new ModificarArticulo();
-            ventanaModificar.ShowDialog();
-        }
-
         private void nuevoArticulo_Click(object sender, EventArgs e)
         {
             AgregarArticulo ventanaAgregar = new AgregarArticulo();
             ventanaAgregar.ShowDialog();
+            cargarListadoArticulos();
         }
 
         private void nuevaMarca_Click(object sender, EventArgs e)

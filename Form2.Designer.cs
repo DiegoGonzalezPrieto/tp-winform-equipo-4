@@ -99,7 +99,7 @@
             this.TBCodigoArticulo.AccessibleName = "";
             this.TBCodigoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBCodigoArticulo.Location = new System.Drawing.Point(242, 47);
-            this.TBCodigoArticulo.MaxLength = 3;
+            this.TBCodigoArticulo.MaxLength = 4;
             this.TBCodigoArticulo.Name = "TBCodigoArticulo";
             this.TBCodigoArticulo.Size = new System.Drawing.Size(200, 27);
             this.TBCodigoArticulo.TabIndex = 0;
@@ -129,6 +129,7 @@
             // 
             // CBMarca
             // 
+            this.CBMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBMarca.FormattingEnabled = true;
             this.CBMarca.Items.AddRange(new object[] {
             "1",
@@ -149,6 +150,7 @@
             // 
             // CBCategoria
             // 
+            this.CBCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCategoria.FormattingEnabled = true;
             this.CBCategoria.Items.AddRange(new object[] {
             "1",
@@ -193,6 +195,7 @@
             // TBPrecio
             // 
             this.TBPrecio.Location = new System.Drawing.Point(242, 319);
+            this.TBPrecio.MaxLength = 8;
             this.TBPrecio.Name = "TBPrecio";
             this.TBPrecio.Size = new System.Drawing.Size(200, 22);
             this.TBPrecio.TabIndex = 5;
