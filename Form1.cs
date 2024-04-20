@@ -68,5 +68,12 @@ namespace Inventario
             modificarMarca.Text = "Modificar Marca";
             modificarMarca.ShowDialog();
         }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDetalleArticulo frm = new frmDetalleArticulo();
+
+            frm.ShowDialog();
+        }
     }
 }
