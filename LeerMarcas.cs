@@ -38,6 +38,9 @@ namespace Inventario
             {
                 datosDeMarcas.cerrarConexion();
             }
+
+
         }
+
     }
 }

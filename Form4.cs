@@ -19,15 +19,40 @@ namespace Inventario
 
         private void btnGuardarMarca_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(txtMarca.Text))
+            Marca marca = new Marca();
+            try
             {
-                MessageBox.Show("Debe agregar un nombre de Marca correcto.");
+                marca.Nombre = txtMarca.Text;
+
+                Data datos = new Data();
+
+                try
+                {
+                    datos.setearConsulta("INSERT INTO MARCAS (Descripcion) VALUES('" + marca.Nombre + "')");
+                    datos.ejecutarLectura();
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+                finally
+                {
+                    datos.cerrarConexion();
+                }
+
+                MessageBox.Show("Agregado Exitosamente!");
+
+                Close();
+
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Marca agregado correctamente");
-                
+
+                throw ex;
             }
+
+            
         }
 
         private void btnCancelarMarca_Click(object sender, EventArgs e)

@@ -26,10 +26,10 @@ namespace Inventario
             {
                 CBMarca.DataSource = leerMarcas;
                 CBMarca.ValueMember = "Id";
-                CBMarca.DisplayMember = "Descripcion";
+                CBMarca.DisplayMember = "Nombre";
                 CBCategoria.DataSource = leerCategorias;
                 CBCategoria.ValueMember = "Id";
-                CBCategoria.DisplayMember = "Decripcion";
+                CBCategoria.DisplayMember = "Nombre";
             }
             catch (Exception ex)
             {
