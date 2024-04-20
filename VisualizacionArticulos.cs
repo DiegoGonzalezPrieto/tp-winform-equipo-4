@@ -57,8 +57,28 @@ namespace Inventario
             {
                 accesoDatos.cerrarConexion();
             }
+        }
 
+        public void agregar(Articulo articuloNuevo)
+        {
+            Data datos = new Data();
 
+            try
+            {
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES('" + articuloNuevo.CodigoArticulo + "', '" + articuloNuevo.Nombre + "', '" + articuloNuevo.Descripcion + "', @IdMarca, @IdCategoria, "+ articuloNuevo.Precio +")");
+                datos.setearParametro("@IdMarca", articuloNuevo.Marca.Id);
+                datos.setearParametro("@IdCategoria", articuloNuevo.Categoria.Id);
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
     }
 }

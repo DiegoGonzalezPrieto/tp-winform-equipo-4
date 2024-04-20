@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inventario
 {
-    internal class LeerMarcas
+    public class LeerMarcas
     {
         /**Devuelve un listado de Marcas de la base de datos*/
         public static List<Marca> ListaMarcas()

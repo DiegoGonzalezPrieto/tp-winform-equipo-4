@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inventario
 {
-    internal class LeerCategorias
+    public class LeerCategorias
     {
         /// <summary>
         ///  Obtiene lista de Categorías de la base de datos

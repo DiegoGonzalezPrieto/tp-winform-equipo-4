@@ -40,6 +40,8 @@
             this.CBMarca = new System.Windows.Forms.ComboBox();
             this.CBCategoria = new System.Windows.Forms.ComboBox();
             this.BTAgregarArticulo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TBPrecio = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -100,7 +102,7 @@
             this.TBCodigoArticulo.MaxLength = 3;
             this.TBCodigoArticulo.Name = "TBCodigoArticulo";
             this.TBCodigoArticulo.Size = new System.Drawing.Size(200, 27);
-            this.TBCodigoArticulo.TabIndex = 6;
+            this.TBCodigoArticulo.TabIndex = 0;
             this.TBCodigoArticulo.TextChanged += new System.EventHandler(this.TBCodigoArticulo_TextChanged);
             // 
             // TBNombre
@@ -111,7 +113,7 @@
             this.TBNombre.MaxLength = 50;
             this.TBNombre.Name = "TBNombre";
             this.TBNombre.Size = new System.Drawing.Size(200, 27);
-            this.TBNombre.TabIndex = 7;
+            this.TBNombre.TabIndex = 1;
             this.TBNombre.Tag = "";
             this.TBNombre.TextChanged += new System.EventHandler(this.TBNombre_TextChanged);
             // 
@@ -122,7 +124,7 @@
             this.TBDescripcion.MaxLength = 100;
             this.TBDescripcion.Name = "TBDescripcion";
             this.TBDescripcion.Size = new System.Drawing.Size(200, 27);
-            this.TBDescripcion.TabIndex = 8;
+            this.TBDescripcion.TabIndex = 2;
             this.TBDescripcion.TextChanged += new System.EventHandler(this.TBDescripcion_TextChanged);
             // 
             // CBMarca
@@ -143,8 +145,7 @@
             this.CBMarca.MaxLength = 2;
             this.CBMarca.Name = "CBMarca";
             this.CBMarca.Size = new System.Drawing.Size(200, 24);
-            this.CBMarca.TabIndex = 9;
-            this.CBMarca.SelectedIndexChanged += new System.EventHandler(this.CBMarca_SelectedIndexChanged);
+            this.CBMarca.TabIndex = 3;
             // 
             // CBCategoria
             // 
@@ -164,26 +165,45 @@
             this.CBCategoria.MaxLength = 2;
             this.CBCategoria.Name = "CBCategoria";
             this.CBCategoria.Size = new System.Drawing.Size(200, 24);
-            this.CBCategoria.TabIndex = 10;
+            this.CBCategoria.TabIndex = 4;
             this.CBCategoria.SelectedIndexChanged += new System.EventHandler(this.CBCategoria_SelectedIndexChanged);
             // 
             // BTAgregarArticulo
             // 
             this.BTAgregarArticulo.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.BTAgregarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTAgregarArticulo.Location = new System.Drawing.Point(150, 361);
+            this.BTAgregarArticulo.Location = new System.Drawing.Point(150, 392);
             this.BTAgregarArticulo.Name = "BTAgregarArticulo";
             this.BTAgregarArticulo.Size = new System.Drawing.Size(233, 36);
-            this.BTAgregarArticulo.TabIndex = 11;
+            this.BTAgregarArticulo.TabIndex = 6;
             this.BTAgregarArticulo.Text = "Guardar Artículo";
             this.BTAgregarArticulo.UseVisualStyleBackColor = true;
             this.BTAgregarArticulo.Click += new System.EventHandler(this.BTAgregarArticulo_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(144, 319);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Precio:";
+            // 
+            // TBPrecio
+            // 
+            this.TBPrecio.Location = new System.Drawing.Point(242, 319);
+            this.TBPrecio.Name = "TBPrecio";
+            this.TBPrecio.Size = new System.Drawing.Size(200, 22);
+            this.TBPrecio.TabIndex = 5;
             // 
             // AgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(520, 503);
+            this.Controls.Add(this.TBPrecio);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BTAgregarArticulo);
             this.Controls.Add(this.CBCategoria);
             this.Controls.Add(this.CBMarca);
@@ -219,6 +239,7 @@
         private System.Windows.Forms.ComboBox CBMarca;
         private System.Windows.Forms.ComboBox CBCategoria;
         private System.Windows.Forms.Button BTAgregarArticulo;
-
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TBPrecio;
     }
 }
