@@ -18,12 +18,6 @@ namespace Inventario
             InitializeComponent();
         }
 
-        private void buscarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
-        { 
-            FrmBuscar frmBuscar = new FrmBuscar();
-            frmBuscar.ShowDialog();
-        }
-
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
             cargarListadoArticulos();
@@ -71,9 +65,36 @@ namespace Inventario
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDetalleArticulo frm = new frmDetalleArticulo();
+            FrmVerArticulo frm = new FrmVerArticulo();
 
             frm.ShowDialog();
+        }
+
+        private void nuevoArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarArticulo ventanaAgregar = new AgregarArticulo();
+            ventanaAgregar.ShowDialog();
+            cargarListadoArticulos();
+        }
+
+        private void nuevaMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoDato nuevaMarca = new NuevoDato();
+            nuevaMarca.Text = "Nueva Marca";
+            nuevaMarca.ShowDialog();
+        }
+
+        private void modificarMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoDato modificarMarca = new NuevoDato();
+            modificarMarca.Text = "Modificar Marca";
+            modificarMarca.ShowDialog();
+        }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBuscarArticulo frmBuscar = new FrmBuscarArticulo();
+            frmBuscar.ShowDialog();
         }
     }
 }

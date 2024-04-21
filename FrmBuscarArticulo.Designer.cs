@@ -1,6 +1,6 @@
 ﻿namespace Inventario
 {
-    partial class FrmBuscar
+    partial class FrmBuscarArticulo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBuscarArticulo));
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
@@ -45,10 +46,10 @@
             // 
             this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(286, 363);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Location = new System.Drawing.Point(195, 381);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(228, 39);
+            this.btnBuscar.Size = new System.Drawing.Size(143, 48);
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -56,62 +57,63 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(357, 299);
-            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbCategoria.Location = new System.Drawing.Point(232, 314);
+            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCategoria.MaxLength = 2;
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(269, 21);
+            this.cmbCategoria.Size = new System.Drawing.Size(200, 28);
             this.cmbCategoria.TabIndex = 4;
             // 
             // cmbMarca
             // 
+            this.cmbMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(357, 238);
-            this.cmbMarca.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbMarca.Location = new System.Drawing.Point(232, 256);
+            this.cmbMarca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbMarca.MaxLength = 2;
             this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(269, 21);
+            this.cmbMarca.Size = new System.Drawing.Size(200, 28);
             this.cmbMarca.TabIndex = 3;
             // 
             // txbDescripcion
             // 
             this.txbDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbDescripcion.Location = new System.Drawing.Point(357, 175);
-            this.txbDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txbDescripcion.Location = new System.Drawing.Point(232, 195);
+            this.txbDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbDescripcion.MaxLength = 100;
             this.txbDescripcion.Name = "txbDescripcion";
-            this.txbDescripcion.Size = new System.Drawing.Size(269, 23);
+            this.txbDescripcion.Size = new System.Drawing.Size(200, 27);
             this.txbDescripcion.TabIndex = 2;
             // 
             // txbNombre
             // 
             this.txbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNombre.Location = new System.Drawing.Point(357, 112);
-            this.txbNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txbNombre.Location = new System.Drawing.Point(232, 134);
+            this.txbNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbNombre.MaxLength = 50;
             this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(269, 23);
+            this.txbNombre.Size = new System.Drawing.Size(200, 27);
             this.txbNombre.TabIndex = 1;
             // 
             // txbCodigoArticulo
             // 
             this.txbCodigoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCodigoArticulo.Location = new System.Drawing.Point(357, 48);
-            this.txbCodigoArticulo.Margin = new System.Windows.Forms.Padding(2);
+            this.txbCodigoArticulo.Location = new System.Drawing.Point(232, 73);
+            this.txbCodigoArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbCodigoArticulo.MaxLength = 3;
             this.txbCodigoArticulo.Name = "txbCodigoArticulo";
-            this.txbCodigoArticulo.Size = new System.Drawing.Size(269, 23);
+            this.txbCodigoArticulo.Size = new System.Drawing.Size(200, 27);
             this.txbCodigoArticulo.TabIndex = 0;
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(229, 301);
-            this.lblCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCategoria.Location = new System.Drawing.Point(118, 317);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(83, 17);
+            this.lblCategoria.Size = new System.Drawing.Size(96, 20);
             this.lblCategoria.TabIndex = 16;
             this.lblCategoria.Text = "Categoría:";
             // 
@@ -119,10 +121,9 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(251, 240);
-            this.lblMarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMarca.Location = new System.Drawing.Point(147, 259);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(57, 17);
+            this.lblMarca.Size = new System.Drawing.Size(67, 20);
             this.lblMarca.TabIndex = 15;
             this.lblMarca.Text = "Marca:";
             // 
@@ -130,10 +131,9 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(215, 178);
-            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDescripcion.Location = new System.Drawing.Point(100, 198);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(98, 17);
+            this.lblDescripcion.Size = new System.Drawing.Size(116, 20);
             this.lblDescripcion.TabIndex = 14;
             this.lblDescripcion.Text = "Descripción:";
             // 
@@ -141,10 +141,9 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(241, 114);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre.Location = new System.Drawing.Point(136, 137);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(69, 17);
+            this.lblNombre.Size = new System.Drawing.Size(80, 20);
             this.lblNombre.TabIndex = 13;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -152,18 +151,17 @@
             // 
             this.lblCodigoArticulo.AutoSize = true;
             this.lblCodigoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoArticulo.Location = new System.Drawing.Point(175, 51);
-            this.lblCodigoArticulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCodigoArticulo.Location = new System.Drawing.Point(141, 76);
             this.lblCodigoArticulo.Name = "lblCodigoArticulo";
-            this.lblCodigoArticulo.Size = new System.Drawing.Size(145, 17);
+            this.lblCodigoArticulo.Size = new System.Drawing.Size(73, 20);
             this.lblCodigoArticulo.TabIndex = 12;
-            this.lblCodigoArticulo.Text = "Código de artículo:";
+            this.lblCodigoArticulo.Text = "Código:";
             // 
-            // FrmBuscar
+            // FrmBuscarArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(532, 503);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.cmbMarca);
@@ -175,10 +173,13 @@
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigoArticulo);
-            this.MaximumSize = new System.Drawing.Size(816, 489);
-            this.MinimumSize = new System.Drawing.Size(816, 489);
-            this.Name = "FrmBuscar";
-            this.Text = "frmBuscar";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(550, 550);
+            this.MinimumSize = new System.Drawing.Size(550, 550);
+            this.Name = "FrmBuscarArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Buscar Articulo";
             this.Load += new System.EventHandler(this.FrmBuscar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

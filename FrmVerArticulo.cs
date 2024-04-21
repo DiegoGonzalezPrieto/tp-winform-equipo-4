@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Inventario
 {
-    public partial class frmDetalleArticulo : Form
+    public partial class FrmVerArticulo : Form
     {
-        public frmDetalleArticulo()
+        public FrmVerArticulo()
         {
             InitializeComponent();
         }

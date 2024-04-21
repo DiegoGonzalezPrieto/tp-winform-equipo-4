@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Inventario
 {
-    public partial class FrmBuscar : Form
+    public partial class FrmBuscarArticulo : Form
     {
-        public FrmBuscar()
+        public FrmBuscarArticulo()
         {
             InitializeComponent();
         }
