@@ -32,8 +32,9 @@ namespace Inventario
             {
                 articuloListados = articulos.listar();
 
-                dataArticulos.DataSource = articuloListados;
-                dataArticulos.Columns["Id"].Visible = false;
+                dgvArticulos.DataSource = articuloListados;
+                dgvArticulos.Columns["Id"].Visible = false;
+                obtenerImagenPbxArticulo(articuloListados[0].Imagenes[0].Url);
                 
             }
             catch (Exception ex)
@@ -68,7 +69,7 @@ namespace Inventario
         {
            
             Articulo articuloSeleccionado;
-            articuloSeleccionado = (Articulo)dataArticulos.CurrentRow.DataBoundItem;
+            articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             FrmVerArticulo verArticulo = new FrmVerArticulo(articuloSeleccionado);
             verArticulo.ShowDialog();
 
@@ -119,6 +120,26 @@ namespace Inventario
             FrmAgregarCategoria ModificarCategoria = new FrmAgregarCategoria();
             ModificarCategoria.Text = "Modificar Categoria";
             ModificarCategoria.ShowDialog();
+        }
+
+        private void dataArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo art = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            obtenerImagenPbxArticulo(art.Imagenes[0].Url);
+        }
+
+        private void obtenerImagenPbxArticulo(string url)
+        {
+            try
+            {
+                pbxImagenArticulo.Load(url);
+            }
+            catch (Exception ex)
+            {
+                pbxImagenArticulo.Load("https://placehold.co/600x400@2x.png?text=%F0%9F%98%85");
+            }
+            
+            
         }
     }
 }
