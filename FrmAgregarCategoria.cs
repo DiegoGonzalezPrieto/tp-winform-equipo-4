@@ -22,7 +22,7 @@ namespace Inventario
         private void btnGuardarCategoria_Click(object sender, EventArgs e)
         {
             Categoria categoria = new Categoria();
-            LeerCategorias leerCategorias = new LeerCategorias();
+            CategoriasNegocio leerCategorias = new CategoriasNegocio();
 
             try
             {

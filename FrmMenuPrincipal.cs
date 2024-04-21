@@ -27,7 +27,7 @@ namespace Inventario
 
         private void cargarListadoArticulos()
         {
-            VisualizacionArticulos articulos = new VisualizacionArticulos();
+            ArticulosNegocio articulos = new ArticulosNegocio();
             try
             {
                 articuloListados = articulos.listar();

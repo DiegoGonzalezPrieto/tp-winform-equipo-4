@@ -21,8 +21,8 @@ namespace Inventario
         }
         private void AgregarArticulo_Load(object sender, EventArgs e)
         {
-            List<Marca> leerMarcas = LeerMarcas.ListaMarcas();
-            List<Categoria> leerCategorias = LeerCategorias.ListaCategorias();
+            List<Marca> leerMarcas = MarcasNegocio.ListaMarcas();
+            List<Categoria> leerCategorias = CategoriasNegocio.ListaCategorias();
 
             try
             {
@@ -55,7 +55,7 @@ namespace Inventario
         private void BTAgregarArticulo_Click(object sender, EventArgs e)
         {
             Articulo articulo = new Articulo();
-            VisualizacionArticulos visu = new VisualizacionArticulos();
+            ArticulosNegocio visu = new ArticulosNegocio();
 
             try
             {

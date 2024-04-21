@@ -22,7 +22,7 @@ namespace Inventario
         private void btnGuardarMarca_Click(object sender, EventArgs e)
         {
             Marca marca = new Marca();
-            LeerMarcas leerMarcas = new LeerMarcas();
+            MarcasNegocio leerMarcas = new MarcasNegocio();
             try
             {
                 if(!string.IsNullOrWhiteSpace(txtMarca.Text))

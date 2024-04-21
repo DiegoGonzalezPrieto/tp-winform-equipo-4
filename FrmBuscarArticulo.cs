@@ -21,8 +21,8 @@ namespace Inventario
 
         private void FrmBuscar_Load(object sender, EventArgs e)
         {
-            List<Marca> marcas = LeerMarcas.ListaMarcas();
-            List<Categoria> categorias = LeerCategorias.ListaCategorias();
+            List<Marca> marcas = MarcasNegocio.ListaMarcas();
+            List<Categoria> categorias = CategoriasNegocio.ListaCategorias();
 
             Console.WriteLine("Categorias:");
             Console.WriteLine(categorias.ToString());
@@ -40,11 +40,11 @@ namespace Inventario
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            DatosBusqueda datosBusqueda = new DatosBusqueda();
+            ParametrosBusqueda datosBusqueda = new ParametrosBusqueda();
             // TODO: validar qué datos están en el formulario de búsqueda
             datosBusqueda.CodArticulo = txbCodigoArticulo.Text;
 
-            List<Articulo> resultados = BuscadorArticulos.buscarArticulos(datosBusqueda);
+            List<Articulo> resultados = ArticulosNegocio.buscarArticulos(datosBusqueda);
 
             string res = "";
             foreach (var item in resultados)
