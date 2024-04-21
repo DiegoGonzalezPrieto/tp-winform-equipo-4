@@ -24,7 +24,7 @@ namespace Inventario
 
         private void BTModificarCodigo_Click(object sender, EventArgs e)
         {
-            NuevoDato ingresarDato = new NuevoDato();
+            FrmAgregarMarca ingresarDato = new FrmAgregarMarca();
 
             ingresarDato.Text = "INGRESE EL NUEVO CODIGO DE ARTICULO";
 

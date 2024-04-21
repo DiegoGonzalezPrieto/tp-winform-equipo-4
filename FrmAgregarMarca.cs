@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Inventario
 {
-    public partial class NuevoDato : Form
+    public partial class FrmAgregarMarca : Form
     {
-        public NuevoDato()
+        public FrmAgregarMarca()
         {
             InitializeComponent();
         }
@@ -65,5 +65,7 @@ namespace Inventario
                 lblNuevoDato.Text = "Modificar: ";
             }
         }
+
+
     }
 }

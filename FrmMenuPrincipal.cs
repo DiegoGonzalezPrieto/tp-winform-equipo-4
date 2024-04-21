@@ -51,14 +51,14 @@ namespace Inventario
 
         private void nuevaMarca_Click(object sender, EventArgs e)
         {
-            NuevoDato nuevaMarca = new NuevoDato();
+            FrmAgregarMarca nuevaMarca = new FrmAgregarMarca();
             nuevaMarca.Text = "Nueva Marca";
             nuevaMarca.ShowDialog();
         }
 
         private void modificarMarca_Click(object sender, EventArgs e)
         {
-            NuevoDato modificarMarca = new NuevoDato();
+            FrmAgregarMarca modificarMarca = new FrmAgregarMarca();
             modificarMarca.Text = "Modificar Marca";
             modificarMarca.ShowDialog();
         }
@@ -79,14 +79,14 @@ namespace Inventario
 
         private void nuevaMarcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NuevoDato nuevaMarca = new NuevoDato();
+            FrmAgregarMarca nuevaMarca = new FrmAgregarMarca();
             nuevaMarca.Text = "Nueva Marca";
             nuevaMarca.ShowDialog();
         }
 
         private void modificarMarcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NuevoDato modificarMarca = new NuevoDato();
+            FrmAgregarMarca modificarMarca = new FrmAgregarMarca();
             modificarMarca.Text = "Modificar Marca";
             modificarMarca.ShowDialog();
         }
@@ -95,6 +95,26 @@ namespace Inventario
         {
             FrmBuscarArticulo frmBuscar = new FrmBuscarArticulo();
             frmBuscar.ShowDialog();
+        }
+
+        private void modificarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarArticulo ventanaModificar = new ModificarArticulo();
+            ventanaModificar.ShowDialog();
+        }
+
+        private void nuevaCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAgregarCategoria nuevaCategoria = new FrmAgregarCategoria();
+            nuevaCategoria.Text = "Nueva Categoria";
+            nuevaCategoria.ShowDialog();
+        }
+
+        private void modificarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAgregarCategoria ModificarCategoria = new FrmAgregarCategoria();
+            ModificarCategoria.Text = "Modificar Categoria";
+            ModificarCategoria.ShowDialog();
         }
     }
 }

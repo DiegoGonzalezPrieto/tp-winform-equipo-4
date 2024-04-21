@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Inventario
 {
-    public class LeerCategorias
+    internal class LeerCategorias
     {
-        /// <summary>
-        ///  Obtiene lista de Categorías de la base de datos
-        /// </summary>
-        /// <returns></returns>
         public static List<Categoria> ListaCategorias()
         {
             {
@@ -24,7 +20,7 @@ namespace Inventario
                     datosDeCategorias.ejecutarLectura();
 
 
-                    while(datosDeCategorias.Lector.Read())
+                    while (datosDeCategorias.Lector.Read())
                     {
 
                         Categoria categoria = new Categoria();
@@ -41,10 +37,36 @@ namespace Inventario
 
                     throw ex;
 
-                } finally { datosDeCategorias.cerrarConexion(); }
-
+                }
+                finally
+                {
+                    datosDeCategorias.cerrarConexion();
+                }
 
             }
         }
+
+            public void agregarCategoria(Categoria nuevaCategoria)
+            {
+
+                Data datos = new Data();
+
+                try
+                {
+                    datos.setearConsulta("INSERT INTO CATEGORIAS (Descripcion) VALUES('" + nuevaCategoria.Nombre + "')");
+                    datos.ejecutarLectura();
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+                finally
+                {
+                    datos.cerrarConexion();
+                }
+            }
+                
+        }
     }
-}
+
