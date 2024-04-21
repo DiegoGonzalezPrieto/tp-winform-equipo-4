@@ -95,12 +95,6 @@ namespace Inventario
             nuevaMarca.ShowDialog();
         }
 
-        private void modificarMarcaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmAgregarMarca modificarMarca = new FrmAgregarMarca();
-            modificarMarca.Text = "Modificar Marca";
-            modificarMarca.ShowDialog();
-        }
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -202,6 +196,12 @@ namespace Inventario
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void buscarMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBuscarArticulo frmBuscarArticulo = new FrmBuscarArticulo();
+            frmBuscarArticulo.ShowDialog();
         }
     }
 }

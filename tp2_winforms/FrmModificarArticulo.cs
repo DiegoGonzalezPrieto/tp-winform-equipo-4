@@ -86,10 +86,6 @@ namespace Inventario
                 
                 negocio.modificar(articulo);
                 MessageBox.Show("Modificado Exitosamente!");
-              
-
-
-
 
                 Close();
             }

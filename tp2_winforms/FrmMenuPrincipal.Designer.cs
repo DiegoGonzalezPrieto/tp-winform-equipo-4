@@ -36,8 +36,6 @@
             this.eliminarArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,6 +80,7 @@
             // 
             // nuevoArticuloToolStripMenuItem
             // 
+            this.nuevoArticuloToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevoArticuloToolStripMenuItem.Image")));
             this.nuevoArticuloToolStripMenuItem.Name = "nuevoArticuloToolStripMenuItem";
             this.nuevoArticuloToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.nuevoArticuloToolStripMenuItem.Text = "&Nuevo Articulo";
@@ -89,6 +88,7 @@
             // 
             // modificarArticuloToolStripMenuItem
             // 
+            this.modificarArticuloToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("modificarArticuloToolStripMenuItem.Image")));
             this.modificarArticuloToolStripMenuItem.Name = "modificarArticuloToolStripMenuItem";
             this.modificarArticuloToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.modificarArticuloToolStripMenuItem.Text = "&Modificar Articulo";
@@ -96,6 +96,7 @@
             // 
             // eliminarArticuloToolStripMenuItem
             // 
+            this.eliminarArticuloToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eliminarArticuloToolStripMenuItem.Image")));
             this.eliminarArticuloToolStripMenuItem.Name = "eliminarArticuloToolStripMenuItem";
             this.eliminarArticuloToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.eliminarArticuloToolStripMenuItem.Text = "&Eliminar Articulo";
@@ -105,8 +106,6 @@
             // 
             this.marcaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevaMarcaToolStripMenuItem,
-            this.modificarMarcaToolStripMenuItem,
-            this.eliminarMarcaToolStripMenuItem,
             this.buscarMarcaToolStripMenuItem});
             this.marcaToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.marcaToolStripMenuItem.Name = "marcaToolStripMenuItem";
@@ -116,28 +115,16 @@
             // nuevaMarcaToolStripMenuItem
             // 
             this.nuevaMarcaToolStripMenuItem.Name = "nuevaMarcaToolStripMenuItem";
-            this.nuevaMarcaToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.nuevaMarcaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nuevaMarcaToolStripMenuItem.Text = "&Nueva Marca";
             this.nuevaMarcaToolStripMenuItem.Click += new System.EventHandler(this.nuevaMarcaToolStripMenuItem_Click);
-            // 
-            // modificarMarcaToolStripMenuItem
-            // 
-            this.modificarMarcaToolStripMenuItem.Name = "modificarMarcaToolStripMenuItem";
-            this.modificarMarcaToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
-            this.modificarMarcaToolStripMenuItem.Text = "&Modificar Marca";
-            this.modificarMarcaToolStripMenuItem.Click += new System.EventHandler(this.modificarMarcaToolStripMenuItem_Click);
-            // 
-            // eliminarMarcaToolStripMenuItem
-            // 
-            this.eliminarMarcaToolStripMenuItem.Name = "eliminarMarcaToolStripMenuItem";
-            this.eliminarMarcaToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
-            this.eliminarMarcaToolStripMenuItem.Text = "&Eliminar Marca";
             // 
             // buscarMarcaToolStripMenuItem
             // 
             this.buscarMarcaToolStripMenuItem.Name = "buscarMarcaToolStripMenuItem";
-            this.buscarMarcaToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.buscarMarcaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.buscarMarcaToolStripMenuItem.Text = "&Buscar Marca";
+            this.buscarMarcaToolStripMenuItem.Click += new System.EventHandler(this.buscarMarcaToolStripMenuItem_Click);
             // 
             // categoriaToolStripMenuItem
             // 
@@ -192,6 +179,7 @@
             this.dgvArticulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvArticulos.ColumnHeadersHeight = 29;
+            this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(43, 110);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -206,7 +194,7 @@
             // pbxImagenArticulo
             // 
             this.pbxImagenArticulo.Location = new System.Drawing.Point(969, 110);
-            this.pbxImagenArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxImagenArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.pbxImagenArticulo.Name = "pbxImagenArticulo";
             this.pbxImagenArticulo.Size = new System.Drawing.Size(356, 332);
             this.pbxImagenArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -276,8 +264,6 @@
         private System.Windows.Forms.ToolStripMenuItem modificarArticuloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarArticuloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaMarcaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarMarcaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarMarcaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarMarcaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaCategoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarCategoriaToolStripMenuItem;
