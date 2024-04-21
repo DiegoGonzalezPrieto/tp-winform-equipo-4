@@ -144,7 +144,7 @@ namespace Inventario
             {
                 pbxImagenArticulo.Load(url);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 pbxImagenArticulo.Load("https://placehold.co/600x400@2x.png?text=%F0%9F%98%85");
             }
@@ -176,6 +176,28 @@ namespace Inventario
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltrada;
             ocultarColumna();
+        }
+
+        private void eliminarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Articulo selecionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            ArticulosNegocio negocio = new ArticulosNegocio();
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar\n "+ selecionado.Marca+ " " + selecionado.Nombre, "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    negocio.eliminar(selecionado.Id);
+                    cargarListadoArticulos();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

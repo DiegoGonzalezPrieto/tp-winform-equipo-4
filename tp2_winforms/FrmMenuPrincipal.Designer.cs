@@ -99,6 +99,7 @@
             this.eliminarArticuloToolStripMenuItem.Name = "eliminarArticuloToolStripMenuItem";
             this.eliminarArticuloToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.eliminarArticuloToolStripMenuItem.Text = "&Eliminar Articulo";
+            this.eliminarArticuloToolStripMenuItem.Click += new System.EventHandler(this.eliminarArticuloToolStripMenuItem_Click);
             // 
             // marcaToolStripMenuItem
             // 
