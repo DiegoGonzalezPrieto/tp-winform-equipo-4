@@ -98,6 +98,7 @@
             // PBImagenDetalle
             // 
             this.PBImagenDetalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PBImagenDetalle.Image = ((System.Drawing.Image)(resources.GetObject("PBImagenDetalle.Image")));
             this.PBImagenDetalle.Location = new System.Drawing.Point(211, 136);
             this.PBImagenDetalle.Name = "PBImagenDetalle";
             this.PBImagenDetalle.Size = new System.Drawing.Size(360, 256);
