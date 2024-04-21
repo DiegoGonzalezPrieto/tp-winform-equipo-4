@@ -96,6 +96,9 @@ namespace Inventario
                 else { MessageBox.Show("Debe completar todos los campos para poder guardar un articulo"); }*/
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Aqui se deberia desplegar una ventana para la carga de imagenes.");
+        }
     }
 }
