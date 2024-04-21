@@ -88,6 +88,31 @@ namespace negocio
             }
         }
 
+        public void modificar(Articulo articuloModificado)
+        {
+            Data datos = new Data();
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idmarca, IdCategoria = @idcategoria, Precio = @precio WHERE Id = @id");
+                datos.setearParametro("@codigo", articuloModificado.CodigoArticulo);
+                datos.setearParametro("@nombre", articuloModificado.Nombre);
+                datos.setearParametro("@descripcion", articuloModificado.Descripcion);
+                datos.setearParametro("@idmarca", articuloModificado.Marca.Id);
+                datos.setearParametro("@idcategoria", articuloModificado.Categoria.Id);
+                datos.setearParametro("@precio", articuloModificado.Precio);
+                datos.setearParametro("@id", articuloModificado.Id);
+
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public static List<Articulo> buscarArticulos(ParametrosBusqueda busqueda)
         {
             List<Articulo> lista = new List<Articulo>();

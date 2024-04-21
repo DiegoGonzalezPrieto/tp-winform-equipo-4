@@ -110,8 +110,12 @@ namespace Inventario
 
         private void modificarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModificarArticulo ventanaModificar = new ModificarArticulo();
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            ModificarArticulo ventanaModificar = new ModificarArticulo(seleccionado);
             ventanaModificar.ShowDialog();
+            cargarListadoArticulos();
+
         }
 
         private void nuevaCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
