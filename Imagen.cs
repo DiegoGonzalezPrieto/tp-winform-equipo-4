@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inventario
 {
-    internal class Imagen
+    public class Imagen
     {
         public int Id { get; set; }
         public int IdArticulo { get; set; }

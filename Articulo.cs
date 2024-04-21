@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Inventario
 {
-    internal class Articulo
+    public class Articulo
     {
         public int Id { get; set; }
         [DisplayName("Código de Artículo")]

@@ -41,7 +41,6 @@ namespace Inventario
             }
         }
 
-
         private void nuevoArticulo_Click(object sender, EventArgs e)
         {
             AgregarArticulo ventanaAgregar = new AgregarArticulo();
@@ -65,9 +64,12 @@ namespace Inventario
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmVerArticulo frm = new FrmVerArticulo();
+           
+            Articulo articuloSeleccionado;
+            articuloSeleccionado = (Articulo)dataArticulos.CurrentRow.DataBoundItem;
+            FrmVerArticulo verArticulo = new FrmVerArticulo(articuloSeleccionado);
+            verArticulo.ShowDialog();
 
-            frm.ShowDialog();
         }
 
         private void nuevoArticuloToolStripMenuItem_Click(object sender, EventArgs e)

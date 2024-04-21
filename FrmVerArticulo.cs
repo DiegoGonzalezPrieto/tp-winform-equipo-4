@@ -12,9 +12,27 @@ namespace Inventario
 {
     public partial class FrmVerArticulo : Form
     {
+        private Articulo articulo = null;
         public FrmVerArticulo()
         {
             InitializeComponent();
+        }
+
+        public FrmVerArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+
+        }
+
+        private void FrmVerArticulo_Load(object sender, EventArgs e)
+        {
+            lblNombre.Text = articulo.Nombre;
+            lblDescripcion.Text = articulo.Descripcion;
+            lblPrecio.Text = articulo.Precio.ToString();
+            lblMarca.Text = articulo.Marca.Nombre;
+            lblCategoria.Text = articulo.Categoria.Nombre;
+
         }
     }
 }

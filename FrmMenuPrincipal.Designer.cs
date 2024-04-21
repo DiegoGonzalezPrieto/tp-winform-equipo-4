@@ -62,7 +62,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(932, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(912, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -120,27 +120,27 @@
             // nuevaMarcaToolStripMenuItem
             // 
             this.nuevaMarcaToolStripMenuItem.Name = "nuevaMarcaToolStripMenuItem";
-            this.nuevaMarcaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuevaMarcaToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.nuevaMarcaToolStripMenuItem.Text = "&Nueva Marca";
             this.nuevaMarcaToolStripMenuItem.Click += new System.EventHandler(this.nuevaMarcaToolStripMenuItem_Click);
             // 
             // modificarMarcaToolStripMenuItem
             // 
             this.modificarMarcaToolStripMenuItem.Name = "modificarMarcaToolStripMenuItem";
-            this.modificarMarcaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.modificarMarcaToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.modificarMarcaToolStripMenuItem.Text = "&Modificar Marca";
             this.modificarMarcaToolStripMenuItem.Click += new System.EventHandler(this.modificarMarcaToolStripMenuItem_Click);
             // 
             // eliminarMarcaToolStripMenuItem
             // 
             this.eliminarMarcaToolStripMenuItem.Name = "eliminarMarcaToolStripMenuItem";
-            this.eliminarMarcaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.eliminarMarcaToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.eliminarMarcaToolStripMenuItem.Text = "&Eliminar Marca";
             // 
             // buscarMarcaToolStripMenuItem
             // 
             this.buscarMarcaToolStripMenuItem.Name = "buscarMarcaToolStripMenuItem";
-            this.buscarMarcaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.buscarMarcaToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.buscarMarcaToolStripMenuItem.Text = "&Buscar Marca";
             // 
             // categoriaToolStripMenuItem
@@ -197,20 +197,22 @@
             this.dataArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataArticulos.ColumnHeadersHeight = 29;
             this.dataArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataArticulos.Location = new System.Drawing.Point(26, 95);
+            this.dataArticulos.Location = new System.Drawing.Point(12, 109);
             this.dataArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataArticulos.Name = "dataArticulos";
             this.dataArticulos.RowHeadersWidth = 51;
             this.dataArticulos.RowTemplate.Height = 24;
             this.dataArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataArticulos.Size = new System.Drawing.Size(874, 332);
+            this.dataArticulos.Size = new System.Drawing.Size(888, 332);
             this.dataArticulos.TabIndex = 1;
             // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 553);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(912, 553);
             this.Controls.Add(this.dataArticulos);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -218,7 +220,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(950, 600);
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "VentanaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Artículos v1.0";
