@@ -107,11 +107,19 @@ namespace Inventario
 
         private void modificarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Articulo seleccionado;
-            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            ModificarArticulo ventanaModificar = new ModificarArticulo(seleccionado);
-            ventanaModificar.ShowDialog();
-            cargarListadoArticulos();
+            if(dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado;
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                ModificarArticulo ventanaModificar = new ModificarArticulo(seleccionado);
+                ventanaModificar.ShowDialog();
+                cargarListadoArticulos();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar el articulo a modificar");
+            }
+           
 
         }
 
@@ -180,24 +188,32 @@ namespace Inventario
 
         private void eliminarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Articulo selecionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            ArticulosNegocio negocio = new ArticulosNegocio();
-
-            try
+            if(dgvArticulos.CurrentRow != null)
             {
-                DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar\n "+ selecionado.Marca+ " " + selecionado.Nombre, "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (respuesta == DialogResult.Yes)
+                Articulo selecionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                ArticulosNegocio negocio = new ArticulosNegocio();
+
+                try
                 {
-                    negocio.eliminar(selecionado.Id);
-                    cargarListadoArticulos();
+                    DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar\n " + selecionado.Marca + " " + selecionado.Nombre, "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        negocio.eliminar(selecionado.Id);
+                        cargarListadoArticulos();
+                    }
+
                 }
+                catch (Exception ex)
+                {
 
+                    MessageBox.Show(ex.ToString());
+                }
             }
-            catch (Exception ex)
+            else
             {
-
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Debe seleccionar primero el articulo a eliminar");
             }
+            
         }
 
         private void buscarMarcaToolStripMenuItem_Click(object sender, EventArgs e)

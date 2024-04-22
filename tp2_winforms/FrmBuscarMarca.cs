@@ -27,12 +27,20 @@ namespace Inventario
 
         private void btnEditarMarca_Click(object sender, EventArgs e)
         {
-            Marca seleccionado;
-            seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
-            FrmAgregarMarca modificarMarca = new FrmAgregarMarca(seleccionado);
-            modificarMarca.Text = "Modificar Marca";
-            modificarMarca.ShowDialog();
-            cargarMarca();
+            if(dgvMarcas.CurrentRow != null)
+            {
+                Marca seleccionado;
+                seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                FrmAgregarMarca modificarMarca = new FrmAgregarMarca(seleccionado);
+                modificarMarca.Text = "Modificar Marca";
+                modificarMarca.ShowDialog();
+                cargarMarca();
+            }
+            else
+            {
+                MessageBox.Show("No a seleccionado ningun elemento para editar");
+            }
+            
         }
 
         private void cargarMarca()
@@ -74,19 +82,30 @@ namespace Inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Marca selecionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
-            MarcasNegocio negocio = new MarcasNegocio();
 
             try
             {
-                DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar la marca: " + selecionado.Nombre, "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (respuesta == DialogResult.Yes)
+                if (dgvMarcas.CurrentRow != null)
                 {
-                    negocio.eliminar(selecionado.Id);
-                    cargarMarca();
-                }
+                    Marca selecionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                    MarcasNegocio negocio = new MarcasNegocio();
 
+                    DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar la marca", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        negocio.eliminar(selecionado.Id);
+                        cargarMarca();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No a seleccionado ningun elemento para eliminar");
+                }
             }
+
+
+
+
             catch (Exception ex)
             {
 
