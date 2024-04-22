@@ -115,14 +115,14 @@
             // nuevaMarcaToolStripMenuItem
             // 
             this.nuevaMarcaToolStripMenuItem.Name = "nuevaMarcaToolStripMenuItem";
-            this.nuevaMarcaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuevaMarcaToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.nuevaMarcaToolStripMenuItem.Text = "&Nueva Marca";
             this.nuevaMarcaToolStripMenuItem.Click += new System.EventHandler(this.nuevaMarcaToolStripMenuItem_Click);
             // 
             // buscarMarcaToolStripMenuItem
             // 
             this.buscarMarcaToolStripMenuItem.Name = "buscarMarcaToolStripMenuItem";
-            this.buscarMarcaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.buscarMarcaToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.buscarMarcaToolStripMenuItem.Text = "&Buscar Marca";
             this.buscarMarcaToolStripMenuItem.Click += new System.EventHandler(this.buscarMarcaToolStripMenuItem_Click);
             // 
@@ -177,13 +177,14 @@
             this.dgvArticulos.AllowUserToResizeColumns = false;
             this.dgvArticulos.AllowUserToResizeRows = false;
             this.dgvArticulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvArticulos.ColumnHeadersHeight = 29;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(43, 110);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.RowHeadersVisible = false;
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.RowTemplate.Height = 24;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

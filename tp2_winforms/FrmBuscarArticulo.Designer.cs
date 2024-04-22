@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBuscarArticulo));
             this.btnEditarMarca = new System.Windows.Forms.Button();
-            this.txbCodigoArticulo = new System.Windows.Forms.TextBox();
+            this.txbBuscar = new System.Windows.Forms.TextBox();
             this.lblCodigoArticulo = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEditarMarca
@@ -50,15 +50,16 @@
             this.btnEditarMarca.UseVisualStyleBackColor = true;
             this.btnEditarMarca.Click += new System.EventHandler(this.btnEditarMarca_Click);
             // 
-            // txbCodigoArticulo
+            // txbBuscar
             // 
-            this.txbCodigoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCodigoArticulo.Location = new System.Drawing.Point(128, 73);
-            this.txbCodigoArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbCodigoArticulo.MaxLength = 3;
-            this.txbCodigoArticulo.Name = "txbCodigoArticulo";
-            this.txbCodigoArticulo.Size = new System.Drawing.Size(200, 27);
-            this.txbCodigoArticulo.TabIndex = 0;
+            this.txbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbBuscar.Location = new System.Drawing.Point(128, 73);
+            this.txbBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbBuscar.MaxLength = 50;
+            this.txbBuscar.Name = "txbBuscar";
+            this.txbBuscar.Size = new System.Drawing.Size(200, 27);
+            this.txbBuscar.TabIndex = 0;
+            this.txbBuscar.TextChanged += new System.EventHandler(this.txbCodigoArticulo_TextChanged);
             // 
             // lblCodigoArticulo
             // 
@@ -70,15 +71,20 @@
             this.lblCodigoArticulo.TabIndex = 12;
             this.lblCodigoArticulo.Text = "Buscar: ";
             // 
-            // dataGridView1
+            // dgvMarcas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 130);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(199, 230);
-            this.dataGridView1.TabIndex = 13;
+            this.dgvMarcas.AllowUserToResizeRows = false;
+            this.dgvMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvMarcas.Location = new System.Drawing.Point(45, 130);
+            this.dgvMarcas.MultiSelect = false;
+            this.dgvMarcas.Name = "dgvMarcas";
+            this.dgvMarcas.RowHeadersVisible = false;
+            this.dgvMarcas.RowHeadersWidth = 51;
+            this.dgvMarcas.RowTemplate.Height = 24;
+            this.dgvMarcas.Size = new System.Drawing.Size(199, 230);
+            this.dgvMarcas.TabIndex = 13;
             // 
             // button1
             // 
@@ -96,9 +102,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 420);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.btnEditarMarca);
-            this.Controls.Add(this.txbCodigoArticulo);
+            this.Controls.Add(this.txbBuscar);
             this.Controls.Add(this.lblCodigoArticulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -110,7 +116,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Marca";
             this.Load += new System.EventHandler(this.FrmBuscar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,9 +125,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnEditarMarca;
-        private System.Windows.Forms.TextBox txbCodigoArticulo;
+        private System.Windows.Forms.TextBox txbBuscar;
         private System.Windows.Forms.Label lblCodigoArticulo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMarcas;
         private System.Windows.Forms.Button button1;
     }
 }

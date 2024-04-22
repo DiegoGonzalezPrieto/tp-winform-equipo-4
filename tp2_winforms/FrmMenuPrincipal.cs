@@ -155,9 +155,6 @@ namespace Inventario
             List<Articulo> listaFiltrada;
             string filtro = txtBuscar.Text;
 
-            decimal filtroNumerico;
-            bool precio = Decimal.TryParse(filtro, out filtroNumerico);
-
             if (filtro != "")
             {
                 listaFiltrada = articuloListados.FindAll(x => x.CodigoArticulo.ToUpper().Contains(filtro.ToUpper())
