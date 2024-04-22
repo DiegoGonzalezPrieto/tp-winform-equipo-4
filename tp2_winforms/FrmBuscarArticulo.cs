@@ -68,5 +68,27 @@ namespace Inventario
             dgvMarcas.Columns["Id"].Visible = false;
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Marca selecionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+            MarcasNegocio negocio = new MarcasNegocio();
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar la marca: " + selecionado.Nombre, "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    negocio.eliminar(selecionado.Id);
+                    cargarMarca();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
