@@ -33,15 +33,20 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvCategorias
             // 
+            this.dgvCategorias.AllowUserToResizeRows = false;
+            this.dgvCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategorias.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCategorias.Location = new System.Drawing.Point(45, 130);
+            this.dgvCategorias.MultiSelect = false;
             this.dgvCategorias.Name = "dgvCategorias";
+            this.dgvCategorias.RowHeadersVisible = false;
             this.dgvCategorias.RowHeadersWidth = 51;
             this.dgvCategorias.RowTemplate.Height = 24;
             this.dgvCategorias.Size = new System.Drawing.Size(199, 230);
@@ -77,21 +82,22 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Buscar:";
             // 
-            // textBox1
+            // txtBuscar
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.textBox1.Location = new System.Drawing.Point(128, 73);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 27);
-            this.textBox1.TabIndex = 4;
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.txtBuscar.Location = new System.Drawing.Point(128, 73);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(200, 27);
+            this.txtBuscar.TabIndex = 4;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // FrmBuscarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 420);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -116,6 +122,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

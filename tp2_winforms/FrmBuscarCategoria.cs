@@ -40,6 +40,26 @@ namespace Inventario
                 throw ex;
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            List<Categoria> listaFiltrada;
+            string filtro = txtBuscar.Text;
+
+            if (filtro != "")
+            {
+                listaFiltrada = categoriasListada.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()));
+
+            }
+            else
+            {
+                listaFiltrada = categoriasListada;
+            }
+
+            dgvCategorias.DataSource = null;
+            dgvCategorias.DataSource = listaFiltrada;
+            dgvCategorias.Columns["Id"].Visible = false;
+        }
     }
 
 }
