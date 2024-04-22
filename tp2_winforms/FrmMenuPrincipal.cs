@@ -73,11 +73,14 @@ namespace Inventario
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
-            Articulo articuloSeleccionado;
-            articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            FrmVerArticulo verArticulo = new FrmVerArticulo(articuloSeleccionado);
-            verArticulo.ShowDialog();
+           if(dgvArticulos.CurrentRow != null)
+            {
+                Articulo articuloSeleccionado;
+                articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                FrmVerArticulo verArticulo = new FrmVerArticulo(articuloSeleccionado);
+                verArticulo.ShowDialog();
+            }
+            
 
         }
 
@@ -144,7 +147,9 @@ namespace Inventario
             }
             catch (Exception)
             {
-                pbxImagenArticulo.Load("https://placehold.co/600x400@2x.png?text=%F0%9F%98%85");
+                pbxImagenArticulo.Load("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
+                //pbxImagenArticulo.Load("https://bcs-management.com/wp-content/uploads/2017/02/2000px-No_image_available.svg_-1024x1024.png");
+                //pbxImagenArticulo.Load("https://placehold.co/600x400@2x.png?text=%F0%9F%98%85");
             }
             
             

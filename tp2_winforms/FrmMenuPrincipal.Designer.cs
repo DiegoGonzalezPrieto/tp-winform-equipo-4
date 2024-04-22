@@ -47,6 +47,7 @@
             this.pbxImagenArticulo = new System.Windows.Forms.PictureBox();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenArticulo)).BeginInit();
@@ -208,19 +209,32 @@
             this.lblBuscar.BackColor = System.Drawing.Color.Transparent;
             this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblBuscar.Location = new System.Drawing.Point(49, 76);
+            this.lblBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBuscar.Location = new System.Drawing.Point(42, 80);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(76, 22);
+            this.lblBuscar.Size = new System.Drawing.Size(81, 22);
             this.lblBuscar.TabIndex = 3;
-            this.lblBuscar.Text = "Buscar: ";
+            this.lblBuscar.Text = " Buscar: ";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(131, 76);
+            this.txtBuscar.Location = new System.Drawing.Point(124, 80);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(160, 22);
             this.txtBuscar.TabIndex = 4;
             this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(290, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 36);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "    ";
             // 
             // VentanaPrincipal
             // 
@@ -229,6 +243,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1371, 561);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.pbxImagenArticulo);
@@ -273,6 +288,7 @@
         private System.Windows.Forms.PictureBox pbxImagenArticulo;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label1;
     }
 }
 
