@@ -72,10 +72,10 @@
             // txtCategoria
             // 
             this.txtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoria.Location = new System.Drawing.Point(188, 48);
+            this.txtCategoria.Location = new System.Drawing.Point(203, 51);
             this.txtCategoria.MaxLength = 50;
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(288, 27);
+            this.txtCategoria.Size = new System.Drawing.Size(274, 27);
             this.txtCategoria.TabIndex = 10;
             // 
             // FrmAgregarCategoria

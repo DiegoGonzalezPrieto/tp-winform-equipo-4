@@ -39,8 +39,6 @@
             this.buscarMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarCategoriaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarCategoriaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
@@ -133,8 +131,6 @@
             // 
             this.categoriaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevaCategoriaToolStripMenuItem,
-            this.modificarCategoriaToolStripMenuItem,
-            this.eliminarCategoriaToolStripMenuItem1,
             this.buscarCategoriaToolStripMenuItem1});
             this.categoriaToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
@@ -145,28 +141,15 @@
             // 
             this.nuevaCategoriaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevaCategoriaToolStripMenuItem.Image")));
             this.nuevaCategoriaToolStripMenuItem.Name = "nuevaCategoriaToolStripMenuItem";
-            this.nuevaCategoriaToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
+            this.nuevaCategoriaToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.nuevaCategoriaToolStripMenuItem.Text = "&Nueva Categoria";
             this.nuevaCategoriaToolStripMenuItem.Click += new System.EventHandler(this.nuevaCategoriaToolStripMenuItem_Click);
-            // 
-            // modificarCategoriaToolStripMenuItem
-            // 
-            this.modificarCategoriaToolStripMenuItem.Name = "modificarCategoriaToolStripMenuItem";
-            this.modificarCategoriaToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
-            this.modificarCategoriaToolStripMenuItem.Text = "&Modificar Categoria";
-            this.modificarCategoriaToolStripMenuItem.Click += new System.EventHandler(this.modificarCategoriaToolStripMenuItem_Click);
-            // 
-            // eliminarCategoriaToolStripMenuItem1
-            // 
-            this.eliminarCategoriaToolStripMenuItem1.Name = "eliminarCategoriaToolStripMenuItem1";
-            this.eliminarCategoriaToolStripMenuItem1.Size = new System.Drawing.Size(245, 26);
-            this.eliminarCategoriaToolStripMenuItem1.Text = "&Eliminar Categoria";
             // 
             // buscarCategoriaToolStripMenuItem1
             // 
             this.buscarCategoriaToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("buscarCategoriaToolStripMenuItem1.Image")));
             this.buscarCategoriaToolStripMenuItem1.Name = "buscarCategoriaToolStripMenuItem1";
-            this.buscarCategoriaToolStripMenuItem1.Size = new System.Drawing.Size(245, 26);
+            this.buscarCategoriaToolStripMenuItem1.Size = new System.Drawing.Size(226, 26);
             this.buscarCategoriaToolStripMenuItem1.Text = "&Buscar Categoria";
             this.buscarCategoriaToolStripMenuItem1.Click += new System.EventHandler(this.buscarCategoriaToolStripMenuItem1_Click);
             // 
@@ -287,8 +270,6 @@
         private System.Windows.Forms.ToolStripMenuItem nuevaMarcaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarMarcaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaCategoriaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarCategoriaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarCategoriaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem buscarCategoriaToolStripMenuItem1;
         private System.Windows.Forms.PictureBox pbxImagenArticulo;
         private System.Windows.Forms.Label lblBuscar;

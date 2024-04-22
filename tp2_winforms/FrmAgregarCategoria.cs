@@ -9,31 +9,50 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using negocio;
 using dominio;
+using System.Text.RegularExpressions;
 
 namespace Inventario
 {
     public partial class FrmAgregarCategoria : Form
     {
+        private Categoria categoria = null;
         public FrmAgregarCategoria()
         {
             InitializeComponent();
         }
 
+        public FrmAgregarCategoria(Categoria categoria)
+        {
+            InitializeComponent();
+            this.categoria = categoria;
+        }
+
         private void btnGuardarCategoria_Click(object sender, EventArgs e)
         {
-            Categoria categoria = new Categoria();
+            //Categoria categoria = new Categoria();
             CategoriasNegocio leerCategorias = new CategoriasNegocio();
 
             try
             {
+                if(categoria == null) categoria = new Categoria();
+
                 if (!string.IsNullOrWhiteSpace(txtCategoria.Text))
                 {
 
                     categoria.Nombre = txtCategoria.Text;
-                    leerCategorias.agregarCategoria(categoria);
 
-
-                    MessageBox.Show("Agregado Exitosamente!");
+                    if(categoria.Id != 0)
+                    {
+                        leerCategorias.modificarCategoria(categoria);
+                        MessageBox.Show("Modificado Exitosamente!");
+                    }
+                    else
+                    {
+                        leerCategorias.agregarCategoria(categoria);
+                        MessageBox.Show("Agregado Exitosamente!");
+                    }
+                    
+                   
 
                     Close();
                 }
@@ -64,6 +83,19 @@ namespace Inventario
             else if (Text == "Modificar Categoria")
             {
                 LblNuevoDato.Text = "Modificar: ";
+            }
+
+            try
+            {
+                if (categoria != null)
+                {
+                   txtCategoria.Text = categoria.Nombre;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

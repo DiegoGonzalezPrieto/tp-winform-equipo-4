@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using dominio;
 
@@ -67,6 +68,27 @@ namespace negocio
                     datos.cerrarConexion();
                 }
             }
+
+          public void modificarCategoria(Categoria categoria)
+        {
+            Data datos = new Data();
+            try
+            {
+                datos.setearConsulta("UPDATE CATEGORIAS SET Descripcion = @descripcion WHERE Id = @id");
+                datos.setearParametro("@descripcion", categoria.Nombre);
+                datos.setearParametro("@id", categoria.Id);
+
+
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
                 
         }
     }

@@ -33,6 +33,7 @@ namespace Inventario
                 articuloListados = articulos.listar();
 
                 dgvArticulos.DataSource = articuloListados;
+                dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "F2";
                 ocultarColumna();
                
                 obtenerImagenPbxArticulo(articuloListados[0].Imagenes[0].Url);
@@ -128,13 +129,6 @@ namespace Inventario
             FrmAgregarCategoria nuevaCategoria = new FrmAgregarCategoria();
             nuevaCategoria.Text = "Nueva Categoria";
             nuevaCategoria.ShowDialog();
-        }
-
-        private void modificarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmAgregarCategoria ModificarCategoria = new FrmAgregarCategoria();
-            ModificarCategoria.Text = "Modificar Categoria";
-            ModificarCategoria.ShowDialog();
         }
 
         private void dataArticulos_SelectionChanged(object sender, EventArgs e)

@@ -30,7 +30,7 @@ namespace Inventario
         {
             lblNombre.Text = articulo.Nombre;
             lblDescripcion.Text = articulo.Descripcion;
-            lblPrecio.Text = articulo.Precio.ToString();
+            lblPrecio.Text = articulo.Precio.ToString("F2");
             lblMarca.Text = articulo.Marca.Nombre;
             lblCategoria.Text = articulo.Categoria.Nombre;
 

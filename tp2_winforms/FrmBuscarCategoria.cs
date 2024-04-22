@@ -14,7 +14,7 @@ namespace Inventario
 {
     public partial class FrmBuscarCategoria : Form
     {
-        List<Categoria> categoriasListada;
+        private List<Categoria> categoriasListada;
         public FrmBuscarCategoria()
         {
             InitializeComponent();
@@ -59,6 +59,24 @@ namespace Inventario
             dgvCategorias.DataSource = null;
             dgvCategorias.DataSource = listaFiltrada;
             dgvCategorias.Columns["Id"].Visible = false;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            if (dgvCategorias.CurrentRow != null)
+            {
+                Categoria seleccionado;
+                seleccionado = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+                FrmAgregarCategoria modificarCategoria = new FrmAgregarCategoria(seleccionado);
+                modificarCategoria.Text = "Modificar Categoria";
+                modificarCategoria.ShowDialog();
+                cargarCategoria();
+            }
+            else
+            {
+                MessageBox.Show("No a seleccionado ningun elemento para editar");
+            }
         }
     }
 
