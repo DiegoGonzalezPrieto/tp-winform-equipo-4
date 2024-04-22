@@ -14,23 +14,46 @@ namespace Inventario
 {
     public partial class FrmAgregarMarca : Form
     {
+        private Marca marca = null;
         public FrmAgregarMarca()
         {
             InitializeComponent();
         }
 
+        public FrmAgregarMarca(Marca marca)
+        {
+            InitializeComponent();
+            this.marca = marca;
+        }
+
         private void btnGuardarMarca_Click(object sender, EventArgs e)
         {
-            Marca marca = new Marca();
+            //Marca marca = new Marca();
             MarcasNegocio leerMarcas = new MarcasNegocio();
             try
             {
+                if (marca == null) marca = new Marca();
+
                 if(!string.IsNullOrWhiteSpace(txtMarca.Text))
                 {
                     marca.Nombre = txtMarca.Text;
-                    leerMarcas.agregarMarca(marca);
 
-                    MessageBox.Show("Agregado Exitosamente!");
+
+                    if(marca.Id != 0)
+                    {
+                        leerMarcas.modificar(marca);
+                        MessageBox.Show("Modificado Exitosamente!");
+                    }
+                    else
+                    {
+                        leerMarcas.agregarMarca(marca);
+                        MessageBox.Show("Agregado Exitosamente!");
+                       
+                        
+                    }
+                    
+
+                    
 
                     Close();
                 }else
@@ -66,6 +89,19 @@ namespace Inventario
             {
                 lblNuevoDato.Text = "Modificar: ";
             }
+            try
+            {
+                if (marca != null)
+                {
+                    txtMarca.Text = marca.Nombre;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
 

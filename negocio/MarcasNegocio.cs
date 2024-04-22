@@ -73,8 +73,8 @@ namespace negocio
             Data datos = new Data();
             try
             {
-                datos.setearConsulta("UPDATE MARCAS SET Nombre = @nombre WHERE Id = @id");
-                datos.setearParametro("@codigo", marca.Nombre);
+                datos.setearConsulta("UPDATE MARCAS SET Descripcion = @descripcion WHERE Id = @id");
+                datos.setearParametro("@descripcion", marca.Nombre);
                 datos.setearParametro("@id", marca.Id);
                 
 

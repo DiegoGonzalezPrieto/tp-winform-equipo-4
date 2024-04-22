@@ -27,9 +27,12 @@ namespace Inventario
 
         private void btnEditarMarca_Click(object sender, EventArgs e)
         {
-            FrmAgregarMarca modificarMarca = new FrmAgregarMarca();
+            Marca seleccionado;
+            seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+            FrmAgregarMarca modificarMarca = new FrmAgregarMarca(seleccionado);
             modificarMarca.Text = "Modificar Marca";
             modificarMarca.ShowDialog();
+            cargarMarca();
         }
 
         private void cargarMarca()
