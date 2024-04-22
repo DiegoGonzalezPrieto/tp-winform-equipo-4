@@ -101,7 +101,7 @@ namespace Inventario
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmBuscarArticulo frmBuscar = new FrmBuscarArticulo();
+            FrmBuscarMarca frmBuscar = new FrmBuscarMarca();
             frmBuscar.ShowDialog();
         }
 
@@ -202,8 +202,14 @@ namespace Inventario
 
         private void buscarMarcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmBuscarArticulo frmBuscarArticulo = new FrmBuscarArticulo();
-            frmBuscarArticulo.ShowDialog();
+            FrmBuscarMarca frmBuscarMarca = new FrmBuscarMarca();
+            frmBuscarMarca.ShowDialog();
+        }
+
+        private void buscarCategoriaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmBuscarCategoria frmBuscarCategoria = new FrmBuscarCategoria();
+            frmBuscarCategoria.ShowDialog();
         }
     }
 }

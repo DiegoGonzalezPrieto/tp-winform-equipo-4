@@ -1,6 +1,6 @@
 ﻿namespace Inventario
 {
-    partial class FrmBuscarArticulo
+    partial class FrmBuscarMarca
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBuscarArticulo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBuscarMarca));
             this.btnEditarMarca = new System.Windows.Forms.Button();
             this.txbBuscar = new System.Windows.Forms.TextBox();
             this.lblCodigoArticulo = new System.Windows.Forms.Label();

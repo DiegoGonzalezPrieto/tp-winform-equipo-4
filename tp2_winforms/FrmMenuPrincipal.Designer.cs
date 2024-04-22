@@ -115,6 +115,7 @@
             // 
             // nuevaMarcaToolStripMenuItem
             // 
+            this.nuevaMarcaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevaMarcaToolStripMenuItem.Image")));
             this.nuevaMarcaToolStripMenuItem.Name = "nuevaMarcaToolStripMenuItem";
             this.nuevaMarcaToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.nuevaMarcaToolStripMenuItem.Text = "&Nueva Marca";
@@ -122,6 +123,7 @@
             // 
             // buscarMarcaToolStripMenuItem
             // 
+            this.buscarMarcaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("buscarMarcaToolStripMenuItem.Image")));
             this.buscarMarcaToolStripMenuItem.Name = "buscarMarcaToolStripMenuItem";
             this.buscarMarcaToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.buscarMarcaToolStripMenuItem.Text = "&Buscar Marca";
@@ -141,6 +143,7 @@
             // 
             // nuevaCategoriaToolStripMenuItem
             // 
+            this.nuevaCategoriaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevaCategoriaToolStripMenuItem.Image")));
             this.nuevaCategoriaToolStripMenuItem.Name = "nuevaCategoriaToolStripMenuItem";
             this.nuevaCategoriaToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.nuevaCategoriaToolStripMenuItem.Text = "&Nueva Categoria";
@@ -161,9 +164,11 @@
             // 
             // buscarCategoriaToolStripMenuItem1
             // 
+            this.buscarCategoriaToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("buscarCategoriaToolStripMenuItem1.Image")));
             this.buscarCategoriaToolStripMenuItem1.Name = "buscarCategoriaToolStripMenuItem1";
             this.buscarCategoriaToolStripMenuItem1.Size = new System.Drawing.Size(245, 26);
             this.buscarCategoriaToolStripMenuItem1.Text = "&Buscar Categoria";
+            this.buscarCategoriaToolStripMenuItem1.Click += new System.EventHandler(this.buscarCategoriaToolStripMenuItem1_Click);
             // 
             // editarToolStripMenuItem
             // 

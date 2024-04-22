@@ -12,10 +12,10 @@ using negocio;
 
 namespace Inventario
 {
-    public partial class FrmBuscarArticulo : Form
+    public partial class FrmBuscarMarca : Form
     {
         private List<Marca> listaMarca;
-        public FrmBuscarArticulo()
+        public FrmBuscarMarca()
         {
             InitializeComponent();
         }
