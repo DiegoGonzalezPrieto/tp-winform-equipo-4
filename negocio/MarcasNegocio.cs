@@ -24,7 +24,7 @@ namespace negocio
                 datosDeMarcas.setearConsulta("SELECT Id, Descripcion FROM MARCAS");
                 datosDeMarcas.ejecutarLectura();
 
-                while(datosDeMarcas.Lector.Read())
+                while (datosDeMarcas.Lector.Read())
                 {
                     Marca marca = new Marca();
                     marca.Id = (int)datosDeMarcas.Lector["Id"];
@@ -39,7 +39,8 @@ namespace negocio
             {
 
                 throw ex;
-            }finally
+            }
+            finally
             {
                 datosDeMarcas.cerrarConexion();
             }
@@ -47,8 +48,9 @@ namespace negocio
 
         }
 
-        public void agregarMarca(Marca nuevaMarca) {
-            
+        public void agregarMarca(Marca nuevaMarca)
+        {
+
             Data datos = new Data();
 
             try
@@ -76,7 +78,7 @@ namespace negocio
                 datos.setearConsulta("UPDATE MARCAS SET Descripcion = @descripcion WHERE Id = @id");
                 datos.setearParametro("@descripcion", marca.Nombre);
                 datos.setearParametro("@id", marca.Id);
-                
+
 
                 datos.ejecutarAccion();
 
@@ -89,15 +91,25 @@ namespace negocio
             }
         }
 
-        public void eliminar(int id)
+        public bool eliminar(int id)
         {
+
+            // revisar que la marca no esté asociada a ningún producto.
+            ArticulosNegocio articulosNegocio = new ArticulosNegocio();
+            List<Articulo> articulos = articulosNegocio.listar();
+
+            if (articulos.FindAll(a => a.Marca.Id == id).Count > 0)
+            {
+                return false;
+            }
+
             try
             {
                 Data datos = new Data();
                 datos.setearConsulta("DELETE FROM MARCAS WHERE Id = @Id");
                 datos.setearParametro("@Id", id);
                 datos.ejecutarAccion();
-
+                return true;
             }
             catch (Exception ex)
             {

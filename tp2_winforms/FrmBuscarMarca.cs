@@ -27,7 +27,7 @@ namespace Inventario
 
         private void btnEditarMarca_Click(object sender, EventArgs e)
         {
-            if(dgvMarcas.CurrentRow != null)
+            if (dgvMarcas.CurrentRow != null)
             {
                 Marca seleccionado;
                 seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
@@ -40,7 +40,7 @@ namespace Inventario
             {
                 MessageBox.Show("No a seleccionado ningun elemento para editar");
             }
-            
+
         }
 
         private void cargarMarca()
@@ -67,7 +67,7 @@ namespace Inventario
             if (filtro != "")
             {
                 listaFiltrada = listaMarca.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()));
-                
+
             }
             else
             {
@@ -93,22 +93,24 @@ namespace Inventario
                     DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar la marca", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (respuesta == DialogResult.Yes)
                     {
-                        negocio.eliminar(selecionado.Id);
+                        if (negocio.eliminar(selecionado.Id))
+                        {
+                            MessageBox.Show("Marca eliminada correctamente.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se puede eliminar la marca porque está asociada a artículos existentes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
                         cargarMarca();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No a seleccionado ningun elemento para eliminar");
+                    MessageBox.Show("No ha seleccionado ningun elemento para eliminar");
                 }
             }
-
-
-
-
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }

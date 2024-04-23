@@ -78,6 +78,11 @@ namespace Inventario
                 MessageBox.Show("No a seleccionado ningun elemento para editar");
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            // TODO: eliminar categoría, revisando que no esté asociada a ningun articulo
+        }
     }
 
 }
