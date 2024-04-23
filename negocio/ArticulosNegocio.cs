@@ -271,17 +271,21 @@ namespace negocio
 
         public void eliminar(int id)
         {
+                Data datos = new Data();
             try
             {
-                Data datos = new Data();
                 datos.setearConsulta("DELETE FROM ARTICULOS WHERE Id = @Id");
                 datos.setearParametro("@Id", id);
                 datos.ejecutarAccion();
+                datos.cerrarConexion();
+
+                quitarImagenes(id);
 
             }
             catch (Exception ex)
             {
 
+                datos.cerrarConexion();
                 throw ex;
             }
         }
