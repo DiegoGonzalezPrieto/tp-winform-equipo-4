@@ -95,5 +95,18 @@ namespace Inventario
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnModificarImagenes_Click(object sender, EventArgs e)
+        {
+            using (FrmVentanaImagenes ventanaImagenes = new FrmVentanaImagenes(articulo.Imagenes))
+            {
+                ventanaImagenes.ShowDialog();
+
+                if (ventanaImagenes.Resultado == true)
+                {
+                    articulo.Imagenes = ventanaImagenes.ListaLinkImagenes;
+                }
+            }
+        }
     }
 }

@@ -22,6 +22,17 @@ namespace Inventario
         public FrmVentanaImagenes()
         {
             InitializeComponent();
+        } 
+        public FrmVentanaImagenes(List<Imagen> imagenes)
+        {
+            ListaLinkImagenes = imagenes;
+            InitializeComponent();
+
+            dgvImagenes.DataSource = null;
+            dgvImagenes.DataSource = ListaLinkImagenes;
+            //Oculta las colmnas Id y IdArticulo
+            dgvImagenes.Columns["Id"].Visible = false;
+            dgvImagenes.Columns["IdArticulo"].Visible = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -83,9 +94,28 @@ namespace Inventario
         {
             if (dgvImagenes.CurrentRow != null)
             {
+                try
+                {
                 Imagen seleccionado = (Imagen)dgvImagenes.CurrentRow.DataBoundItem;
                 cargarImagen(seleccionado.Url);
+                }
+                catch (Exception)
+                {
+                cargarImagen("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
+                }
             }
+        }
+
+        private void btnQuitarImagen_Click(object sender, EventArgs e)
+        {
+            Imagen imagen = (Imagen)dgvImagenes.CurrentRow.DataBoundItem;
+            ListaLinkImagenes.Remove(imagen);
+            dgvImagenes.DataSource = null;
+            dgvImagenes.DataSource = ListaLinkImagenes;
+            //Oculta las colmnas Id y IdArticulo
+            dgvImagenes.Columns["Id"].Visible = false;
+            dgvImagenes.Columns["IdArticulo"].Visible = false;
+
         }
     }
 }

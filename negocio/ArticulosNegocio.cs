@@ -22,7 +22,7 @@ namespace negocio
             {
 
                 accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion Nombre_Marca, "
-                    + "C.Descripcion Nombre_Categoria, A.Precio, I.ImagenUrl UrlImagen FROM ARTICULOS A JOIN CATEGORIAS C " +
+                    + "C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio, I.ImagenUrl UrlImagen FROM ARTICULOS A JOIN CATEGORIAS C " +
                     "ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id ORDER BY A.Id ASC");
 
 
@@ -48,11 +48,11 @@ namespace negocio
                     articulo.Descripcion = (string)accesoDatos.Lector["Descripcion"];
                     //Creacion de Marca y relacion en datagrip
                     articulo.Marca = new Marca();
-                    articulo.Marca.Id = (int)accesoDatos.Lector["Id"];
+                    articulo.Marca.Id = (int)accesoDatos.Lector["Id_Marca"];
                     articulo.Marca.Nombre = (string)accesoDatos.Lector["Nombre_Marca"];
                     //Creacion de Categoria y relacion en datagrip
                     articulo.Categoria = new Categoria();
-                    articulo.Categoria.Id = (int)accesoDatos.Lector["Id"];
+                    articulo.Categoria.Id = (int)accesoDatos.Lector["Id_Categoria"];
                     articulo.Categoria.Nombre = (string)accesoDatos.Lector["Nombre_Categoria"];
                     articulo.Precio = (decimal)accesoDatos.Lector["Precio"];
                     articulo.Imagenes = new List<Imagen>();
@@ -108,19 +108,30 @@ namespace negocio
             }
         }
 
-        private void agregarImagenes(Articulo articuloNuevo)
+        private void agregarImagenes(Articulo articulo)
         {
+            int idArticulo;
+            if (articulo.Id != 0)
+            {
+                // artículo en modificación. quitamos imagenes previas y cargamos nuevas
+                idArticulo = articulo.Id;
+                this.quitarImagenes(idArticulo);
+            }
+            else
+            {
+                // artículo nuevo. buscamos el último artículo agregado, para vincular imagenes a su Id
+                Articulo ultimoArticulo = this.listar().OrderBy(art => art.Id).Last();
+                idArticulo = ultimoArticulo.Id;
+
+            }
 
             try
             {
-                // el último artículo agregado, para vincular imagenes a su Id
-                Articulo ultimoArticulo = this.listar().OrderBy(art => art.Id).Last();
-
                 // Agregar imagenes relacionadas
 
-                foreach (Imagen imagen in articuloNuevo.Imagenes)
+                foreach (Imagen imagen in articulo.Imagenes)
                 {
-                    this.agregarImagen(imagen, ultimoArticulo);
+                    this.agregarImagen(imagen, idArticulo);
                 }
 
             }
@@ -131,13 +142,34 @@ namespace negocio
             }
         }
 
-        private void agregarImagen(Imagen imagen, Articulo articulo)
+        private void quitarImagenes(int idArticulo)
+        {
+                Data datos = new Data();
+            try
+            {
+                datos.setearConsulta("DELETE FROM IMAGENES WHERE IdArticulo = @Id");
+                datos.setearParametro("@Id", idArticulo);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        private void agregarImagen(Imagen imagen, int idArticulo)
         {
             Data datos = new Data();
             try
             {
                 datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @Url)");
-                datos.setearParametro("@IdArticulo", articulo.Id);
+                datos.setearParametro("@IdArticulo", idArticulo);
                 datos.setearParametro("@Url", imagen.Url);
                 datos.ejecutarAccion();
 
@@ -175,6 +207,13 @@ namespace negocio
             {
 
                 throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+                this.agregarImagenes(articuloModificado);
+
             }
         }
 

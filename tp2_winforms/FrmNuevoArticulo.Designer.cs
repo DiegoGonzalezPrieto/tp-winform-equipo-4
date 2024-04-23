@@ -106,7 +106,7 @@
             this.TBCodigoArticulo.AccessibleName = "";
             this.TBCodigoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBCodigoArticulo.Location = new System.Drawing.Point(179, 50);
-            this.TBCodigoArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBCodigoArticulo.Margin = new System.Windows.Forms.Padding(2);
             this.TBCodigoArticulo.MaxLength = 4;
             this.TBCodigoArticulo.Name = "TBCodigoArticulo";
             this.TBCodigoArticulo.Size = new System.Drawing.Size(151, 23);
@@ -118,7 +118,7 @@
             this.TBNombre.AccessibleName = "";
             this.TBNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBNombre.Location = new System.Drawing.Point(179, 95);
-            this.TBNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBNombre.Margin = new System.Windows.Forms.Padding(2);
             this.TBNombre.MaxLength = 50;
             this.TBNombre.Name = "TBNombre";
             this.TBNombre.Size = new System.Drawing.Size(151, 23);
@@ -130,7 +130,7 @@
             // 
             this.TBDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBDescripcion.Location = new System.Drawing.Point(179, 140);
-            this.TBDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.TBDescripcion.MaxLength = 100;
             this.TBDescripcion.Name = "TBDescripcion";
             this.TBDescripcion.Size = new System.Drawing.Size(151, 23);
@@ -154,7 +154,7 @@
             "9",
             "10"});
             this.CBMarca.Location = new System.Drawing.Point(179, 184);
-            this.CBMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBMarca.Margin = new System.Windows.Forms.Padding(2);
             this.CBMarca.MaxLength = 2;
             this.CBMarca.Name = "CBMarca";
             this.CBMarca.Size = new System.Drawing.Size(151, 25);
@@ -177,7 +177,7 @@
             "9",
             "10"});
             this.CBCategoria.Location = new System.Drawing.Point(179, 229);
-            this.CBCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CBCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.CBCategoria.MaxLength = 2;
             this.CBCategoria.Name = "CBCategoria";
             this.CBCategoria.Size = new System.Drawing.Size(151, 25);
@@ -189,7 +189,7 @@
             this.BTAgregarArticulo.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.BTAgregarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTAgregarArticulo.Location = new System.Drawing.Point(110, 382);
-            this.BTAgregarArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTAgregarArticulo.Margin = new System.Windows.Forms.Padding(2);
             this.BTAgregarArticulo.Name = "BTAgregarArticulo";
             this.BTAgregarArticulo.Size = new System.Drawing.Size(175, 29);
             this.BTAgregarArticulo.TabIndex = 6;
@@ -201,7 +201,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(101, 321);
+            this.label1.Location = new System.Drawing.Point(107, 321);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 17);
@@ -212,7 +212,7 @@
             // 
             this.TBPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBPrecio.Location = new System.Drawing.Point(179, 318);
-            this.TBPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TBPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.TBPrecio.MaxLength = 8;
             this.TBPrecio.Name = "TBPrecio";
             this.TBPrecio.Size = new System.Drawing.Size(151, 23);
@@ -222,18 +222,18 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(101, 276);
+            this.label7.Location = new System.Drawing.Point(84, 278);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 17);
+            this.label7.Size = new System.Drawing.Size(82, 17);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Imagen:";
+            this.label7.Text = "Imágenes:";
             // 
             // btnAgregarImagenes
             // 
             this.btnAgregarImagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarImagenes.Location = new System.Drawing.Point(179, 272);
-            this.btnAgregarImagenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarImagenes.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarImagenes.Name = "btnAgregarImagenes";
             this.btnAgregarImagenes.Size = new System.Drawing.Size(150, 28);
             this.btnAgregarImagenes.TabIndex = 14;
@@ -265,7 +265,7 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "AgregarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
