@@ -74,15 +74,19 @@ namespace Inventario
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           if(dgvArticulos.CurrentRow != null)
+            verDetalleArticulo();
+
+        }
+
+        private void verDetalleArticulo()
+        {
+            if (dgvArticulos.CurrentRow != null)
             {
                 Articulo articuloSeleccionado;
                 articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 FrmVerArticulo verArticulo = new FrmVerArticulo(articuloSeleccionado);
                 verArticulo.ShowDialog();
             }
-            
-
         }
 
         private void nuevoArticuloToolStripMenuItem_Click(object sender, EventArgs e)
@@ -227,6 +231,11 @@ namespace Inventario
         {
             FrmBuscarCategoria frmBuscarCategoria = new FrmBuscarCategoria();
             frmBuscarCategoria.ShowDialog();
+        }
+
+        private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            verDetalleArticulo();
         }
     }
 }
