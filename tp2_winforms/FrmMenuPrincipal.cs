@@ -36,7 +36,7 @@ namespace Inventario
                 dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "F2";
                 ocultarColumna();
                
-                obtenerImagenPbxArticulo(articuloListados[0].Imagenes[0].Url);
+                obtenerImagenPbxArticulo(articuloListados[0].Imagenes);
                 
             }
             catch (Exception ex)
@@ -136,16 +136,23 @@ namespace Inventario
             if(dgvArticulos.CurrentRow != null)
             {
                 Articulo art = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                obtenerImagenPbxArticulo(art.Imagenes[0].Url);
+                obtenerImagenPbxArticulo(art.Imagenes);
             }
            
         }
 
-        private void obtenerImagenPbxArticulo(string url)
+        private void obtenerImagenPbxArticulo(List<Imagen> imagenes)
         {
+            // si no tiene imagenes, cargar placeholder y volver
+            if (imagenes.Count == 0)
+            {
+                pbxImagenArticulo.Load("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
+                return;
+            }
+
             try
             {
-                pbxImagenArticulo.Load(url);
+                pbxImagenArticulo.Load(imagenes[0].Url);
             }
             catch (Exception)
             {

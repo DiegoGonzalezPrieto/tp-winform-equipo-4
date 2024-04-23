@@ -23,7 +23,7 @@ namespace negocio
 
                 accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion Nombre_Marca, "
                     + "C.Descripcion Nombre_Categoria, A.Precio, I.ImagenUrl UrlImagen FROM ARTICULOS A JOIN CATEGORIAS C " +
-                    "ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id JOIN IMAGENES I ON I.IdArticulo = A.Id");
+                    "ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id ORDER BY A.Id ASC");
 
 
 
@@ -31,6 +31,16 @@ namespace negocio
 
                 while (accesoDatos.Lector.Read())
                 {
+                    Articulo artCargado = lista.Find(a => a.Id == (int)accesoDatos.Lector["Id"]);
+                    if (artCargado != null)
+                    {
+                        // le agrego la imagen nueva y avanzo al siguiente registro.
+                        Imagen imagen = new Imagen();
+                        imagen.Url = (string)accesoDatos.Lector["UrlImagen"];
+                        lista[lista.Count - 1].Imagenes.Add(imagen);
+                        continue;
+
+                    }
                     Articulo articulo = new Articulo();
                     articulo.Id = (int)accesoDatos.Lector["Id"];
                     articulo.CodigoArticulo = (string)accesoDatos.Lector["Codigo"];
@@ -46,9 +56,14 @@ namespace negocio
                     articulo.Categoria.Nombre = (string)accesoDatos.Lector["Nombre_Categoria"];
                     articulo.Precio = (decimal)accesoDatos.Lector["Precio"];
                     articulo.Imagenes = new List<Imagen>();
-                    Imagen auxImagen = new Imagen();
-                    auxImagen.Url = (string)accesoDatos.Lector["UrlImagen"];
-                    articulo.Imagenes.Add(auxImagen);
+
+                    // si no tiene imagenes, no se cargan en el objeto
+                    if (!(accesoDatos.Lector["UrlImagen"] is DBNull))
+                    {
+                        Imagen auxImagen = new Imagen();
+                        auxImagen.Url = (string)accesoDatos.Lector["UrlImagen"];
+                        articulo.Imagenes.Add(auxImagen);
+                    }
 
 
                     lista.Add(articulo);
