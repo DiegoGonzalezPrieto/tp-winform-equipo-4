@@ -100,7 +100,8 @@ namespace Inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Aqui se deberia desplegar una ventana para la carga de imagenes.");
+            FrmVentanaImagenes ventanaImagenes = new FrmVentanaImagenes();
+            ventanaImagenes.ShowDialog();
         }
     }
 }
