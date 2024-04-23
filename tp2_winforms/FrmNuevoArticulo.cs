@@ -13,7 +13,7 @@ using negocio;
 namespace Inventario
 {
     public partial class AgregarArticulo : Form
-    {
+    { 
         public AgregarArticulo()
         {
             InitializeComponent();
@@ -65,6 +65,7 @@ namespace Inventario
                 articulo.Marca = (Marca)CBMarca.SelectedItem;
                 articulo.Categoria = (Categoria)CBCategoria.SelectedItem;
                 articulo.Precio = decimal.Parse(TBPrecio.Text);
+                
 
                 visu.agregar(articulo);
                 MessageBox.Show("Agregado Exitosamente!");
@@ -81,21 +82,7 @@ namespace Inventario
                  MessageBox.Show(ex.ToString());
             }
 
-            /*if (TBCodigoArticulo.TextLength > 0 &&
-            TBNombre.TextLength > 0 &&
-            TBDescripcion.TextLength > 0 &&
-            CBMarca.SelectedIndex != -1 &&
-            CBCategoria.SelectedIndex != -1)
-                {
-                    string codigoArticulo = TBCodigoArticulo.Text;
-                    string nombre = TBNombre.Text;
-                    string descripcion = TBDescripcion.Text;
-                    int marca = CBMarca.SelectedIndex;
-                    int categoria = CBCategoria.SelectedIndex;
-
-                    MessageBox.Show("ID: (ID asignado)" + "\nCodigo de articulo: " + codigoArticulo.ToString() + "\nNombre: " + nombre.ToString() + "\nDescripcion: " + descripcion.ToString() + "\nMarca: " + marca.ToString() + "\nCategoria: " + categoria.ToString(), "Articulo cargado correctamente");
-                }
-                else { MessageBox.Show("Debe completar todos los campos para poder guardar un articulo"); }*/
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
