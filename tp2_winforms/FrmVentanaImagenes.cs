@@ -15,7 +15,10 @@ namespace Inventario
 {
     public partial class FrmVentanaImagenes : Form
     {
-        private List<Imagen> listaLinkImagenes = new List<Imagen>();
+        //private List<Imagen> listaLinkImagenes  = new List<Imagen>();
+        public List<Imagen> ListaLinkImagenes { get; } = new List<Imagen>();
+
+        public bool Resultado { get; set; } = false;
         public FrmVentanaImagenes()
         {
             InitializeComponent();
@@ -23,12 +26,14 @@ namespace Inventario
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            Resultado = false;
             Close();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            
+            Resultado = true;
+            Close();
         }
 
         private void FrmVentanaImagenes_Load(object sender, EventArgs e)
@@ -38,17 +43,26 @@ namespace Inventario
 
         private void btnAgregarLink_Click(object sender, EventArgs e)
         {
-            Imagen linkImagen = new Imagen {Url = txtLink.Text};
+            try
+            {
+                Imagen linkImagen = new Imagen();
+                linkImagen.Url = txtLink.Text;
 
-            listaLinkImagenes.Add(linkImagen);
-            txtLink.Clear();
+                ListaLinkImagenes.Add(linkImagen);
+                txtLink.Clear();
 
             
-            dgvImagenes.DataSource = null;
-            dgvImagenes.DataSource = listaLinkImagenes;
-            //Oculta las colmnas Id y IdArticulo
-            dgvImagenes.Columns["Id"].Visible = false;
-            dgvImagenes.Columns["IdArticulo"].Visible = false;
+                dgvImagenes.DataSource = null;
+                dgvImagenes.DataSource = ListaLinkImagenes;
+                //Oculta las colmnas Id y IdArticulo
+                dgvImagenes.Columns["Id"].Visible = false;
+                dgvImagenes.Columns["IdArticulo"].Visible = false;
+
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void cargarImagen(string imagen)

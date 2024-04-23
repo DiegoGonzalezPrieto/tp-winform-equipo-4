@@ -20,11 +20,11 @@ namespace negocio
 
             try
             {
-                
-                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion Nombre_Marca, " 
-                    + "C.Descripcion Nombre_Categoria, A.Precio, I.ImagenUrl UrlImagen FROM ARTICULOS A JOIN CATEGORIAS C " + 
+
+                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion Nombre_Marca, "
+                    + "C.Descripcion Nombre_Categoria, A.Precio, I.ImagenUrl UrlImagen FROM ARTICULOS A JOIN CATEGORIAS C " +
                     "ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id JOIN IMAGENES I ON I.IdArticulo = A.Id");
-                
+
 
 
                 accesoDatos.ejecutarLectura();
@@ -73,10 +73,12 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES('" + articuloNuevo.CodigoArticulo + "', '" + articuloNuevo.Nombre + "', '" + articuloNuevo.Descripcion + "', @IdMarca, @IdCategoria, "+ articuloNuevo.Precio +")");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES('" + articuloNuevo.CodigoArticulo + "', '" + articuloNuevo.Nombre + "', '" + articuloNuevo.Descripcion + "', @IdMarca, @IdCategoria, " + articuloNuevo.Precio + ")");
                 datos.setearParametro("@IdMarca", articuloNuevo.Marca.Id);
                 datos.setearParametro("@IdCategoria", articuloNuevo.Categoria.Id);
-                datos.ejecutarLectura();
+                datos.ejecutarAccion(); // cambio de ejecutarLectura a Accion porque es INSERT
+
+
             }
             catch (Exception ex)
             {
@@ -86,8 +88,55 @@ namespace negocio
             finally
             {
                 datos.cerrarConexion();
+                if (articuloNuevo.Imagenes != null)
+                    this.agregarImagenes(articuloNuevo);
             }
         }
+
+        private void agregarImagenes(Articulo articuloNuevo)
+        {
+
+            try
+            {
+                // el último artículo agregado, para vincular imagenes a su Id
+                Articulo ultimoArticulo = this.listar().OrderBy(art => art.Id).Last();
+
+                // Agregar imagenes relacionadas
+
+                foreach (Imagen imagen in articuloNuevo.Imagenes)
+                {
+                    this.agregarImagen(imagen, ultimoArticulo);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+        }
+
+        private void agregarImagen(Imagen imagen, Articulo articulo)
+        {
+            Data datos = new Data();
+            try
+            {
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @Url)");
+                datos.setearParametro("@IdArticulo", articulo.Id);
+                datos.setearParametro("@Url", imagen.Url);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
 
         public void modificar(Articulo articuloModificado)
         {

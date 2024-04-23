@@ -43,16 +43,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TBPrecio = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregarImagenes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(137, 65);
+            this.label2.Location = new System.Drawing.Point(103, 53);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.Size = new System.Drawing.Size(63, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Código:";
             // 
@@ -60,9 +61,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(130, 120);
+            this.label3.Location = new System.Drawing.Point(98, 98);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre:";
             // 
@@ -70,9 +72,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(94, 175);
+            this.label4.Location = new System.Drawing.Point(70, 142);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 20);
+            this.label4.Size = new System.Drawing.Size(98, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Descripción:";
             // 
@@ -80,9 +83,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(143, 230);
+            this.label5.Location = new System.Drawing.Point(107, 187);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 20);
+            this.label5.Size = new System.Drawing.Size(57, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Marca:";
             // 
@@ -90,9 +94,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(114, 285);
+            this.label6.Location = new System.Drawing.Point(86, 232);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 20);
+            this.label6.Size = new System.Drawing.Size(83, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "Categoría:";
             // 
@@ -100,10 +105,11 @@
             // 
             this.TBCodigoArticulo.AccessibleName = "";
             this.TBCodigoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBCodigoArticulo.Location = new System.Drawing.Point(239, 62);
+            this.TBCodigoArticulo.Location = new System.Drawing.Point(179, 50);
+            this.TBCodigoArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBCodigoArticulo.MaxLength = 4;
             this.TBCodigoArticulo.Name = "TBCodigoArticulo";
-            this.TBCodigoArticulo.Size = new System.Drawing.Size(200, 27);
+            this.TBCodigoArticulo.Size = new System.Drawing.Size(151, 23);
             this.TBCodigoArticulo.TabIndex = 0;
             this.TBCodigoArticulo.TextChanged += new System.EventHandler(this.TBCodigoArticulo_TextChanged);
             // 
@@ -111,10 +117,11 @@
             // 
             this.TBNombre.AccessibleName = "";
             this.TBNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombre.Location = new System.Drawing.Point(239, 117);
+            this.TBNombre.Location = new System.Drawing.Point(179, 95);
+            this.TBNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBNombre.MaxLength = 50;
             this.TBNombre.Name = "TBNombre";
-            this.TBNombre.Size = new System.Drawing.Size(200, 27);
+            this.TBNombre.Size = new System.Drawing.Size(151, 23);
             this.TBNombre.TabIndex = 1;
             this.TBNombre.Tag = "";
             this.TBNombre.TextChanged += new System.EventHandler(this.TBNombre_TextChanged);
@@ -122,10 +129,11 @@
             // TBDescripcion
             // 
             this.TBDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDescripcion.Location = new System.Drawing.Point(239, 172);
+            this.TBDescripcion.Location = new System.Drawing.Point(179, 140);
+            this.TBDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBDescripcion.MaxLength = 100;
             this.TBDescripcion.Name = "TBDescripcion";
-            this.TBDescripcion.Size = new System.Drawing.Size(200, 27);
+            this.TBDescripcion.Size = new System.Drawing.Size(151, 23);
             this.TBDescripcion.TabIndex = 2;
             this.TBDescripcion.TextChanged += new System.EventHandler(this.TBDescripcion_TextChanged);
             // 
@@ -145,10 +153,11 @@
             "8",
             "9",
             "10"});
-            this.CBMarca.Location = new System.Drawing.Point(239, 227);
+            this.CBMarca.Location = new System.Drawing.Point(179, 184);
+            this.CBMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CBMarca.MaxLength = 2;
             this.CBMarca.Name = "CBMarca";
-            this.CBMarca.Size = new System.Drawing.Size(200, 28);
+            this.CBMarca.Size = new System.Drawing.Size(151, 25);
             this.CBMarca.TabIndex = 3;
             // 
             // CBCategoria
@@ -167,10 +176,11 @@
             "8",
             "9",
             "10"});
-            this.CBCategoria.Location = new System.Drawing.Point(239, 282);
+            this.CBCategoria.Location = new System.Drawing.Point(179, 229);
+            this.CBCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CBCategoria.MaxLength = 2;
             this.CBCategoria.Name = "CBCategoria";
-            this.CBCategoria.Size = new System.Drawing.Size(200, 28);
+            this.CBCategoria.Size = new System.Drawing.Size(151, 25);
             this.CBCategoria.TabIndex = 4;
             this.CBCategoria.SelectedIndexChanged += new System.EventHandler(this.CBCategoria_SelectedIndexChanged);
             // 
@@ -178,9 +188,10 @@
             // 
             this.BTAgregarArticulo.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.BTAgregarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTAgregarArticulo.Location = new System.Drawing.Point(147, 470);
+            this.BTAgregarArticulo.Location = new System.Drawing.Point(110, 382);
+            this.BTAgregarArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BTAgregarArticulo.Name = "BTAgregarArticulo";
-            this.BTAgregarArticulo.Size = new System.Drawing.Size(233, 36);
+            this.BTAgregarArticulo.Size = new System.Drawing.Size(175, 29);
             this.BTAgregarArticulo.TabIndex = 6;
             this.BTAgregarArticulo.Text = "Agregar Artículo";
             this.BTAgregarArticulo.UseVisualStyleBackColor = true;
@@ -190,50 +201,54 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(135, 395);
+            this.label1.Location = new System.Drawing.Point(101, 321);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "Precio:";
             // 
             // TBPrecio
             // 
             this.TBPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPrecio.Location = new System.Drawing.Point(239, 392);
+            this.TBPrecio.Location = new System.Drawing.Point(179, 318);
+            this.TBPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBPrecio.MaxLength = 8;
             this.TBPrecio.Name = "TBPrecio";
-            this.TBPrecio.Size = new System.Drawing.Size(200, 27);
+            this.TBPrecio.Size = new System.Drawing.Size(151, 23);
             this.TBPrecio.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(135, 340);
+            this.label7.Location = new System.Drawing.Point(101, 276);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 20);
+            this.label7.Size = new System.Drawing.Size(65, 17);
             this.label7.TabIndex = 13;
             this.label7.Text = "Imagen:";
             // 
-            // button1
+            // btnAgregarImagenes
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(239, 335);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 35);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAgregarImagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarImagenes.Location = new System.Drawing.Point(179, 272);
+            this.btnAgregarImagenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarImagenes.Name = "btnAgregarImagenes";
+            this.btnAgregarImagenes.Size = new System.Drawing.Size(150, 28);
+            this.btnAgregarImagenes.TabIndex = 14;
+            this.btnAgregarImagenes.Text = "Agregar";
+            this.btnAgregarImagenes.UseVisualStyleBackColor = true;
+            this.btnAgregarImagenes.Click += new System.EventHandler(this.button1_Click);
             // 
             // AgregarArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(532, 583);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(399, 474);
+            this.Controls.Add(this.btnAgregarImagenes);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.TBPrecio);
             this.Controls.Add(this.label1);
@@ -250,6 +265,7 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "AgregarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -275,6 +291,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TBPrecio;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregarImagenes;
     }
 }

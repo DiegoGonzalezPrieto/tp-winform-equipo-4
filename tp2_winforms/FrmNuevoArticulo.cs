@@ -17,8 +17,9 @@ namespace Inventario
         public AgregarArticulo()
         {
             InitializeComponent();
-
         }
+
+        public Articulo Articulo { get; set; } = new Articulo();
         private void AgregarArticulo_Load(object sender, EventArgs e)
         {
             List<Marca> leerMarcas = MarcasNegocio.ListaMarcas();
@@ -54,20 +55,20 @@ namespace Inventario
         }
         private void BTAgregarArticulo_Click(object sender, EventArgs e)
         {
-            Articulo articulo = new Articulo();
+            //Articulo articulo = new Articulo();
             ArticulosNegocio visu = new ArticulosNegocio();
 
             try
             {
-                articulo.CodigoArticulo = TBCodigoArticulo.Text;
-                articulo.Nombre = TBNombre.Text;
-                articulo.Descripcion = TBDescripcion.Text;
-                articulo.Marca = (Marca)CBMarca.SelectedItem;
-                articulo.Categoria = (Categoria)CBCategoria.SelectedItem;
-                articulo.Precio = decimal.Parse(TBPrecio.Text);
+                Articulo.CodigoArticulo = TBCodigoArticulo.Text;
+                Articulo.Nombre = TBNombre.Text;
+                Articulo.Descripcion = TBDescripcion.Text;
+                Articulo.Marca = (Marca)CBMarca.SelectedItem;
+                Articulo.Categoria = (Categoria)CBCategoria.SelectedItem;
+                Articulo.Precio = decimal.Parse(TBPrecio.Text);
                 
 
-                visu.agregar(articulo);
+                visu.agregar(Articulo);
                 MessageBox.Show("Agregado Exitosamente!");
 
                 Close();
@@ -87,8 +88,16 @@ namespace Inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmVentanaImagenes ventanaImagenes = new FrmVentanaImagenes();
-            ventanaImagenes.ShowDialog();
+            using (FrmVentanaImagenes ventanaImagenes = new FrmVentanaImagenes())
+            {
+                ventanaImagenes.ShowDialog();
+
+                if (ventanaImagenes.Resultado == true)
+                {
+                    Articulo.Imagenes = ventanaImagenes.ListaLinkImagenes;
+                }
+            }
+            
         }
     }
 }
