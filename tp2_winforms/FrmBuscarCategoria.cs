@@ -81,7 +81,36 @@ namespace Inventario
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            // TODO: eliminar categoría, revisando que no esté asociada a ningun articulo
+            try
+            {
+                if (dgvCategorias.CurrentRow != null)
+                {
+                    Categoria selecionado = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+                    CategoriasNegocio negocio = new CategoriasNegocio();
+
+                    DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar la categoría?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        if (negocio.eliminar(selecionado.Id))
+                        {
+                            MessageBox.Show("Categoría eliminada correctamente.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se puede eliminar la categoría porque está asociada a artículos existentes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        cargarCategoria();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No ha seleccionado ningún elemento para eliminar");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 

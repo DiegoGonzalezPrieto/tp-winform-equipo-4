@@ -69,7 +69,34 @@ namespace negocio
                 }
             }
 
-          public void modificarCategoria(Categoria categoria)
+        public bool eliminar(int id)
+        {
+
+            // revisar que la categoría no esté asociada a ningún producto.
+            ArticulosNegocio articulosNegocio = new ArticulosNegocio();
+            List<Articulo> articulos = articulosNegocio.listar();
+
+            if (articulos.FindAll(a => a.Categoria.Id == id).Count > 0)
+            {
+                return false;
+            }
+
+            try
+            {
+                Data datos = new Data();
+                datos.setearConsulta("DELETE FROM CATEGORIAS WHERE Id = @Id");
+                datos.setearParametro("@Id", id);
+                datos.ejecutarAccion();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void modificarCategoria(Categoria categoria)
         {
             Data datos = new Data();
             try
