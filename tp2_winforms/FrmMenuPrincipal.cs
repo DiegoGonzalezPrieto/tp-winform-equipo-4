@@ -23,6 +23,10 @@ namespace Inventario
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
             cargarListadoArticulos();
+            cboCampo.Items.Add("Precio");
+            cboCampo.Items.Add("Marca");
+            cboCampo.Items.Add("Categoria");
+            cboCampo.Items.Add("Nombre");
         }
 
         private void cargarListadoArticulos()
@@ -48,6 +52,7 @@ namespace Inventario
 
         private void ocultarColumna()
         {
+
             dgvArticulos.Columns["Id"].Visible = false;
         }
 
@@ -236,6 +241,54 @@ namespace Inventario
         private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             verDetalleArticulo();
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboCampo.SelectedItem.ToString();
+
+            if (opcion == "Precio")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a");
+
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+
+            }
+
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            ArticulosNegocio articulosFiltrados = new ArticulosNegocio();
+
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+
+                dgvArticulos.DataSource = articulosFiltrados.filtrar(campo, criterio, filtro);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void btnBorrarFiltro_Click(object sender, EventArgs e)
+        {
+            cargarListadoArticulos();
         }
     }
 }
