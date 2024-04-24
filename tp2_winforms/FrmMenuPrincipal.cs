@@ -272,6 +272,9 @@ namespace Inventario
 
             try
             {
+                if (validarFiltro())
+                return;
+
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
@@ -289,6 +292,46 @@ namespace Inventario
         private void btnBorrarFiltro_Click(object sender, EventArgs e)
         {
             cargarListadoArticulos();
+        }
+
+        private bool validarFiltro()
+        {
+            if (cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el campo para filtrar.");
+                return true;
+            }
+            if (cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el criterio para filtrar.");
+                return true;
+            }
+            if (cboCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty(txtFiltroAvanzado.Text))
+                {
+                    MessageBox.Show("Ingrese un número para completar el filtro");
+                    return true;
+                }
+                if (!(soloNumeros(txtFiltroAvanzado.Text)))
+                {
+                    MessageBox.Show("Para filtrar por precio solo puede ingresar números");
+                    return true;
+                }
+
+            }
+
+            return false;
+        }
+
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
         }
     }
 }
