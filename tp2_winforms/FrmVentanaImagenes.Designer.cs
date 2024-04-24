@@ -48,12 +48,13 @@
             this.dgvImagenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvImagenes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvImagenes.Location = new System.Drawing.Point(9, 62);
-            this.dgvImagenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvImagenes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvImagenes.MultiSelect = false;
             this.dgvImagenes.Name = "dgvImagenes";
             this.dgvImagenes.RowHeadersVisible = false;
             this.dgvImagenes.RowHeadersWidth = 51;
             this.dgvImagenes.RowTemplate.Height = 24;
+            this.dgvImagenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvImagenes.Size = new System.Drawing.Size(368, 204);
             this.dgvImagenes.TabIndex = 0;
             this.dgvImagenes.SelectionChanged += new System.EventHandler(this.dgvImagenes_SelectionChanged);
@@ -73,7 +74,7 @@
             // 
             this.txtLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLink.Location = new System.Drawing.Point(112, 29);
-            this.txtLink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLink.Margin = new System.Windows.Forms.Padding(2);
             this.txtLink.Name = "txtLink";
             this.txtLink.Size = new System.Drawing.Size(201, 23);
             this.txtLink.TabIndex = 2;
@@ -82,7 +83,7 @@
             // 
             this.btnAgregarLink.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarLink.Image")));
             this.btnAgregarLink.Location = new System.Drawing.Point(323, 24);
-            this.btnAgregarLink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarLink.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarLink.Name = "btnAgregarLink";
             this.btnAgregarLink.Size = new System.Drawing.Size(53, 33);
             this.btnAgregarLink.TabIndex = 3;
@@ -93,7 +94,7 @@
             // 
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.Location = new System.Drawing.Point(268, 271);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(45, 41);
             this.btnAceptar.TabIndex = 4;
@@ -104,7 +105,7 @@
             // 
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.Location = new System.Drawing.Point(332, 271);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(45, 41);
             this.btnCancel.TabIndex = 5;
@@ -114,7 +115,7 @@
             // pxbImagenes
             // 
             this.pxbImagenes.Location = new System.Drawing.Point(396, 62);
-            this.pxbImagenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pxbImagenes.Margin = new System.Windows.Forms.Padding(2);
             this.pxbImagenes.Name = "pxbImagenes";
             this.pxbImagenes.Size = new System.Drawing.Size(236, 204);
             this.pxbImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -147,7 +148,7 @@
             this.Controls.Add(this.dgvImagenes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmVentanaImagenes";

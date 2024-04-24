@@ -94,7 +94,7 @@ namespace Inventario
 
                 if (ventanaImagenes.Resultado == true)
                 {
-                    Articulo.Imagenes = ventanaImagenes.ListaLinkImagenes;
+                    Articulo.Imagenes = ventanaImagenes.ListaLinkImagenes.ToList() ;
                 }
             }
             

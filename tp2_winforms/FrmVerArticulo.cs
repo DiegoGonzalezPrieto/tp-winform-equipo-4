@@ -73,36 +73,60 @@ namespace Inventario
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            string urlImagen = PBImagenDetalle.ImageLocation;
-            int indiceActual = articulo.Imagenes.FindIndex(i => i.Url == urlImagen);
+            if (articulo.Imagenes.Count == 0)
+                return;
 
-            if (indiceActual < articulo.Imagenes.Count - 1)
+            try
             {
-                obtenerImagenDetalleArticulo(articulo.Imagenes[indiceActual + 1]);
+                string urlImagen = PBImagenDetalle.ImageLocation;
+                int indiceActual = articulo.Imagenes.FindIndex(i => i.Url == urlImagen);
+
+                if (indiceActual < articulo.Imagenes.Count - 1)
+                {
+                    obtenerImagenDetalleArticulo(articulo.Imagenes[indiceActual + 1]);
+                }
+                else
+                {
+                    // ir a imagen inicial
+                    obtenerImagenDetalleArticulo(articulo.Imagenes[0]);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // ir a imagen inicial
-                obtenerImagenDetalleArticulo(articulo.Imagenes[0]);
+                MessageBox.Show(ex.ToString());
+
+
             }
 
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            string urlImagen = PBImagenDetalle.ImageLocation;
-            int indiceActual = articulo.Imagenes.FindIndex(i => i.Url == urlImagen);
+            if (articulo.Imagenes.Count == 0)
+                return;
 
-            if (indiceActual == 0)
+            try
             {
-                int cantImagenes = articulo.Imagenes.Count;
-                obtenerImagenDetalleArticulo(articulo.Imagenes[cantImagenes - 1]);
+                string urlImagen = PBImagenDetalle.ImageLocation;
+                int indiceActual = articulo.Imagenes.FindIndex(i => i.Url == urlImagen);
+
+                if (indiceActual == 0)
+                {
+                    int cantImagenes = articulo.Imagenes.Count;
+                    obtenerImagenDetalleArticulo(articulo.Imagenes[cantImagenes - 1]);
+                }
+                else
+                {
+                    // ir imagen final
+                    obtenerImagenDetalleArticulo(articulo.Imagenes[indiceActual - 1]);
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                // ir imagen final
-                obtenerImagenDetalleArticulo(articulo.Imagenes[indiceActual - 1]);
+                MessageBox.Show(ex.ToString());
             }
+
         }
     }
 }

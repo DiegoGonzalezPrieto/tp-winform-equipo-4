@@ -15,21 +15,25 @@ namespace Inventario
 {
     public partial class FrmVentanaImagenes : Form
     {
-        //private List<Imagen> listaLinkImagenes  = new List<Imagen>();
         public List<Imagen> ListaLinkImagenes { get; } = new List<Imagen>();
 
         public bool Resultado { get; set; } = false;
         public FrmVentanaImagenes()
         {
             InitializeComponent();
-        } 
+        }
         public FrmVentanaImagenes(List<Imagen> imagenes)
         {
+            if (imagenes.Count == 0)
+            {
+                InitializeComponent();
+                return;
+            }
+
             ListaLinkImagenes = imagenes;
             InitializeComponent();
-
-            dgvImagenes.DataSource = null;
             dgvImagenes.DataSource = ListaLinkImagenes;
+
             //Oculta las colmnas Id y IdArticulo
             dgvImagenes.Columns["Id"].Visible = false;
             dgvImagenes.Columns["IdArticulo"].Visible = false;
@@ -49,27 +53,36 @@ namespace Inventario
 
         private void FrmVentanaImagenes_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnAgregarLink_Click(object sender, EventArgs e)
         {
+
             try
             {
+
                 Imagen linkImagen = new Imagen();
                 linkImagen.Url = txtLink.Text;
+
+                if (linkImagen.Url.Trim() == "")
+                {
+                    txtLink.Clear();
+                    return;
+                }
 
                 ListaLinkImagenes.Add(linkImagen);
                 txtLink.Clear();
 
-            
-                dgvImagenes.DataSource = null;
+                if (dgvImagenes.DataSource != null)
+                    dgvImagenes.DataSource = null;
+
                 dgvImagenes.DataSource = ListaLinkImagenes;
                 //Oculta las colmnas Id y IdArticulo
                 dgvImagenes.Columns["Id"].Visible = false;
                 dgvImagenes.Columns["IdArticulo"].Visible = false;
 
-            } 
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -92,29 +105,44 @@ namespace Inventario
 
         private void dgvImagenes_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvImagenes.CurrentRow != null)
+            if (dgvImagenes.SelectedRows.Count == 0)
             {
-                try
-                {
+                return;
+            }
+            //if (dgvImagenes.CurrentRow.DataBoundItem != null)
+            //{
+            try
+            {
                 Imagen seleccionado = (Imagen)dgvImagenes.CurrentRow.DataBoundItem;
                 cargarImagen(seleccionado.Url);
-                }
-                catch (Exception)
-                {
-                cargarImagen("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
-                }
             }
+            catch (Exception)
+            {
+                cargarImagen("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
+            }
+            //}
         }
 
         private void btnQuitarImagen_Click(object sender, EventArgs e)
         {
-            Imagen imagen = (Imagen)dgvImagenes.CurrentRow.DataBoundItem;
-            ListaLinkImagenes.Remove(imagen);
-            dgvImagenes.DataSource = null;
-            dgvImagenes.DataSource = ListaLinkImagenes;
-            //Oculta las colmnas Id y IdArticulo
-            dgvImagenes.Columns["Id"].Visible = false;
-            dgvImagenes.Columns["IdArticulo"].Visible = false;
+            if (dgvImagenes.CurrentRow == null)
+                return;
+
+            try
+            {
+                Imagen imagen = (Imagen)dgvImagenes.CurrentRow.DataBoundItem;
+                ListaLinkImagenes.Remove(imagen);
+                dgvImagenes.DataSource = null;
+                dgvImagenes.DataSource = ListaLinkImagenes;
+                //Oculta las colmnas Id y IdArticulo
+                dgvImagenes.Columns["Id"].Visible = false;
+                dgvImagenes.Columns["IdArticulo"].Visible = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
         }
     }
