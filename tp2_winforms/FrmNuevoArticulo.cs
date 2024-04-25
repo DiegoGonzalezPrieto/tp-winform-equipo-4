@@ -99,5 +99,36 @@ namespace Inventario
             }
             
         }
+
+        private void lblAgregarArticulo_Click(object sender, EventArgs e)
+        {
+            ArticulosNegocio visu = new ArticulosNegocio();
+
+            try
+            {
+                Articulo.CodigoArticulo = TBCodigoArticulo.Text;
+                Articulo.Nombre = TBNombre.Text;
+                Articulo.Descripcion = TBDescripcion.Text;
+                Articulo.Marca = (Marca)CBMarca.SelectedItem;
+                Articulo.Categoria = (Categoria)CBCategoria.SelectedItem;
+                Articulo.Precio = decimal.Parse(TBPrecio.Text);
+
+
+                visu.agregar(Articulo);
+                MessageBox.Show("Agregado Exitosamente!");
+
+                Close();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Verifique que los campos esten cargados correctamente.");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
     }
 }

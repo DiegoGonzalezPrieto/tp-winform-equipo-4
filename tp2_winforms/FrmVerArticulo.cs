@@ -70,7 +70,7 @@ namespace Inventario
 
 
         }
-
+        /*
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
             if (articulo.Imagenes.Count == 0)
@@ -127,6 +127,63 @@ namespace Inventario
                 MessageBox.Show(ex.ToString());
             }
 
+        }
+        */
+        private void lblSiguiente_Click(object sender, EventArgs e)
+        {
+            if (articulo.Imagenes.Count == 0)
+                return;
+
+            try
+            {
+                string urlImagen = PBImagenDetalle.ImageLocation;
+                int indiceActual = articulo.Imagenes.FindIndex(i => i.Url == urlImagen);
+
+                if (indiceActual < articulo.Imagenes.Count - 1)
+                {
+                    obtenerImagenDetalleArticulo(articulo.Imagenes[indiceActual + 1]);
+                }
+                else
+                {
+                    // ir a imagen inicial
+                    obtenerImagenDetalleArticulo(articulo.Imagenes[0]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+
+            }
+        }
+
+        private void lblAnterior_Click(object sender, EventArgs e)
+        {
+            if (articulo.Imagenes.Count == 0)
+                return;
+                
+
+            try
+            {
+                string urlImagen = PBImagenDetalle.ImageLocation;
+                int indiceActual = articulo.Imagenes.FindIndex(i => i.Url == urlImagen);
+
+                if (indiceActual == 0)
+                {
+                    int cantImagenes = articulo.Imagenes.Count;
+                    obtenerImagenDetalleArticulo(articulo.Imagenes[cantImagenes - 1]);
+                }
+                else
+                {
+                    // ir imagen final
+                    obtenerImagenDetalleArticulo(articulo.Imagenes[indiceActual - 1]);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
