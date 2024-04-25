@@ -107,6 +107,7 @@
             this.PBImagenDetalle.TabIndex = 5;
             this.PBImagenDetalle.TabStop = false;
             this.PBImagenDetalle.Click += new System.EventHandler(this.PBImagenDetalle_Click);
+
             // 
             // lblNombre
             // 

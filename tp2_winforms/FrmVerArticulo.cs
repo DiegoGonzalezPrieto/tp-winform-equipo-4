@@ -153,7 +153,6 @@ namespace Inventario
             {
                 MessageBox.Show(ex.ToString());
 
-
             }
         }
 
@@ -168,15 +167,18 @@ namespace Inventario
                 string urlImagen = PBImagenDetalle.ImageLocation;
                 int indiceActual = articulo.Imagenes.FindIndex(i => i.Url == urlImagen);
 
-                if (indiceActual == 0)
+                if (indiceActual > 0)
+                
                 {
                     int cantImagenes = articulo.Imagenes.Count;
-                    obtenerImagenDetalleArticulo(articulo.Imagenes[cantImagenes - 1]);
+                    
+                    obtenerImagenDetalleArticulo(articulo.Imagenes[articulo.Imagenes.Count - 1]);
                 }
                 else
                 {
                     // ir imagen final
-                    obtenerImagenDetalleArticulo(articulo.Imagenes[indiceActual - 1]);
+                    
+                    obtenerImagenDetalleArticulo(articulo.Imagenes[articulo.Imagenes.Count - 1]);
                 }
 
             }
@@ -185,5 +187,7 @@ namespace Inventario
                 MessageBox.Show(ex.ToString());
             }
         }
+
+      
     }
 }

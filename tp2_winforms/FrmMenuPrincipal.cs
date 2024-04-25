@@ -291,14 +291,18 @@ namespace Inventario
 
         private void btnBorrarFiltro_Click(object sender, EventArgs e)
         {
+            
             cargarListadoArticulos();
+            cboCriterio.Text = "";
+            cboCampo.Text = "";
+            txtFiltroAvanzado.Text = "";
         }
 
         private bool validarFiltro()
         {
             if (cboCampo.SelectedIndex < 0)
             {
-                MessageBox.Show("Por favor, seleccione el campo para filtrar.");
+                MessageBox.Show("Por favor, seleccione el campo para filtrar.", "Accion no permitida", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                 return true;
             }
             if (cboCriterio.SelectedIndex < 0)
