@@ -151,7 +151,7 @@ namespace Inventario
            
         }
 
-        private void obtenerImagenPbxArticulo(List<Imagen> imagenes)
+        private void obtenerImagenPbxArticulo(List<Imagen> imagenes, int indice = 0)
         {
             // si no tiene imagenes, cargar placeholder y volver
             if (imagenes.Count == 0)
@@ -162,7 +162,7 @@ namespace Inventario
 
             try
             {
-                pbxImagenArticulo.Load(imagenes[0].Url);
+                pbxImagenArticulo.Load(imagenes[indice].Url);
             }
             catch (Exception)
             {
@@ -348,6 +348,70 @@ namespace Inventario
         {
             FrmAcercaDe frmAcercaDe = new FrmAcercaDe();
             frmAcercaDe.ShowDialog();
+        }
+
+        private void lblSiguiente_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow == null || dgvArticulos.CurrentRow.DataBoundItem == null)
+                return;
+
+            Articulo articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            if (articuloSeleccionado.Imagenes.Count == 0)
+                return;
+
+            try
+            {
+                string urlImagen = pbxImagenArticulo.ImageLocation;
+                int indiceActual = articuloSeleccionado.Imagenes.FindIndex(i => i.Url == urlImagen);
+
+                if (indiceActual < articuloSeleccionado.Imagenes.Count - 1)
+                {
+                    obtenerImagenPbxArticulo(articuloSeleccionado.Imagenes, indiceActual + 1);
+                }
+                else
+                {
+                    // ir a imagen inicial
+                    obtenerImagenPbxArticulo(articuloSeleccionado.Imagenes, 0);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
+
+        private void lblAnterior_Click(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow == null || dgvArticulos.CurrentRow.DataBoundItem == null)
+                return;
+
+            Articulo articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            if (articuloSeleccionado.Imagenes.Count == 0)
+                return;
+
+            try
+            {
+                string urlImagen = pbxImagenArticulo.ImageLocation;
+                int indiceActual = articuloSeleccionado.Imagenes.FindIndex(i => i.Url == urlImagen);
+
+                if (indiceActual > 0)
+                {
+                    obtenerImagenPbxArticulo(articuloSeleccionado.Imagenes, indiceActual - 1);
+                }
+                else
+                {
+                    // ir a imagen final
+                    obtenerImagenPbxArticulo(articuloSeleccionado.Imagenes, articuloSeleccionado.Imagenes.Count - 1);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
         }
     }
 }
