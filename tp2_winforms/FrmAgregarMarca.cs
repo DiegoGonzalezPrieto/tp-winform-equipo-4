@@ -36,7 +36,7 @@ namespace Inventario
 
                 if(!string.IsNullOrWhiteSpace(txtMarca.Text))
                 {
-                    marca.Nombre = txtMarca.Text;
+                    marca.Nombre = txtMarca.Text.Trim();
 
 
                     if(marca.Id != 0)

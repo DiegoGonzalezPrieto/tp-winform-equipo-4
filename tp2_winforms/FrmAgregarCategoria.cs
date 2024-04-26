@@ -39,7 +39,7 @@ namespace Inventario
                 if (!string.IsNullOrWhiteSpace(txtCategoria.Text))
                 {
 
-                    categoria.Nombre = txtCategoria.Text;
+                    categoria.Nombre = txtCategoria.Text.Trim();
 
                     if(categoria.Id != 0)
                     {
