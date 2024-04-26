@@ -64,71 +64,10 @@ namespace Inventario
             catch (Exception)
             {
                 PBImagenDetalle.Load("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
-                //pbxImagenArticulo.Load("https://bcs-management.com/wp-content/uploads/2017/02/2000px-No_image_available.svg_-1024x1024.png");
-                //pbxImagenArticulo.Load("https://placehold.co/600x400@2x.png?text=%F0%9F%98%85");
             }
 
 
         }
-        /*
-        private void btnSiguiente_Click(object sender, EventArgs e)
-        {
-            if (articulo.Imagenes.Count == 0)
-                return;
-
-            try
-            {
-                string urlImagen = PBImagenDetalle.ImageLocation;
-                int indiceActual = articulo.Imagenes.FindIndex(i => i.Url == urlImagen);
-
-                if (indiceActual < articulo.Imagenes.Count - 1)
-                {
-                    obtenerImagenDetalleArticulo(articulo.Imagenes[indiceActual + 1]);
-                }
-                else
-                {
-                    // ir a imagen inicial
-                    obtenerImagenDetalleArticulo(articulo.Imagenes[0]);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-
-
-            }
-
-        }
-
-        private void btnAnterior_Click(object sender, EventArgs e)
-        {
-            if (articulo.Imagenes.Count == 0)
-                return;
-
-            try
-            {
-                string urlImagen = PBImagenDetalle.ImageLocation;
-                int indiceActual = articulo.Imagenes.FindIndex(i => i.Url == urlImagen);
-
-                if (indiceActual == 0)
-                {
-                    int cantImagenes = articulo.Imagenes.Count;
-                    obtenerImagenDetalleArticulo(articulo.Imagenes[cantImagenes - 1]);
-                }
-                else
-                {
-                    // ir imagen final
-                    obtenerImagenDetalleArticulo(articulo.Imagenes[indiceActual - 1]);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-        }
-        */
         private void lblSiguiente_Click(object sender, EventArgs e)
         {
             if (articulo.Imagenes.Count == 0)
@@ -170,14 +109,12 @@ namespace Inventario
                 if (indiceActual > 0)
                 
                 {
-                    int cantImagenes = articulo.Imagenes.Count;
                     
-                    obtenerImagenDetalleArticulo(articulo.Imagenes[articulo.Imagenes.Count - 1]);
+                    obtenerImagenDetalleArticulo(articulo.Imagenes[indiceActual - 1]);
                 }
                 else
                 {
-                    // ir imagen final
-                    
+                    // ir imagen 
                     obtenerImagenDetalleArticulo(articulo.Imagenes[articulo.Imagenes.Count - 1]);
                 }
 
