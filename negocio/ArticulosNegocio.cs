@@ -22,8 +22,8 @@ namespace negocio
             {
 
                 accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion Nombre_Marca, "
-                    + "C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio, I.ImagenUrl UrlImagen FROM ARTICULOS A JOIN CATEGORIAS C " +
-                    "ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id ORDER BY A.Id ASC");
+                    + "C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio, I.ImagenUrl UrlImagen FROM ARTICULOS A LEFT JOIN CATEGORIAS C " +
+                    "ON A.IdCategoria = C.Id LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id ORDER BY A.Id ASC");
 
 
 
@@ -46,14 +46,22 @@ namespace negocio
                     articulo.CodigoArticulo = (string)accesoDatos.Lector["Codigo"];
                     articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
                     articulo.Descripcion = (string)accesoDatos.Lector["Descripcion"];
-                    //Creacion de Marca y relacion en datagrip
+
+                    //Creacion de Marca y relacion en datagrid
                     articulo.Marca = new Marca();
-                    articulo.Marca.Id = (int)accesoDatos.Lector["Id_Marca"];
-                    articulo.Marca.Nombre = (string)accesoDatos.Lector["Nombre_Marca"];
-                    //Creacion de Categoria y relacion en datagrip
+                    if (!(accesoDatos.Lector["Id_Marca"] is DBNull))
+                    {
+                        articulo.Marca.Id = (int)accesoDatos.Lector["Id_Marca"];
+                        articulo.Marca.Nombre = (string)accesoDatos.Lector["Nombre_Marca"];
+                    } 
+
+                    //Creacion de Categoria y relacion en datagrid
                     articulo.Categoria = new Categoria();
-                    articulo.Categoria.Id = (int)accesoDatos.Lector["Id_Categoria"];
-                    articulo.Categoria.Nombre = (string)accesoDatos.Lector["Nombre_Categoria"];
+                    if (!(accesoDatos.Lector["Id_Categoria"] is DBNull))
+                    {
+                        articulo.Categoria.Id = (int)accesoDatos.Lector["Id_Categoria"];
+                        articulo.Categoria.Nombre = (string)accesoDatos.Lector["Nombre_Categoria"];
+                    }
                     articulo.Precio = (decimal)accesoDatos.Lector["Precio"];
                     articulo.Imagenes = new List<Imagen>();
 
@@ -408,5 +416,5 @@ namespace negocio
     }
 }
 
-    
+
 
