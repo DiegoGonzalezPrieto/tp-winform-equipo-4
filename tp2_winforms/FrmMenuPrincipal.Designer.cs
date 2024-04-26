@@ -62,6 +62,7 @@
             this.ttpLimpiarBusqueda = new System.Windows.Forms.ToolTip(this.components);
             this.lblSiguiente = new System.Windows.Forms.Label();
             this.lblAnterior = new System.Windows.Forms.Label();
+            this.ttpImagen = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenArticulo)).BeginInit();
@@ -375,6 +376,7 @@
             this.lblSiguiente.Size = new System.Drawing.Size(38, 41);
             this.lblSiguiente.TabIndex = 15;
             this.lblSiguiente.Text = "  ";
+            this.ttpImagen.SetToolTip(this.lblSiguiente, "Imagen siguiente");
             this.lblSiguiente.Click += new System.EventHandler(this.lblSiguiente_Click);
             // 
             // lblAnterior
@@ -387,6 +389,7 @@
             this.lblAnterior.Size = new System.Drawing.Size(38, 41);
             this.lblAnterior.TabIndex = 16;
             this.lblAnterior.Text = "  ";
+            this.ttpImagen.SetToolTip(this.lblAnterior, "Imagen anterior");
             this.lblAnterior.Click += new System.EventHandler(this.lblAnterior_Click);
             // 
             // VentanaPrincipal
@@ -465,6 +468,7 @@
         private System.Windows.Forms.ToolTip ttpLimpiarBusqueda;
         private System.Windows.Forms.Label lblSiguiente;
         private System.Windows.Forms.Label lblAnterior;
+        private System.Windows.Forms.ToolTip ttpImagen;
     }
 }
 
