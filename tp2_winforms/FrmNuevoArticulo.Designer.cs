@@ -237,10 +237,11 @@
             // 
             // lblAgregarArticulo
             // 
+            this.lblAgregarArticulo.BackColor = System.Drawing.Color.Transparent;
             this.lblAgregarArticulo.Image = ((System.Drawing.Image)(resources.GetObject("lblAgregarArticulo.Image")));
-            this.lblAgregarArticulo.Location = new System.Drawing.Point(374, 424);
+            this.lblAgregarArticulo.Location = new System.Drawing.Point(372, 431);
             this.lblAgregarArticulo.Name = "lblAgregarArticulo";
-            this.lblAgregarArticulo.Size = new System.Drawing.Size(65, 65);
+            this.lblAgregarArticulo.Size = new System.Drawing.Size(50, 50);
             this.lblAgregarArticulo.TabIndex = 15;
             this.lblAgregarArticulo.Text = "  ";
             this.lblAgregarArticulo.Click += new System.EventHandler(this.lblAgregarArticulo_Click);

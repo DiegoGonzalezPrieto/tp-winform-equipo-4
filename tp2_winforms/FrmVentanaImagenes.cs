@@ -145,5 +145,17 @@ namespace Inventario
             }
 
         }
+
+        private void pxbImagenes_Paint(object sender, PaintEventArgs e)
+        {
+            int borderWidth = 3;
+            Color borderColor = Color.Gray;
+
+            ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor,
+                borderWidth, ButtonBorderStyle.Outset,
+                borderColor, borderWidth, ButtonBorderStyle.Outset,
+                borderColor, borderWidth, ButtonBorderStyle.Outset,
+                borderColor, borderWidth, ButtonBorderStyle.Outset);
+        }
     }
 }

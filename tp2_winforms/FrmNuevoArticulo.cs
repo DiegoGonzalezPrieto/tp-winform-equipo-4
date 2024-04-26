@@ -75,7 +75,7 @@ namespace Inventario
             }
             catch(FormatException)
             {
-                MessageBox.Show("Verifique que los campos esten cargados correctamente.");
+                MessageBox.Show("Verifique que los campos\nesten cargados correctamente.", "Accion No Permitida.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {

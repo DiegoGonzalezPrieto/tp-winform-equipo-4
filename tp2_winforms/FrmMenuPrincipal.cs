@@ -127,7 +127,7 @@ namespace Inventario
             }
             else
             {
-                MessageBox.Show("Debe seleccionar el articulo a modificar");
+                MessageBox.Show("Debe seleccionar el articulo a modificar", "No se seleccion ningun articulo");
             }
            
 
@@ -205,7 +205,7 @@ namespace Inventario
 
                 try
                 {
-                    DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar\n " + selecionado.Marca + " " + selecionado.Nombre, "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar\n " + selecionado.Marca + " " + selecionado.Nombre + " ", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (respuesta == DialogResult.Yes)
                     {
                         negocio.eliminar(selecionado.Id);
@@ -221,7 +221,7 @@ namespace Inventario
             }
             else
             {
-                MessageBox.Show("Debe seleccionar primero el articulo a eliminar");
+                MessageBox.Show("Debe seleccionar primero el articulo a eliminar", "No se seleccion ningun articulo");
             }
             
         }
@@ -302,7 +302,7 @@ namespace Inventario
         {
             if (cboCampo.SelectedIndex < 0)
             {
-                MessageBox.Show("Por favor, seleccione el campo para filtrar.", "Accion no permitida", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Por favor, seleccione el campo para filtrar.", "Accion No Permitida", MessageBoxButtons.OK , MessageBoxIcon.Stop);
                 return true;
             }
             if (cboCriterio.SelectedIndex < 0)
@@ -336,6 +336,11 @@ namespace Inventario
                     return false;
             }
             return true;
+        }
+
+        private void ayudaSobreLaAplicacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.dropbox.com/scl/fi/6f0bihb394en7s4yz44vp/readme.pdf?rlkey=ptfcd3vdphpri2sscmhvf46gs&st=r0vgndd8&dl=0");
         }
     }
 }

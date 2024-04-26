@@ -165,5 +165,11 @@
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\selectivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\embudo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

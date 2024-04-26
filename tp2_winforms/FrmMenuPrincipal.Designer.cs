@@ -54,6 +54,9 @@
             this.txtFiltroAvanzado = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnBorrarFiltro = new System.Windows.Forms.Button();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaSobreLaAplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeLaAplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenArticulo)).BeginInit();
@@ -66,7 +69,8 @@
             this.articuloToolStripMenuItem,
             this.marcaToolStripMenuItem,
             this.categoriaToolStripMenuItem,
-            this.editarToolStripMenuItem});
+            this.editarToolStripMenuItem,
+            this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -238,11 +242,11 @@
             // 
             this.lblCampo.AutoSize = true;
             this.lblCampo.BackColor = System.Drawing.Color.Transparent;
-            this.lblCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCampo.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCampo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCampo.Location = new System.Drawing.Point(52, 466);
+            this.lblCampo.Location = new System.Drawing.Point(43, 470);
             this.lblCampo.Name = "lblCampo";
-            this.lblCampo.Size = new System.Drawing.Size(67, 22);
+            this.lblCampo.Size = new System.Drawing.Size(84, 23);
             this.lblCampo.TabIndex = 6;
             this.lblCampo.Text = "Campo";
             // 
@@ -250,11 +254,11 @@
             // 
             this.lblCriterio.AutoSize = true;
             this.lblCriterio.BackColor = System.Drawing.Color.Transparent;
-            this.lblCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCriterio.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCriterio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCriterio.Location = new System.Drawing.Point(274, 466);
+            this.lblCriterio.Location = new System.Drawing.Point(281, 470);
             this.lblCriterio.Name = "lblCriterio";
-            this.lblCriterio.Size = new System.Drawing.Size(68, 22);
+            this.lblCriterio.Size = new System.Drawing.Size(80, 23);
             this.lblCriterio.TabIndex = 7;
             this.lblCriterio.Text = "Criterio";
             // 
@@ -262,10 +266,10 @@
             // 
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.BackColor = System.Drawing.Color.Transparent;
-            this.lblFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltro.Location = new System.Drawing.Point(517, 466);
+            this.lblFiltro.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.Location = new System.Drawing.Point(520, 470);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(50, 22);
+            this.lblFiltro.Size = new System.Drawing.Size(55, 23);
             this.lblFiltro.TabIndex = 8;
             this.lblFiltro.Text = "Filtro";
             // 
@@ -273,7 +277,7 @@
             // 
             this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCampo.FormattingEnabled = true;
-            this.cboCampo.Location = new System.Drawing.Point(129, 467);
+            this.cboCampo.Location = new System.Drawing.Point(129, 469);
             this.cboCampo.Name = "cboCampo";
             this.cboCampo.Size = new System.Drawing.Size(121, 24);
             this.cboCampo.TabIndex = 10;
@@ -283,14 +287,14 @@
             // 
             this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCriterio.FormattingEnabled = true;
-            this.cboCriterio.Location = new System.Drawing.Point(367, 464);
+            this.cboCriterio.Location = new System.Drawing.Point(367, 469);
             this.cboCriterio.Name = "cboCriterio";
             this.cboCriterio.Size = new System.Drawing.Size(121, 24);
             this.cboCriterio.TabIndex = 11;
             // 
             // txtFiltroAvanzado
             // 
-            this.txtFiltroAvanzado.Location = new System.Drawing.Point(581, 467);
+            this.txtFiltroAvanzado.Location = new System.Drawing.Point(581, 470);
             this.txtFiltroAvanzado.Name = "txtFiltroAvanzado";
             this.txtFiltroAvanzado.Size = new System.Drawing.Size(121, 22);
             this.txtFiltroAvanzado.TabIndex = 12;
@@ -298,23 +302,47 @@
             // btnFiltrar
             // 
             this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.Location = new System.Drawing.Point(741, 464);
+            this.btnFiltrar.Image = global::Inventario.Properties.Resources.selectivo;
+            this.btnFiltrar.Location = new System.Drawing.Point(754, 461);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(92, 27);
+            this.btnFiltrar.Size = new System.Drawing.Size(80, 40);
             this.btnFiltrar.TabIndex = 13;
-            this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // btnBorrarFiltro
             // 
-            this.btnBorrarFiltro.Location = new System.Drawing.Point(839, 464);
+            this.btnBorrarFiltro.Image = global::Inventario.Properties.Resources.embudo;
+            this.btnBorrarFiltro.Location = new System.Drawing.Point(851, 461);
             this.btnBorrarFiltro.Name = "btnBorrarFiltro";
-            this.btnBorrarFiltro.Size = new System.Drawing.Size(92, 27);
+            this.btnBorrarFiltro.Size = new System.Drawing.Size(80, 40);
             this.btnBorrarFiltro.TabIndex = 14;
-            this.btnBorrarFiltro.Text = "Borrar filtro";
             this.btnBorrarFiltro.UseVisualStyleBackColor = true;
             this.btnBorrarFiltro.Click += new System.EventHandler(this.btnBorrarFiltro_Click);
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ayudaSobreLaAplicacionToolStripMenuItem,
+            this.acercaDeLaAplicacionToolStripMenuItem});
+            this.acercaDeToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 10.8F);
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.acercaDeToolStripMenuItem.Text = "Ayuda";
+            // 
+            // ayudaSobreLaAplicacionToolStripMenuItem
+            // 
+            this.ayudaSobreLaAplicacionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ayudaSobreLaAplicacionToolStripMenuItem.Image")));
+            this.ayudaSobreLaAplicacionToolStripMenuItem.Name = "ayudaSobreLaAplicacionToolStripMenuItem";
+            this.ayudaSobreLaAplicacionToolStripMenuItem.Size = new System.Drawing.Size(342, 26);
+            this.ayudaSobreLaAplicacionToolStripMenuItem.Text = "Ver la ayuda";
+            this.ayudaSobreLaAplicacionToolStripMenuItem.Click += new System.EventHandler(this.ayudaSobreLaAplicacionToolStripMenuItem_Click);
+            // 
+            // acercaDeLaAplicacionToolStripMenuItem
+            // 
+            this.acercaDeLaAplicacionToolStripMenuItem.Name = "acercaDeLaAplicacionToolStripMenuItem";
+            this.acercaDeLaAplicacionToolStripMenuItem.Size = new System.Drawing.Size(342, 26);
+            this.acercaDeLaAplicacionToolStripMenuItem.Text = "Sobre Gestión de Artículos v1.0";
             // 
             // VentanaPrincipal
             // 
@@ -383,6 +411,9 @@
         private System.Windows.Forms.TextBox txtFiltroAvanzado;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Button btnBorrarFiltro;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ayudaSobreLaAplicacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeLaAplicacionToolStripMenuItem;
     }
 }
 
