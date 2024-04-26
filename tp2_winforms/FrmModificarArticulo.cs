@@ -68,7 +68,6 @@ namespace Inventario
 
         private void BTGuardarArticulo_Click(object sender, EventArgs e)
         {
-            //Pokemon poke = new Pokemon();
             ArticulosNegocio negocio = new ArticulosNegocio();
             try
             {

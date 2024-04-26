@@ -55,17 +55,16 @@ namespace Inventario
         }
         private void BTAgregarArticulo_Click(object sender, EventArgs e)
         {
-            //Articulo articulo = new Articulo();
             ArticulosNegocio visu = new ArticulosNegocio();
 
             try
             {
-                Articulo.CodigoArticulo = TBCodigoArticulo.Text;
-                Articulo.Nombre = TBNombre.Text;
-                Articulo.Descripcion = TBDescripcion.Text;
+                Articulo.CodigoArticulo = TBCodigoArticulo.Text.Trim();
+                Articulo.Nombre = TBNombre.Text.Trim();
+                Articulo.Descripcion = TBDescripcion.Text.Trim();
                 Articulo.Marca = (Marca)CBMarca.SelectedItem;
                 Articulo.Categoria = (Categoria)CBCategoria.SelectedItem;
-                Articulo.Precio = decimal.Parse(TBPrecio.Text);
+                Articulo.Precio = decimal.Parse(TBPrecio.Text.Trim());
                 
 
                 visu.agregar(Articulo);
