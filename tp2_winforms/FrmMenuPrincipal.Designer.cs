@@ -41,6 +41,9 @@
             this.nuevaCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarCategoriaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaSobreLaAplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeLaAplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.pbxImagenArticulo = new System.Windows.Forms.PictureBox();
             this.lblBuscar = new System.Windows.Forms.Label();
@@ -54,9 +57,6 @@
             this.txtFiltroAvanzado = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnBorrarFiltro = new System.Windows.Forms.Button();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaSobreLaAplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDeLaAplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenArticulo)).BeginInit();
@@ -172,6 +172,31 @@
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(115, 26);
             this.editarToolStripMenuItem.Text = "&Ver Articulo";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ayudaSobreLaAplicacionToolStripMenuItem,
+            this.acercaDeLaAplicacionToolStripMenuItem});
+            this.acercaDeToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 10.8F);
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.acercaDeToolStripMenuItem.Text = "Ayu&da";
+            // 
+            // ayudaSobreLaAplicacionToolStripMenuItem
+            // 
+            this.ayudaSobreLaAplicacionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ayudaSobreLaAplicacionToolStripMenuItem.Image")));
+            this.ayudaSobreLaAplicacionToolStripMenuItem.Name = "ayudaSobreLaAplicacionToolStripMenuItem";
+            this.ayudaSobreLaAplicacionToolStripMenuItem.Size = new System.Drawing.Size(356, 26);
+            this.ayudaSobreLaAplicacionToolStripMenuItem.Text = "&Ver la ayuda";
+            this.ayudaSobreLaAplicacionToolStripMenuItem.Click += new System.EventHandler(this.ayudaSobreLaAplicacionToolStripMenuItem_Click);
+            // 
+            // acercaDeLaAplicacionToolStripMenuItem
+            // 
+            this.acercaDeLaAplicacionToolStripMenuItem.Name = "acercaDeLaAplicacionToolStripMenuItem";
+            this.acercaDeLaAplicacionToolStripMenuItem.Size = new System.Drawing.Size(356, 26);
+            this.acercaDeLaAplicacionToolStripMenuItem.Text = "&Sobre \"Gestión de Artículos v1.0\"";
+            this.acercaDeLaAplicacionToolStripMenuItem.Click += new System.EventHandler(this.acercaDeLaAplicacionToolStripMenuItem_Click);
             // 
             // dgvArticulos
             // 
@@ -319,30 +344,6 @@
             this.btnBorrarFiltro.TabIndex = 14;
             this.btnBorrarFiltro.UseVisualStyleBackColor = true;
             this.btnBorrarFiltro.Click += new System.EventHandler(this.btnBorrarFiltro_Click);
-            // 
-            // acercaDeToolStripMenuItem
-            // 
-            this.acercaDeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ayudaSobreLaAplicacionToolStripMenuItem,
-            this.acercaDeLaAplicacionToolStripMenuItem});
-            this.acercaDeToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 10.8F);
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
-            this.acercaDeToolStripMenuItem.Text = "Ayuda";
-            // 
-            // ayudaSobreLaAplicacionToolStripMenuItem
-            // 
-            this.ayudaSobreLaAplicacionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ayudaSobreLaAplicacionToolStripMenuItem.Image")));
-            this.ayudaSobreLaAplicacionToolStripMenuItem.Name = "ayudaSobreLaAplicacionToolStripMenuItem";
-            this.ayudaSobreLaAplicacionToolStripMenuItem.Size = new System.Drawing.Size(342, 26);
-            this.ayudaSobreLaAplicacionToolStripMenuItem.Text = "Ver la ayuda";
-            this.ayudaSobreLaAplicacionToolStripMenuItem.Click += new System.EventHandler(this.ayudaSobreLaAplicacionToolStripMenuItem_Click);
-            // 
-            // acercaDeLaAplicacionToolStripMenuItem
-            // 
-            this.acercaDeLaAplicacionToolStripMenuItem.Name = "acercaDeLaAplicacionToolStripMenuItem";
-            this.acercaDeLaAplicacionToolStripMenuItem.Size = new System.Drawing.Size(342, 26);
-            this.acercaDeLaAplicacionToolStripMenuItem.Text = "Sobre Gestión de Artículos v1.0";
             // 
             // VentanaPrincipal
             // 

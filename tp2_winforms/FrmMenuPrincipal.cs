@@ -37,7 +37,7 @@ namespace Inventario
                 articuloListados = articulos.listar();
 
                 dgvArticulos.DataSource = articuloListados;
-                dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "F2";
+                //dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "F2";
                 ocultarColumna();
                
                 obtenerImagenPbxArticulo(articuloListados[0].Imagenes);
@@ -54,6 +54,7 @@ namespace Inventario
         {
 
             dgvArticulos.Columns["Id"].Visible = false;
+            dgvArticulos.Columns["Precio"].Visible = false;
         }
 
         private void nuevoArticulo_Click(object sender, EventArgs e)
@@ -341,6 +342,12 @@ namespace Inventario
         private void ayudaSobreLaAplicacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.dropbox.com/scl/fi/6f0bihb394en7s4yz44vp/readme.pdf?rlkey=ptfcd3vdphpri2sscmhvf46gs&st=r0vgndd8&dl=0");
+        }
+
+        private void acercaDeLaAplicacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAcercaDe frmAcercaDe = new FrmAcercaDe();
+            frmAcercaDe.ShowDialog();
         }
     }
 }
