@@ -341,7 +341,7 @@ namespace Inventario
 
         private void ayudaSobreLaAplicacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.dropbox.com/scl/fi/6f0bihb394en7s4yz44vp/readme.pdf?rlkey=ptfcd3vdphpri2sscmhvf46gs&st=r0vgndd8&dl=0");
+            System.Diagnostics.Process.Start("https://www.dropbox.com/scl/fi/jcrcngytibq5qw5ay1sqg/Ayuda-de-Gestion-de-Articulos.pdf?rlkey=1zgcc5j5wu7krgvmcog03xqjf&st=nkw6lb03&dl=0");
         }
 
         private void acercaDeLaAplicacionToolStripMenuItem_Click(object sender, EventArgs e)

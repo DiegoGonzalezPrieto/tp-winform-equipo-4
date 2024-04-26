@@ -90,7 +90,7 @@ namespace Inventario
                     Marca selecionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
                     MarcasNegocio negocio = new MarcasNegocio();
 
-                    DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar la marca", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar\n la marca: " + selecionado.Nombre, "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (respuesta == DialogResult.Yes)
                     {
                         if (negocio.eliminar(selecionado.Id))

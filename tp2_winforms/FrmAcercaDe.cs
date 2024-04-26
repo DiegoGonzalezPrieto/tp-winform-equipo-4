@@ -22,6 +22,19 @@ namespace Inventario
             Close();
         }
 
+        private void label9_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/DiegoGonzalezPrieto/tp2_winforms");
+        }
 
+        private void label9_MouseHover(object sender, EventArgs e)
+        {
+            label9.ForeColor = Color.Orange;
+        }
+
+        private void label9_MouseLeave(object sender, EventArgs e)
+        {
+            label9.ForeColor = Color.DimGray;
+        }
     }
 }

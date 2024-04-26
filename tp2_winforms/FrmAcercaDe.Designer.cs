@@ -37,21 +37,24 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.IcoDiego = new System.Windows.Forms.PictureBox();
+            this.IcoMaxi = new System.Windows.Forms.PictureBox();
+            this.IcoRegi = new System.Windows.Forms.PictureBox();
+            this.IcoGonza = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.IcoDani = new System.Windows.Forms.PictureBox();
+            this.IcoJuan = new System.Windows.Forms.PictureBox();
+            this.IcoGit = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoDiego)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoMaxi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoRegi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoGonza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoDani)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoJuan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoGit)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -87,7 +90,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(44, 138);
+            this.label2.Location = new System.Drawing.Point(55, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(283, 17);
             this.label2.TabIndex = 2;
@@ -99,7 +102,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(44, 335);
+            this.label3.Location = new System.Drawing.Point(55, 341);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 17);
             this.label3.TabIndex = 3;
@@ -153,49 +156,49 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Daniel (Luciano) Santostefano";
             // 
-            // pictureBox1
+            // IcoDiego
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 363);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.IcoDiego.BackColor = System.Drawing.Color.Transparent;
+            this.IcoDiego.Image = ((System.Drawing.Image)(resources.GetObject("IcoDiego.Image")));
+            this.IcoDiego.Location = new System.Drawing.Point(8, 363);
+            this.IcoDiego.Name = "IcoDiego";
+            this.IcoDiego.Size = new System.Drawing.Size(40, 40);
+            this.IcoDiego.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.IcoDiego.TabIndex = 14;
+            this.IcoDiego.TabStop = false;
             // 
-            // pictureBox2
+            // IcoMaxi
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 171);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
+            this.IcoMaxi.BackColor = System.Drawing.Color.Transparent;
+            this.IcoMaxi.Image = ((System.Drawing.Image)(resources.GetObject("IcoMaxi.Image")));
+            this.IcoMaxi.Location = new System.Drawing.Point(12, 171);
+            this.IcoMaxi.Name = "IcoMaxi";
+            this.IcoMaxi.Size = new System.Drawing.Size(40, 40);
+            this.IcoMaxi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.IcoMaxi.TabIndex = 15;
+            this.IcoMaxi.TabStop = false;
             // 
-            // pictureBox3
+            // IcoRegi
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 217);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 16;
-            this.pictureBox3.TabStop = false;
+            this.IcoRegi.BackColor = System.Drawing.Color.Transparent;
+            this.IcoRegi.Image = ((System.Drawing.Image)(resources.GetObject("IcoRegi.Image")));
+            this.IcoRegi.Location = new System.Drawing.Point(12, 217);
+            this.IcoRegi.Name = "IcoRegi";
+            this.IcoRegi.Size = new System.Drawing.Size(40, 40);
+            this.IcoRegi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.IcoRegi.TabIndex = 16;
+            this.IcoRegi.TabStop = false;
             // 
-            // pictureBox4
+            // IcoGonza
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(9, 263);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 17;
-            this.pictureBox4.TabStop = false;
+            this.IcoGonza.BackColor = System.Drawing.Color.Transparent;
+            this.IcoGonza.Image = ((System.Drawing.Image)(resources.GetObject("IcoGonza.Image")));
+            this.IcoGonza.Location = new System.Drawing.Point(12, 263);
+            this.IcoGonza.Name = "IcoGonza";
+            this.IcoGonza.Size = new System.Drawing.Size(40, 40);
+            this.IcoGonza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.IcoGonza.TabIndex = 17;
+            this.IcoGonza.TabStop = false;
             // 
             // label6
             // 
@@ -233,27 +236,54 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Ayudante: Gonzalo Ligero";
             // 
-            // pictureBox5
+            // IcoDani
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(9, 454);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox5.TabIndex = 21;
-            this.pictureBox5.TabStop = false;
+            this.IcoDani.BackColor = System.Drawing.Color.Transparent;
+            this.IcoDani.Image = ((System.Drawing.Image)(resources.GetObject("IcoDani.Image")));
+            this.IcoDani.Location = new System.Drawing.Point(8, 454);
+            this.IcoDani.Name = "IcoDani";
+            this.IcoDani.Size = new System.Drawing.Size(40, 40);
+            this.IcoDani.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.IcoDani.TabIndex = 21;
+            this.IcoDani.TabStop = false;
             // 
-            // pictureBox6
+            // IcoJuan
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(12, 409);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox6.TabIndex = 22;
-            this.pictureBox6.TabStop = false;
+            this.IcoJuan.BackColor = System.Drawing.Color.Transparent;
+            this.IcoJuan.Image = ((System.Drawing.Image)(resources.GetObject("IcoJuan.Image")));
+            this.IcoJuan.Location = new System.Drawing.Point(8, 409);
+            this.IcoJuan.Name = "IcoJuan";
+            this.IcoJuan.Size = new System.Drawing.Size(40, 40);
+            this.IcoJuan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.IcoJuan.TabIndex = 22;
+            this.IcoJuan.TabStop = false;
+            // 
+            // IcoGit
+            // 
+            this.IcoGit.BackColor = System.Drawing.Color.Transparent;
+            this.IcoGit.Image = ((System.Drawing.Image)(resources.GetObject("IcoGit.Image")));
+            this.IcoGit.Location = new System.Drawing.Point(27, 500);
+            this.IcoGit.Name = "IcoGit";
+            this.IcoGit.Size = new System.Drawing.Size(35, 35);
+            this.IcoGit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.IcoGit.TabIndex = 23;
+            this.IcoGit.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label9.Font = new System.Drawing.Font("Lucida Console", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(68, 512);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(106, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Repositorio";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label9.MouseLeave += new System.EventHandler(this.label9_MouseLeave);
+            this.label9.MouseHover += new System.EventHandler(this.label9_MouseHover);
             // 
             // FrmAcercaDe
             // 
@@ -263,15 +293,17 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(648, 594);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.IcoGit);
+            this.Controls.Add(this.IcoMaxi);
+            this.Controls.Add(this.IcoJuan);
+            this.Controls.Add(this.IcoDani);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.IcoGonza);
+            this.Controls.Add(this.IcoRegi);
+            this.Controls.Add(this.IcoDiego);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -287,12 +319,13 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sobre \"Gestión de Artículos v1.0\"";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoDiego)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoMaxi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoRegi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoGonza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoDani)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoJuan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IcoGit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,14 +341,16 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox IcoDiego;
+        private System.Windows.Forms.PictureBox IcoMaxi;
+        private System.Windows.Forms.PictureBox IcoRegi;
+        private System.Windows.Forms.PictureBox IcoGonza;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox IcoDani;
+        private System.Windows.Forms.PictureBox IcoJuan;
+        private System.Windows.Forms.PictureBox IcoGit;
+        private System.Windows.Forms.Label label9;
     }
 }
