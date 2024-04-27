@@ -92,10 +92,10 @@ namespace Inventario
         }
         private void BTGuardarArticulo_Click(object sender, EventArgs e)
         {
+            string codigoViejo = articulo.CodigoArticulo;
 
-            if(esCodigoNuevo(TBCodigoArticulo.Text))
+            if(TBCodigoArticulo.Text == codigoViejo || esCodigoNuevo(TBCodigoArticulo.Text))
             {
-
 
             if(!lblCamposObligatorios.Visible)
             {
