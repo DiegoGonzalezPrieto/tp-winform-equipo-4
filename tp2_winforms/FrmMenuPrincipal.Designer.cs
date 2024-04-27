@@ -223,12 +223,13 @@
             this.dgvArticulos.Size = new System.Drawing.Size(888, 332);
             this.dgvArticulos.TabIndex = 1;
             this.dgvArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellDoubleClick);
+            this.dgvArticulos.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvArticulos_CellMouseDown);
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dataArticulos_SelectionChanged);
             // 
             // pbxImagenArticulo
             // 
             this.pbxImagenArticulo.Location = new System.Drawing.Point(969, 110);
-            this.pbxImagenArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxImagenArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.pbxImagenArticulo.Name = "pbxImagenArticulo";
             this.pbxImagenArticulo.Size = new System.Drawing.Size(356, 332);
             this.pbxImagenArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

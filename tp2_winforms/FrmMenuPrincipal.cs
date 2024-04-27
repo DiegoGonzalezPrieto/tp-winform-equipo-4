@@ -18,6 +18,8 @@ namespace Inventario
         public VentanaPrincipal()
         {
             InitializeComponent();
+            dgvArticulos.CellMouseDown += dgvArticulos_CellMouseDown;
+
         }
 
         private void VentanaPrincipal_Load(object sender, EventArgs e)
@@ -411,6 +413,60 @@ namespace Inventario
             {
                 MessageBox.Show(ex.ToString());
 
+            }
+        }
+
+        private void dgvArticulos_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ContextMenuStrip menuCD = new ContextMenuStrip();
+            ToolStripMenuItem atajoModificar = new ToolStripMenuItem("Modificar");
+            ToolStripMenuItem atajoEliminar = new ToolStripMenuItem("Eliminar");
+
+            atajoModificar.Click += atajoModificar_Click;
+            atajoEliminar.Click += atajoEliminar_Click;
+
+
+            menuCD.Items.Add(atajoModificar);
+            menuCD.Items.Add(atajoEliminar);
+
+            if (e.Button == MouseButtons.Right)
+            {
+               
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    dgvArticulos.CurrentCell = dgvArticulos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    menuCD.Show(Cursor.Position);
+                }
+            }
+        }
+        private void atajoModificar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            ModificarArticulo ventanaModificar = new ModificarArticulo(seleccionado);
+            ventanaModificar.ShowDialog();
+            cargarListadoArticulos();
+        }
+
+        private void atajoEliminar_Click(object sender, EventArgs e)
+        {
+            Articulo selecionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            ArticulosNegocio negocio = new ArticulosNegocio();
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Esta seguro de querer eliminar\n " + selecionado.Marca + " " + selecionado.Nombre + " ", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (respuesta == DialogResult.Yes)
+                {
+                    negocio.eliminar(selecionado.Id);
+                    cargarListadoArticulos();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
             }
         }
     }

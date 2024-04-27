@@ -164,7 +164,7 @@
             this.CBMarca.Name = "CBMarca";
             this.CBMarca.Size = new System.Drawing.Size(200, 28);
             this.CBMarca.TabIndex = 3;
-            this.CBMarca.Click += new System.EventHandler(this.CBMarca_Click);
+            this.CBMarca.Leave += new System.EventHandler(this.CBMarca_Leave);
             // 
             // CBCategoria
             // 
@@ -188,7 +188,7 @@
             this.CBCategoria.Name = "CBCategoria";
             this.CBCategoria.Size = new System.Drawing.Size(200, 28);
             this.CBCategoria.TabIndex = 4;
-            this.CBCategoria.Click += new System.EventHandler(this.CBCategoria_Click);
+            this.CBCategoria.Leave += new System.EventHandler(this.CBCategoria_Leave);
             // 
             // BTAgregarArticulo
             // 

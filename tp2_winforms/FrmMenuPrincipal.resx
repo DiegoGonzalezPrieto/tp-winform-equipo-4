@@ -292,7 +292,7 @@
   <data name="ayudaSobreLaAplicacionToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAABndJREFUWEfVVllQk1cU5qF97fZoh6XKoqC44VIEQdw67bR9accFIiqLBaygVKtS
+        vAAADrwBlbxySQAABndJREFUWEfVVllQk1cU5qF97fZoh6XKoqC44VIEQdw67bR9accFIiqLBaygVKtS
         UaTuCDMIiKMy09rRDkqCS1GhFa0UEVFkKaCArAECIWwhbIHT8938QcAg2vahPTPfEO455/vuveecm5j9
         v8wt8w0LL4Wzlac82NJLHmvppThngDwWa/AhRor+9+z9NZdsLGWKOPuATPW8HY/JNaKSlh5uoBXHmgXw
         GWvwTQu41YpY5Ejpf9/e/TL5bat1qfGOwfcGlhyso5XH1a8ExDoGZw8g9z3PtLckutczC8+UOba+N6sW
@@ -362,15 +362,6 @@
   <metadata name="ttpLimpiarBusqueda.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>236, 17</value>
   </metadata>
-  <metadata name="ttpBuscar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
-  <metadata name="ttpLimpiarBusqueda.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>236, 17</value>
-  </metadata>
-  <metadata name="ttpImagen.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>397, 17</value>
-  </metadata>
   <data name="lblSiguiente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -394,6 +385,9 @@
         l1NR53ulFg1KoQr/5nrO9Ae5pNPmKXSoXAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="ttpImagen.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>414, 14</value>
+  </metadata>
   <data name="lblAnterior.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -416,11 +410,8 @@
         WX+cqnseu2qZIBol6KqF0onFoImgk6GdAhjDhjn4KF+JwwymP/Eh05VBJr0rAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="ttpImagen.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>414, 14</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>128</value>
+    <value>67</value>
   </metadata>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

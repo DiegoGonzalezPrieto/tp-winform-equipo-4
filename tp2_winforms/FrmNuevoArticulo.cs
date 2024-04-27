@@ -53,12 +53,33 @@ namespace Inventario
 
         }
 
+        private bool esCodigoNuevo(string nuevoCodigo)
+        {
+            ArticulosNegocio articulosNegocio = new ArticulosNegocio();
+            List <Articulo> listaArticulos = articulosNegocio.listar();
+
+            foreach (Articulo articulo in listaArticulos)
+            {
+                if (articulo.CodigoArticulo.ToUpper() == nuevoCodigo.ToUpper())
+                {
+                    return false;
+
+                }
+            }
+
+            return true;
+        }
+
         private void BTAgregarArticulo_Click(object sender, EventArgs e)
         {
-            ArticulosNegocio visu = new ArticulosNegocio();
+            if(esCodigoNuevo(TBCodigoArticulo.Text))
+            {
+
+            
             if (!lblCamposObligatorios.Visible)
             {
 
+            ArticulosNegocio visu = new ArticulosNegocio();
             try
             {
                 Articulo.CodigoArticulo = TBCodigoArticulo.Text.Trim();
@@ -92,6 +113,12 @@ namespace Inventario
                 MessageBox.Show("Verifique que todos los campos\nesten cargados correctamente.", "Accion No Permitida.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
            
+            }
+            else
+            {
+
+                MessageBox.Show("El código de articulo ingresado ya se encuentra cargado, ingrese un código nuevo.", "Accion No Permitida.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -165,26 +192,26 @@ namespace Inventario
 
             ValidarCamposObligatorios();
         }
-
-        private void CBMarca_Click(object sender, EventArgs e)
+        private void CBMarca_Leave(object sender, EventArgs e)
         {
             if (CBMarca.SelectedIndex != -1)
             {
-            lblFaltaMarca.Visible = false;
+                lblFaltaMarca.Visible = false;
             }
 
             ValidarCamposObligatorios();
         }
 
-        private void CBCategoria_Click(object sender, EventArgs e)
+        private void CBCategoria_Leave(object sender, EventArgs e)
         {
-           if (CBCategoria.SelectedIndex != -1)
+            if (CBCategoria.SelectedIndex != -1)
             {
                 lblFaltaCategoria.Visible = false;
             }
 
             ValidarCamposObligatorios();
         }
+
 
         private void TBPrecio_Leave(object sender, EventArgs e)
         {
@@ -210,4 +237,7 @@ namespace Inventario
         }
 
     }
+
+
+    
 }

@@ -73,13 +73,34 @@ namespace Inventario
             else { lblCamposObligatorios.Visible = true; }
 
         }
+
+        private bool esCodigoNuevo(string nuevoCodigo)
+        {
+            ArticulosNegocio articulosNegocio = new ArticulosNegocio();
+            List<Articulo> listaArticulos = articulosNegocio.listar();
+
+            foreach (Articulo articulo in listaArticulos)
+            {
+                if (articulo.CodigoArticulo.ToUpper() == nuevoCodigo.ToUpper())
+                {
+                    return false;
+
+                }
+            }
+
+            return true;
+        }
         private void BTGuardarArticulo_Click(object sender, EventArgs e)
         {
-            ArticulosNegocio negocio = new ArticulosNegocio();
+
+            if(esCodigoNuevo(TBCodigoArticulo.Text))
+            {
+
 
             if(!lblCamposObligatorios.Visible)
             {
 
+            ArticulosNegocio negocio = new ArticulosNegocio();
             try
             {
                 if (articulo == null) articulo = new Articulo();
@@ -109,6 +130,11 @@ namespace Inventario
             else
             {
                 MessageBox.Show("Verifique que todos los campos\nesten cargados correctamente.", "Accion No Permitida.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            } else
+            {
+                MessageBox.Show("El código de articulo ingresado ya se encuentra cargado, ingrese un código nuevo.", "Accion No Permitida.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
         }
