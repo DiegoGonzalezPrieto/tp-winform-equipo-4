@@ -53,6 +53,7 @@
             this.lblFaltaPrecio = new System.Windows.Forms.Label();
             this.lblCamposObligatorios = new System.Windows.Forms.Label();
             this.lblSoloNumeros = new System.Windows.Forms.Label();
+            this.lblCodigoInvalido = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -337,12 +338,24 @@
             this.lblSoloNumeros.AutoSize = true;
             this.lblSoloNumeros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoloNumeros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblSoloNumeros.Location = new System.Drawing.Point(223, 390);
+            this.lblSoloNumeros.Location = new System.Drawing.Point(213, 390);
             this.lblSoloNumeros.Name = "lblSoloNumeros";
             this.lblSoloNumeros.Size = new System.Drawing.Size(249, 16);
             this.lblSoloNumeros.TabIndex = 23;
             this.lblSoloNumeros.Text = "Solo puede ingresar números (positivos)";
             this.lblSoloNumeros.Visible = false;
+            // 
+            // lblCodigoInvalido
+            // 
+            this.lblCodigoInvalido.AutoSize = true;
+            this.lblCodigoInvalido.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoInvalido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblCodigoInvalido.Location = new System.Drawing.Point(218, 60);
+            this.lblCodigoInvalido.Name = "lblCodigoInvalido";
+            this.lblCodigoInvalido.Size = new System.Drawing.Size(244, 16);
+            this.lblCodigoInvalido.TabIndex = 24;
+            this.lblCodigoInvalido.Text = "Codigo invalido. Ej. Formato valido: A01";
+            this.lblCodigoInvalido.Visible = false;
             // 
             // AgregarArticulo
             // 
@@ -351,6 +364,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(532, 519);
+            this.Controls.Add(this.lblCodigoInvalido);
             this.Controls.Add(this.lblSoloNumeros);
             this.Controls.Add(this.lblCamposObligatorios);
             this.Controls.Add(this.lblFaltaPrecio);
@@ -413,5 +427,6 @@
         private System.Windows.Forms.Label lblFaltaPrecio;
         private System.Windows.Forms.Label lblCamposObligatorios;
         private System.Windows.Forms.Label lblSoloNumeros;
+        private System.Windows.Forms.Label lblCodigoInvalido;
     }
 }

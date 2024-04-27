@@ -51,6 +51,7 @@
             this.lblFaltaNombre = new System.Windows.Forms.Label();
             this.lblFaltaCodigo = new System.Windows.Forms.Label();
             this.lblSoloNumeros = new System.Windows.Forms.Label();
+            this.lblCodigoInvalido = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TBDescripcion
@@ -293,11 +294,24 @@
             this.lblSoloNumeros.Text = "Solo puede ingresar números (positivos)";
             this.lblSoloNumeros.Visible = false;
             // 
+            // lblCodigoInvalido
+            // 
+            this.lblCodigoInvalido.AutoSize = true;
+            this.lblCodigoInvalido.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoInvalido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblCodigoInvalido.Location = new System.Drawing.Point(223, 60);
+            this.lblCodigoInvalido.Name = "lblCodigoInvalido";
+            this.lblCodigoInvalido.Size = new System.Drawing.Size(244, 16);
+            this.lblCodigoInvalido.TabIndex = 48;
+            this.lblCodigoInvalido.Text = "Codigo invalido. Ej. Formato valido: A01";
+            this.lblCodigoInvalido.Visible = false;
+            // 
             // ModificarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 519);
+            this.Controls.Add(this.lblCodigoInvalido);
             this.Controls.Add(this.lblSoloNumeros);
             this.Controls.Add(this.lblFaltaPrecio);
             this.Controls.Add(this.lblFaltaDescripcion);
@@ -355,5 +369,6 @@
         private System.Windows.Forms.Label lblFaltaNombre;
         private System.Windows.Forms.Label lblFaltaCodigo;
         private System.Windows.Forms.Label lblSoloNumeros;
+        private System.Windows.Forms.Label lblCodigoInvalido;
     }
 }

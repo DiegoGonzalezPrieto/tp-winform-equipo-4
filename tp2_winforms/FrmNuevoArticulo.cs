@@ -108,16 +108,31 @@ namespace Inventario
             
         }
 
+        private bool esCodigoValido(string codigo)
+        {
+            if (codigo.Length != 3 || !char.IsLetter(codigo[0]) || !char.IsDigit(codigo[1]) || !char.IsDigit(codigo[2]))
+            {
+                return false;
+            }
+            return true;
+        }
 
         private void TBCodigoArticulo_Leave(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrEmpty(TBCodigoArticulo.Text))
             {
                 lblFaltaCodigo.Visible = true;
+                lblCodigoInvalido.Visible = false;
             }
-            else
+            else if (!esCodigoValido(TBCodigoArticulo.Text))
+            {
+                lblFaltaCodigo.Visible = true ;
+                lblCodigoInvalido.Visible = true ;
+            } else
             {
                 lblFaltaCodigo.Visible = false;
+                lblCodigoInvalido.Visible = false;
             }
 
             ValidarCamposObligatorios();
@@ -193,5 +208,6 @@ namespace Inventario
             
             ValidarCamposObligatorios();
         }
+
     }
 }
