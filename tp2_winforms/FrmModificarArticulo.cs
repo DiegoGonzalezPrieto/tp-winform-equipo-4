@@ -66,9 +66,20 @@ namespace Inventario
 
         }
 
+        private void ValidarCamposObligatorios()
+        {
+            if (!lblFaltaCodigo.Visible && !lblFaltaNombre.Visible && !lblFaltaDescripcion.Visible && !lblFaltaPrecio.Visible)
+            { lblCamposObligatorios.Visible = false; }
+            else { lblCamposObligatorios.Visible = true; }
+
+        }
         private void BTGuardarArticulo_Click(object sender, EventArgs e)
         {
             ArticulosNegocio negocio = new ArticulosNegocio();
+
+            if(!lblCamposObligatorios.Visible)
+            {
+
             try
             {
                 if (articulo == null) articulo = new Articulo();
@@ -93,6 +104,13 @@ namespace Inventario
 
                 MessageBox.Show(ex.ToString());
             }
+
+            }
+            else
+            {
+                MessageBox.Show("Verifique que todos los campos\nesten cargados correctamente.", "Accion No Permitida.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
 
         private void btnModificarImagenes_Click(object sender, EventArgs e)
@@ -107,5 +125,72 @@ namespace Inventario
                 }
             }
         }
+
+        private void TBCodigoArticulo_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TBCodigoArticulo.Text))
+            {
+                lblFaltaCodigo.Visible = true;
+            }
+            else
+            {
+                lblFaltaCodigo.Visible = false;
+            }
+
+            ValidarCamposObligatorios();
+        }
+
+        private void TBNombre_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TBNombre.Text))
+            {
+                lblFaltaNombre.Visible = true;
+            }
+            else
+            {
+                lblFaltaNombre.Visible = false;
+            }
+
+            ValidarCamposObligatorios();
+        }
+
+        private void TBDescripcion_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TBDescripcion.Text))
+            {
+                lblFaltaDescripcion.Visible = true;
+            }
+            else
+            {
+                lblFaltaDescripcion.Visible = false;
+            }
+
+            ValidarCamposObligatorios();
+        }
+
+        private void TBPrecio_Leave(object sender, EventArgs e)
+        {
+            double numero;
+
+            if (!string.IsNullOrEmpty(TBPrecio.Text) && (!double.TryParse(TBPrecio.Text, out numero) || numero <= 0))
+            {
+                lblSoloNumeros.Visible = true;
+                lblFaltaPrecio.Visible = true;
+
+            }
+            else if (string.IsNullOrEmpty(TBPrecio.Text))
+            {
+                lblFaltaPrecio.Visible = true;
+                lblSoloNumeros.Visible = false;
+            }
+            else
+            {
+                lblFaltaPrecio.Visible = false;
+                lblSoloNumeros.Visible = false;
+            }
+
+            ValidarCamposObligatorios();
+        }
+
     }
 }

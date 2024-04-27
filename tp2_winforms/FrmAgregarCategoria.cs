@@ -27,47 +27,76 @@ namespace Inventario
             this.categoria = categoria;
         }
 
+        private bool VerificarCategoriaExiste(string nombreCategoria)
+        {
+
+            List<Categoria> categoriasNegocios = CategoriasNegocio.ListaCategorias();
+
+            foreach (Categoria categoria in categoriasNegocios)
+            {
+                if (categoria.Nombre.ToUpper() == nombreCategoria.ToUpper())
+                {
+                    return true;
+
+                }
+            }
+
+            return false;
+
+
+
+        }
         private void btnGuardarCategoria_Click(object sender, EventArgs e)
         {
-            //Categoria categoria = new Categoria();
-            CategoriasNegocio leerCategorias = new CategoriasNegocio();
 
-            try
+
+            if (!VerificarCategoriaExiste(txtCategoria.Text))
             {
-                if(categoria == null) categoria = new Categoria();
+                CategoriasNegocio leerCategorias = new CategoriasNegocio();
 
-                if (!string.IsNullOrWhiteSpace(txtCategoria.Text))
+                try
                 {
+                    if (categoria == null) categoria = new Categoria();
 
-                    categoria.Nombre = txtCategoria.Text.Trim();
-
-                    if(categoria.Id != 0)
+                    if (!string.IsNullOrWhiteSpace(txtCategoria.Text))
                     {
-                        leerCategorias.modificarCategoria(categoria);
-                        MessageBox.Show("Modificado Exitosamente!");
+
+                        categoria.Nombre = txtCategoria.Text.Trim();
+
+                        if (categoria.Id != 0)
+                        {
+                            leerCategorias.modificarCategoria(categoria);
+                            MessageBox.Show("Modificado Exitosamente!");
+                        }
+                        else
+                        {
+                            leerCategorias.agregarCategoria(categoria);
+                            MessageBox.Show("Agregado Exitosamente!");
+                        }
+
+
+
+                        Close();
                     }
                     else
                     {
-                        leerCategorias.agregarCategoria(categoria);
-                        MessageBox.Show("Agregado Exitosamente!");
+                        MessageBox.Show("Ingrese una categoria, no se permiten espacio en blanco o vacios.");
                     }
-                    
-                   
 
-                    Close();
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Ingrese una categoria, no se permiten espacio en blanco o vacios.");
+
+                    throw ex;
                 }
-
-
-            }
-            catch (Exception ex)
+            } else
             {
 
-                throw ex;
+                MessageBox.Show("La categoria ya existe en la base de datos.", "Categoria Existente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
+
         }
 
         private void btnCancelarCategoria_Click(object sender, EventArgs e)

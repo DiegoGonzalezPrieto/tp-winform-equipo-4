@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Inventario
 {
@@ -30,32 +31,33 @@ namespace Inventario
                 CBMarca.DataSource = leerMarcas;
                 CBMarca.ValueMember = "Id";
                 CBMarca.DisplayMember = "Nombre";
+                CBMarca.SelectedIndex = -1;
                 CBCategoria.DataSource = leerCategorias;
                 CBCategoria.ValueMember = "Id";
                 CBCategoria.DisplayMember = "Nombre";
+                CBCategoria.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-        }
-        private void TBCodigoArticulo_TextChanged(object sender, EventArgs e)
-        {
-        }
-        private void TBNombre_TextChanged(object sender, EventArgs e)
-        {
-        }
-        private void TBDescripcion_TextChanged(object sender, EventArgs e)
-        {
+
         }
 
-        private void CBCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        private void ValidarCamposObligatorios()
         {
+            if(!lblFaltaCodigo.Visible && !lblFaltaNombre.Visible && !lblFaltaDescripcion.Visible && !lblFaltaMarca.Visible && !lblFaltaCategoria.Visible && !lblFaltaPrecio.Visible)
+            { lblCamposObligatorios.Visible = false;}
+            else { lblCamposObligatorios.Visible = true; }
+
         }
+
         private void BTAgregarArticulo_Click(object sender, EventArgs e)
         {
             ArticulosNegocio visu = new ArticulosNegocio();
+            if (!lblCamposObligatorios.Visible)
+            {
 
             try
             {
@@ -74,7 +76,8 @@ namespace Inventario
             }
             catch(FormatException)
             {
-                MessageBox.Show("Verifique que los campos\nesten cargados correctamente.", "Accion No Permitida.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Verifique que todos los campos\nesten cargados correctamente.", "Accion No Permitida.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
             catch (Exception ex)
             {
@@ -82,6 +85,12 @@ namespace Inventario
                  MessageBox.Show(ex.ToString());
             }
 
+            }
+            else
+            {
+
+                MessageBox.Show("Verifique que todos los campos\nesten cargados correctamente.", "Accion No Permitida.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
            
         }
 
@@ -99,35 +108,90 @@ namespace Inventario
             
         }
 
-        private void lblAgregarArticulo_Click(object sender, EventArgs e)
+
+        private void TBCodigoArticulo_Leave(object sender, EventArgs e)
         {
-            ArticulosNegocio visu = new ArticulosNegocio();
-
-            try
+            if (string.IsNullOrEmpty(TBCodigoArticulo.Text))
             {
-                Articulo.CodigoArticulo = TBCodigoArticulo.Text;
-                Articulo.Nombre = TBNombre.Text;
-                Articulo.Descripcion = TBDescripcion.Text;
-                Articulo.Marca = (Marca)CBMarca.SelectedItem;
-                Articulo.Categoria = (Categoria)CBCategoria.SelectedItem;
-                Articulo.Precio = decimal.Parse(TBPrecio.Text);
-
-
-                visu.agregar(Articulo);
-                MessageBox.Show("Agregado Exitosamente!");
-
-                Close();
+                lblFaltaCodigo.Visible = true;
             }
-            catch (FormatException)
+            else
             {
-                MessageBox.Show("Verifique que los campos esten cargados correctamente.");
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.ToString());
+                lblFaltaCodigo.Visible = false;
             }
 
+            ValidarCamposObligatorios();
+        }
+
+        private void TBNombre_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TBNombre.Text))
+            {
+                lblFaltaNombre.Visible = true;
+            }
+            else
+            {
+                lblFaltaNombre.Visible = false;
+            }
+
+            ValidarCamposObligatorios();
+        }
+
+        private void TBDescripcion_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TBDescripcion.Text))
+            {
+                lblFaltaDescripcion.Visible = true;
+            }
+            else
+            {
+                lblFaltaDescripcion.Visible = false;
+            }
+
+            ValidarCamposObligatorios();
+        }
+
+        private void CBMarca_Click(object sender, EventArgs e)
+        {
+            if (CBMarca.SelectedIndex != -1)
+            {
+            lblFaltaMarca.Visible = false;
+            }
+
+            ValidarCamposObligatorios();
+        }
+
+        private void CBCategoria_Click(object sender, EventArgs e)
+        {
+           if (CBCategoria.SelectedIndex != -1)
+            {
+                lblFaltaCategoria.Visible = false;
+            }
+
+            ValidarCamposObligatorios();
+        }
+
+        private void TBPrecio_Leave(object sender, EventArgs e)
+        {
+            double numero;
+            if (!string.IsNullOrEmpty(TBPrecio.Text) && (!double.TryParse(TBPrecio.Text, out numero) || numero<=0))
+            {
+             
+                lblSoloNumeros.Visible = true;
+                lblFaltaPrecio.Visible = true;
+
+            } else if (string.IsNullOrEmpty(TBPrecio.Text))
+            {
+                lblFaltaPrecio.Visible = true;
+                lblSoloNumeros.Visible = false;
+            }
+            else
+            {
+                lblFaltaPrecio.Visible = false;
+                lblSoloNumeros.Visible = false;
+            }
+            
+            ValidarCamposObligatorios();
         }
     }
 }

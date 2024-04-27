@@ -26,9 +26,32 @@ namespace Inventario
             this.marca = marca;
         }
 
+        private bool VerificarMarcaExiste(string nombreMarca)
+        {
+           
+            List<Marca> marcasNegocios = MarcasNegocio.ListaMarcas();
+
+            foreach (Marca marca in marcasNegocios)
+            {
+                if (marca.Nombre.ToUpper() == nombreMarca.ToUpper())
+                {
+                    return true;
+     
+                }
+            }
+
+            return false;
+            
+
+
+        }
+
+
         private void btnGuardarMarca_Click(object sender, EventArgs e)
         {
-            //Marca marca = new Marca();
+
+            if (!VerificarMarcaExiste(txtMarca.Text))
+            {
             MarcasNegocio leerMarcas = new MarcasNegocio();
             try
             {
@@ -51,24 +74,24 @@ namespace Inventario
                        
                         
                     }
-                    
-
-                    
 
                     Close();
                 }else
                 {
                     MessageBox.Show("Ingrese una marca, no se permiten espacio en blanco o vacios.");
                 }
-                //marca.Nombre = txtMarca.Text;
-
-                
 
             }
             catch (Exception ex)
             {
 
                 throw ex;
+            }
+            } else
+            {
+             
+                    MessageBox.Show("La marca ya existe en la base de datos.", "Marca Existente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             }
 
             
