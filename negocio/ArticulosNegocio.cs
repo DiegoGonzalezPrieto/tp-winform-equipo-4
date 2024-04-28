@@ -22,8 +22,8 @@ namespace negocio
             {
 
                 accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion Nombre_Marca, "
-                    + "C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio, I.ImagenUrl UrlImagen FROM ARTICULOS A LEFT JOIN CATEGORIAS C " +
-                    "ON A.IdCategoria = C.Id LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id ORDER BY A.Id ASC");
+                    + "C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio, I.ImagenUrl UrlImagen FROM ARTICULOS A JOIN CATEGORIAS C " +
+                    "ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id ORDER BY A.Id ASC");
 
 
 
@@ -31,16 +31,17 @@ namespace negocio
 
                 while (accesoDatos.Lector.Read())
                 {
-                    Articulo artCargado = lista.Find(a => a.Id == (int)accesoDatos.Lector["Id"]);
-                    if (artCargado != null)
+                    // Si el artículo que se está leyendo ya fue cargado, es porque tiene más de una imagen.
+                    int indiceArticuloExistente = lista.FindIndex(a => a.Id == (int)accesoDatos.Lector["Id"]);
+                    if (indiceArticuloExistente != -1)
                     {
                         // le agrego la imagen nueva y avanzo al siguiente registro.
                         Imagen imagen = new Imagen();
                         imagen.Url = (string)accesoDatos.Lector["UrlImagen"];
-                        lista[lista.Count - 1].Imagenes.Add(imagen);
+                        lista[indiceArticuloExistente].Imagenes.Add(imagen);
                         continue;
-
                     }
+
                     Articulo articulo = new Articulo();
                     articulo.Id = (int)accesoDatos.Lector["Id"];
                     articulo.CodigoArticulo = (string)accesoDatos.Lector["Codigo"];
@@ -53,7 +54,7 @@ namespace negocio
                     {
                         articulo.Marca.Id = (int)accesoDatos.Lector["Id_Marca"];
                         articulo.Marca.Nombre = (string)accesoDatos.Lector["Nombre_Marca"];
-                    } 
+                    }
 
                     //Creacion de Categoria y relacion en datagrid
                     articulo.Categoria = new Categoria();
@@ -225,58 +226,6 @@ namespace negocio
             }
         }
 
-        public static List<Articulo> buscarArticulos(ParametrosBusqueda busqueda)
-        {
-            List<Articulo> lista = new List<Articulo>();
-
-            Data accesoDatos = new Data();
-
-            try
-            {
-                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion Nombre_Marca, C.Descripcion Nombre_Categoria, " +
-                    "A.Precio FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id " +
-                    "WHERE Codigo LIKE '%" + busqueda.CodArticulo + "%'");
-
-
-
-                accesoDatos.ejecutarLectura();
-
-                while (accesoDatos.Lector.Read())
-                {
-                    Articulo articulo = new Articulo();
-                    articulo.Id = (int)accesoDatos.Lector["Id"];
-                    articulo.CodigoArticulo = (string)accesoDatos.Lector["Codigo"];
-                    articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
-                    articulo.Descripcion = (string)accesoDatos.Lector["Descripcion"];
-                    //Creacion de Marca y relacion en datagrip
-                    articulo.Marca = new Marca();
-                    articulo.Marca.Id = (int)accesoDatos.Lector["Id"];
-                    articulo.Marca.Nombre = (string)accesoDatos.Lector["Nombre_Marca"];
-                    //Creacion de Categoria y relacion en datagrip
-                    articulo.Categoria = new Categoria();
-                    articulo.Categoria.Id = (int)accesoDatos.Lector["Id"];
-                    articulo.Categoria.Nombre = (string)accesoDatos.Lector["Nombre_Categoria"];
-                    articulo.Precio = (decimal)accesoDatos.Lector["Precio"];
-
-
-                    lista.Add(articulo);
-                }
-
-                return lista;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                accesoDatos.cerrarConexion();
-            }
-
-
-        }
-
         public void eliminar(int id)
         {
             Data datos = new Data();
@@ -383,6 +332,18 @@ namespace negocio
                 while (Datos.Lector.Read())
                 {
                     Articulo articulo = new Articulo();
+
+                    // Si el artículo que se está leyendo ya fue cargado, es porque tiene más de una imagen.
+                    int indiceArticuloExistente = lista.FindIndex(a => a.Id == (int)Datos.Lector["Id"]);
+                    if (indiceArticuloExistente != -1)
+                    {
+                        // le agrego la imagen nueva y avanzo al siguiente registro.
+                        Imagen imagen = new Imagen();
+                        imagen.Url = (string)Datos.Lector["UrlImagen"];
+                        lista[indiceArticuloExistente].Imagenes.Add(imagen);
+                        continue;
+                    }
+
                     articulo.Id = (int)Datos.Lector["Id"];
                     articulo.CodigoArticulo = (string)Datos.Lector["Codigo"];
                     articulo.Nombre = (string)Datos.Lector["Nombre"];
@@ -397,11 +358,14 @@ namespace negocio
                     articulo.Categoria.Nombre = (string)Datos.Lector["Nombre_Categoria"];
                     articulo.Precio = (decimal)Datos.Lector["Precio"];
                     articulo.Imagenes = new List<Imagen>();
-                    Imagen auxImagen = new Imagen();
-                    auxImagen.Url = (string)Datos.Lector["UrlImagen"];
-                    articulo.Imagenes.Add(auxImagen);
-
-
+                    
+                    // si no tiene imagenes, no se cargan en el objeto
+                    if (!(Datos.Lector["UrlImagen"] is DBNull))
+                    {
+                        Imagen auxImagen = new Imagen();
+                        auxImagen.Url = (string)Datos.Lector["UrlImagen"];
+                        articulo.Imagenes.Add(auxImagen);
+                    }
                     lista.Add(articulo);
                 }
 
