@@ -65,6 +65,21 @@ namespace negocio
                 throw ex;
             }
         }
+        public int insertarYObtenerId()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                return (int)comando.ExecuteScalar();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public void setearParametro(string nombre, object valor)
         {

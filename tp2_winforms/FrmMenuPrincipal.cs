@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Inventario
 {
@@ -41,9 +42,9 @@ namespace Inventario
                 dgvArticulos.DataSource = articuloListados;
                 //dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "F2";
                 ocultarColumna();
-               
+
                 obtenerImagenPbxArticulo(articuloListados[0].Imagenes);
-                
+
             }
             catch (Exception ex)
             {
@@ -120,7 +121,7 @@ namespace Inventario
 
         private void modificarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(dgvArticulos.CurrentRow != null)
+            if (dgvArticulos.CurrentRow != null)
             {
                 Articulo seleccionado;
                 seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
@@ -132,7 +133,7 @@ namespace Inventario
             {
                 MessageBox.Show("Debe seleccionar el articulo a modificar", "No se seleccion ningun articulo");
             }
-           
+
 
         }
 
@@ -145,15 +146,15 @@ namespace Inventario
 
         private void dataArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgvArticulos.CurrentRow != null)
+            if (dgvArticulos.CurrentRow != null)
             {
                 Articulo art = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 obtenerImagenPbxArticulo(art.Imagenes);
             }
-           
+
         }
 
-        private void obtenerImagenPbxArticulo(List<Imagen> imagenes, int indice = 0)
+        private void obtenerImagenPbxArticulo(List<Imagen> imagenes, int indice = 0, bool siguienteImagen = true)
         {
             // si no tiene imagenes, cargar placeholder y volver
             if (imagenes.Count == 0)
@@ -162,18 +163,39 @@ namespace Inventario
                 return;
             }
 
-            try
+            // intenta hasta encontrar una imagen que funcione.
+            // si vuelve al inicio, deja imagen por defecto
+            int i = indice;
+            do
             {
-                pbxImagenArticulo.Load(imagenes[indice].Url);
-            }
-            catch (Exception)
-            {
-                pbxImagenArticulo.Load("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
-                //pbxImagenArticulo.Load("https://bcs-management.com/wp-content/uploads/2017/02/2000px-No_image_available.svg_-1024x1024.png");
-                //pbxImagenArticulo.Load("https://placehold.co/600x400@2x.png?text=%F0%9F%98%85");
-            }
-            
-            
+                try
+                {
+                    pbxImagenArticulo.Load(imagenes[i].Url);
+                    return;
+
+                }
+                catch (Exception)
+                {
+                    if (siguienteImagen)
+                    {
+                        if (i < imagenes.Count - 1)
+                            i++;
+                        else
+                            i = 0;
+
+                    }
+                    else
+                    {
+                        if (i != 0)
+                            i--;
+                        else
+                            i = imagenes.Count - 1;
+                    }
+                }
+            } while (i != indice);
+
+            pbxImagenArticulo.Load("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
+            return;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -201,7 +223,7 @@ namespace Inventario
 
         private void eliminarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(dgvArticulos.CurrentRow != null)
+            if (dgvArticulos.CurrentRow != null)
             {
                 Articulo selecionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 ArticulosNegocio negocio = new ArticulosNegocio();
@@ -226,7 +248,7 @@ namespace Inventario
             {
                 MessageBox.Show("Debe seleccionar primero el articulo a eliminar", "No se seleccion ningun articulo");
             }
-            
+
         }
 
         private void buscarMarcaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -276,7 +298,7 @@ namespace Inventario
             try
             {
                 if (validarFiltro())
-                return;
+                    return;
 
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
@@ -294,7 +316,7 @@ namespace Inventario
 
         private void btnBorrarFiltro_Click(object sender, EventArgs e)
         {
-            
+
             cargarListadoArticulos();
             cboCriterio.Text = "";
             cboCampo.Text = "";
@@ -305,7 +327,7 @@ namespace Inventario
         {
             if (cboCampo.SelectedIndex < 0)
             {
-                MessageBox.Show("Por favor, seleccione el campo para filtrar.", "Accion No Permitida", MessageBoxButtons.OK , MessageBoxIcon.Stop);
+                MessageBox.Show("Por favor, seleccione el campo para filtrar.", "Accion No Permitida", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return true;
             }
             if (cboCriterio.SelectedIndex < 0)
@@ -401,12 +423,12 @@ namespace Inventario
 
                 if (indiceActual > 0)
                 {
-                    obtenerImagenPbxArticulo(articuloSeleccionado.Imagenes, indiceActual - 1);
+                    obtenerImagenPbxArticulo(articuloSeleccionado.Imagenes, indiceActual - 1, false);
                 }
                 else
                 {
                     // ir a imagen final
-                    obtenerImagenPbxArticulo(articuloSeleccionado.Imagenes, articuloSeleccionado.Imagenes.Count - 1);
+                    obtenerImagenPbxArticulo(articuloSeleccionado.Imagenes, articuloSeleccionado.Imagenes.Count - 1, false);
                 }
             }
             catch (Exception ex)
@@ -431,7 +453,7 @@ namespace Inventario
 
             if (e.Button == MouseButtons.Right)
             {
-               
+
                 if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
                 {
                     dgvArticulos.CurrentCell = dgvArticulos.Rows[e.RowIndex].Cells[e.ColumnIndex];

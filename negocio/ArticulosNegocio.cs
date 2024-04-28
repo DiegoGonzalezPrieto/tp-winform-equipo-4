@@ -97,11 +97,11 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES('" + articuloNuevo.CodigoArticulo + "', '" + articuloNuevo.Nombre + "', '" + articuloNuevo.Descripcion + "', @IdMarca, @IdCategoria, " + articuloNuevo.Precio + ")");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) OUTPUT inserted.Id VALUES('" + articuloNuevo.CodigoArticulo + "', '" + articuloNuevo.Nombre + "', '" + articuloNuevo.Descripcion + "', @IdMarca, @IdCategoria, " + articuloNuevo.Precio + ")");
                 datos.setearParametro("@IdMarca", articuloNuevo.Marca.Id);
                 datos.setearParametro("@IdCategoria", articuloNuevo.Categoria.Id);
-                datos.ejecutarAccion(); // cambio de ejecutarLectura a Accion porque es INSERT
-
+                int idNuevoArticulo = datos.insertarYObtenerId(); // ejecucion de insert obteniendo id de objeto insertado
+                articuloNuevo.Id = idNuevoArticulo;
 
             }
             catch (Exception ex)
@@ -119,20 +119,8 @@ namespace negocio
 
         private void agregarImagenes(Articulo articulo)
         {
-            int idArticulo;
-            if (articulo.Id != 0)
-            {
-                // artículo en modificación. quitamos imagenes previas y cargamos nuevas
-                idArticulo = articulo.Id;
-                this.quitarImagenes(idArticulo);
-            }
-            else
-            {
-                // artículo nuevo. buscamos el último artículo agregado, para vincular imagenes a su Id
-                Articulo ultimoArticulo = this.listar().OrderBy(art => art.Id).Last();
-                idArticulo = ultimoArticulo.Id;
-
-            }
+            int idArticulo = articulo.Id;
+            this.quitarImagenes(idArticulo);
 
             try
             {
@@ -358,7 +346,7 @@ namespace negocio
                     articulo.Categoria.Nombre = (string)Datos.Lector["Nombre_Categoria"];
                     articulo.Precio = (decimal)Datos.Lector["Precio"];
                     articulo.Imagenes = new List<Imagen>();
-                    
+
                     // si no tiene imagenes, no se cargan en el objeto
                     if (!(Datos.Lector["UrlImagen"] is DBNull))
                     {
