@@ -68,7 +68,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 31);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Salir";
+            this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -208,9 +208,9 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Location = new System.Drawing.Point(55, 183);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(404, 17);
+            this.label6.Size = new System.Drawing.Size(393, 17);
             this.label6.TabIndex = 18;
-            this.label6.Text = "Profesor: Maximililano Sar Fernandez";
+            this.label6.Text = "Profesor: Maximiliano Sar Fernández";
             // 
             // label7
             // 
