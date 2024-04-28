@@ -255,12 +255,14 @@ namespace Inventario
         {
             FrmBuscarMarca frmBuscarMarca = new FrmBuscarMarca();
             frmBuscarMarca.ShowDialog();
+            cargarListadoArticulos();
         }
 
         private void buscarCategoriaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmBuscarCategoria frmBuscarCategoria = new FrmBuscarCategoria();
             frmBuscarCategoria.ShowDialog();
+            cargarListadoArticulos();
         }
 
         private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
